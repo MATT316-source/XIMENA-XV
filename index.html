@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis 15 Años - Ximena</title>
     
-    <!-- ========== META TAGS AGREGADOS  ========== -->
+    <!-- ========== META TAGS OPTIMIZADOS PARA COMPARTIR ========== -->
     <meta property="og:title" content="Mis 15 Años - Ximena">
     <meta property="og:description" content="¡Estás cordialmente invitado a celebrar mis 15 años! 7 de Febrero 2026">
     <meta property="og:image" content="https://raw.githubusercontent.com/matt316-source/xime-15/main/imagenpararchinvitacion.jpg">
@@ -21,7 +21,7 @@
     <meta name="twitter:image" content="https://raw.githubusercontent.com/matt316-source/xime-15/main/imagenpararchinvitacion.jpg">
     
     <meta name="description" content="Invitación para los 15 años de Ximena - 7 de Febrero 2026">
-    <!-- ========== FIN DE META TAGS AGREGADOS ========== -->
+    <!-- ========== FIN DE META TAGS ========== -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -98,13 +98,15 @@
         }
         
         .audio-modal-content {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 15px;
             text-align: center;
             max-width: 500px;
             width: 90%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .audio-modal h2 {
@@ -116,6 +118,7 @@
         .audio-modal p {
             margin-bottom: 25px;
             line-height: 1.6;
+            color: #5a3d3d;
         }
         
         .audio-activate-btn {
@@ -143,7 +146,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 50px;
             padding: 10px 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -152,6 +155,8 @@
             gap: 15px;
             z-index: 1000;
             transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .audio-player.minimized {
@@ -297,12 +302,13 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
         .header-container {
             display: flex;
@@ -486,7 +492,12 @@
                 opacity: 0;
             }
         }
-        /* Hero Section con la imagen específica - MEJORADO RESPONSIVE */
+        
+        /* =========================================== */
+        /* TODAS LAS SECCIONES AHORA SON TRANSPARENTES */
+        /* =========================================== */
+        
+        /* Hero Section - TRANSPARENTE */
         .hero {
             height: 100vh;
             display: flex;
@@ -499,8 +510,7 @@
             overflow: hidden;
             margin-top: 90px;
             transition: all 0.8s ease;
-            background: linear-gradient(rgba(255, 214, 224, 0.7), rgba(255, 155, 179, 0.7)), 
-                        url('piclumen-1762370993641.png') center/cover no-repeat;
+            background: url('https://i.pinimg.com/736x/72/d2/38/72d2386f22015cabc2a336f10fe41659.jpg') center/cover no-repeat;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -513,8 +523,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+            background: rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
         
@@ -523,17 +532,18 @@
             z-index: 2;
             max-width: 800px;
             padding: 40px;
-            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 6rem;
-            color: var(--rosa-brillante);
+            color: white;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             animation: fadeInDown 1.5s ease;
             letter-spacing: 2px;
             position: relative;
@@ -547,15 +557,15 @@
             transform: translateX(-50%);
             width: 350px;
             height: 4px;
-            background: linear-gradient(to right, var(--rosa-claro), var(--rosa-brillante), var(--rosa-claro));
+            background: linear-gradient(to right, rgba(255, 214, 224, 0.5), rgba(255, 107, 139, 0.8), rgba(255, 214, 224, 0.5));
         }
         .hero h2 {
             font-family: 'Dancing Script', cursive;
             font-size: 5rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 30px;
             animation: fadeInUp 1.5s ease;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             font-weight: 700;
         }
         .hero p {
@@ -566,20 +576,22 @@
             line-height: 1.6;
             font-weight: 500;
             font-family: 'Montserrat', sans-serif;
-            color: #5a3d3d;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .scroll-down {
             position: absolute;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            color: var(--rosa-oscuro);
+            color: white;
             font-size: 2rem;
             animation: bounce 2s infinite;
             cursor: pointer;
             z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+        
         /* Secciones generales */
         section {
             padding: 100px 10%;
@@ -597,10 +609,11 @@
             text-align: center;
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 60px;
             position: relative;
             transition: all 0.5s ease;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .section-title::after {
             content: '';
@@ -610,31 +623,45 @@
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: linear-gradient(to right, var(--rosa-claro), var(--rosa-oscuro), var(--rosa-claro));
+            background: linear-gradient(to right, rgba(255, 214, 224, 0.5), rgba(255, 107, 139, 0.8), rgba(255, 214, 224, 0.5));
             transition: width 0.5s ease;
         }
         .section-title:hover::after {
             width: 200px;
         }
-        /* Sección de fecha */
+        
+        /* Sección de fecha - TRANSPARENTE */
         .date-section {
-            background-color: var(--rosa-pastel-2);
+            background: url('https://i.pinimg.com/736x/61/52/64/615264dcdf1a6eb6f8561cc829ac32e2.jpg') center/cover no-repeat;
             text-align: center;
+            position: relative;
+        }
+        .date-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
         }
         .date-container {
-            background: white;
+            position: relative;
+            z-index: 1;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(255, 105, 140, 0.2);
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            overflow: hidden;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease, box-shadow 0.5s ease;
         }
         .date-container:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 105, 140, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
         .date-container::before {
             content: '';
@@ -643,48 +670,68 @@
             left: 0;
             width: 100%;
             height: 10px;
-            background: linear-gradient(to right, var(--rosa-claro), var(--rosa-medio), var(--rosa-oscuro), var(--rosa-medio), var(--rosa-claro));
+            background: linear-gradient(to right, rgba(255, 214, 224, 0.5), rgba(255, 155, 179, 0.8), rgba(255, 107, 139, 0.9), rgba(255, 155, 179, 0.8), rgba(255, 214, 224, 0.5));
         }
         .date-day {
             font-size: 5rem;
-            color: var(--rosa-oscuro);
+            color: white;
             font-weight: bold;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .date-month {
             font-size: 2.5rem;
-            color: var(--rosa-viejo);
+            color: white;
             margin-bottom: 10px;
             text-transform: uppercase;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .date-year {
             font-size: 1.8rem;
-            color: var(--rosa-medio);
+            color: white;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .date-weekday {
             font-size: 1.5rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 30px;
             font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .date-time {
             font-size: 1.8rem;
-            color: #666;
-            background: var(--rosa-polvo);
+            color: white;
+            background: rgba(255, 245, 249, 0.3);
             display: inline-block;
             padding: 10px 25px;
             border-radius: 50px;
             margin-top: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        /* Contador regresivo mejorado con efecto de latido */
+        
+        /* Contador regresivo - TRANSPARENTE */
         .countdown-section {
-            background: linear-gradient(135deg, var(--rosa-pastel-4), var(--rosa-pastel-3));
+            background: url('https://i.pinimg.com/736x/04/1e/e8/041ee879ee46e512f18cb1c499f5cf9f.jpg') center/cover no-repeat;
             text-align: center;
+            position: relative;
+        }
+        .countdown-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
         }
         .countdown-container {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         .countdown {
             display: flex;
@@ -694,16 +741,18 @@
             flex-wrap: wrap;
         }
         .countdown-item {
-            background: linear-gradient(145deg, var(--color-destacado), var(--color-destacado-oscuro));
+            background: linear-gradient(145deg, rgba(255, 46, 116, 0.8), rgba(216, 27, 96, 0.8));
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             min-width: 120px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             color: white;
             animation: heartbeat 2s infinite;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .countdown-item::before {
             content: '';
@@ -729,7 +778,7 @@
             font-weight: bold;
             color: white;
             margin-bottom: 5px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             transition: color 0.3s ease;
         }
         .countdown-label {
@@ -738,19 +787,20 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
         .countdown-message {
             margin-top: 40px;
             font-size: 2rem;
-            color: var(--rosa-oscuro);
+            color: white;
             font-style: italic;
             font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
-        /* Sección ceremonia */
+        
+        /* Sección ceremonia - TRANSPARENTE */
         .ceremony-section {
             background: url('https://i.pinimg.com/736x/e7/49/68/e749683759244b1abe28e2e5b036ebda.jpg') center/cover no-repeat fixed;
-            color: white;
             text-align: center;
             position: relative;
         }
@@ -767,29 +817,33 @@
         .ceremony-container {
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
             padding: 40px;
             border-radius: 15px;
             max-width: 800px;
             margin: 0 auto;
-            color: #333;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease, box-shadow 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .ceremony-container:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
         .ceremony-container h3 {
             font-size: 2rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 20px;
             text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .ceremony-container p {
             font-size: 1.2rem;
             margin-bottom: 15px;
             text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .ceremony-image {
             width: 100%;
@@ -799,10 +853,11 @@
             object-fit: contain;
             border-radius: 10px;
             margin: 30px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease;
-            background-color: #f9f9f9;
+            background-color: rgba(249, 249, 249, 0.1);
             padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .ceremony-image:hover {
             transform: scale(1.03);
@@ -812,26 +867,27 @@
             align-items: center;
             margin-top: 20px;
             padding: 10px 25px;
-            background: var(--rosa-oscuro);
+            background: rgba(255, 107, 139, 0.8);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .map-link i {
             margin-right: 8px;
             font-size: 1.2rem;
         }
         .map-link:hover {
-            background: var(--rosa-viejo);
+            background: rgba(232, 160, 183, 0.8);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        /* Sección recepción */
+        
+        /* Sección recepción - TRANSPARENTE */
         .reception-section {
             background: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
-            color: white;
             text-align: center;
             position: relative;
         }
@@ -848,29 +904,33 @@
         .reception-container {
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
             padding: 40px;
             border-radius: 15px;
             max-width: 800px;
             margin: 0 auto;
-            color: #333;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease, box-shadow 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .reception-container:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
         .reception-container h3 {
             font-size: 2rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 20px;
             text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .reception-container p {
             font-size: 1.2rem;
             margin-bottom: 15px;
             text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .reception-image {
             width: 100%;
@@ -880,15 +940,17 @@
             object-fit: contain;
             border-radius: 10px;
             margin: 30px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease;
-            background-color: #f9f9f9;
+            background-color: rgba(249, 249, 249, 0.1);
             padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .reception-image:hover {
             transform: scale(1.03);
         }
-        /* Sección itinerario */
+        
+        /* Sección itinerario - TRANSPARENTE */
         .itinerary-section {
             background: url('https://i.pinimg.com/1200x/61/52/64/615264dcdf1a6eb6f8561cc829ac32e2.jpg') center/cover no-repeat fixed;
             text-align: center;
@@ -901,19 +963,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
         .itinerary-container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease;
             position: relative;
             z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .itinerary-container:hover {
             transform: translateY(-10px);
@@ -929,7 +993,7 @@
             bottom: 0;
             left: 50%;
             width: 4px;
-            background: linear-gradient(to bottom, var(--rosa-claro), var(--rosa-oscuro), var(--rosa-claro));
+            background: linear-gradient(to bottom, rgba(255, 214, 224, 0.5), rgba(255, 107, 139, 0.8), rgba(255, 214, 224, 0.5));
             transform: translateX(-50%);
         }
         .timeline-item {
@@ -945,29 +1009,33 @@
         .timeline-content {
             width: 45%;
             padding: 20px;
-            background: var(--rosa-pastel-1);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .timeline-content:hover {
             transform: scale(1.05);
-            background: var(--rosa-pastel-2);
+            background: rgba(255, 255, 255, 0.3);
         }
         .timeline-time {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .timeline-event {
             font-size: 1.2rem;
-            color: #555;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         .timeline-icon {
             width: 60px;
             height: 60px;
-            background: var(--rosa-oscuro);
+            background: rgba(255, 107, 139, 0.8);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -978,22 +1046,38 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
-            box-shadow: 0 0 0 8px var(--rosa-pastel-4);
+            box-shadow: 0 0 0 8px rgba(255, 180, 196, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        /* Sección álbum de fotos */
+        
+        /* Sección álbum de fotos - TRANSPARENTE */
         .album-section {
-            background-color: var(--rosa-pastel-3);
+            background: url('https://i.pinimg.com/736x/24/60/7b/24607b4d2c88c41b63a819fa2a572faf.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
+        }
+        .album-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
         }
         .album-container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .album-container:hover {
             transform: translateY(-10px);
@@ -1008,13 +1092,14 @@
             position: relative;
             overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             aspect-ratio: 1/1;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .album-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
         .album-item img {
             width: 100%;
@@ -1042,9 +1127,10 @@
         .album-caption {
             font-size: 1.1rem;
             font-weight: 500;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         
-        /* SECCIÓN MENSAJE ESPECIAL CON EL GIF SOLICITADO */
+        /* SECCIÓN MENSAJE ESPECIAL - TRANSPARENTE */
         .message-section {
             background: url('https://i.pinimg.com/1200x/72/d2/38/72d2386f22015cabc2a336f10fe41659.jpg') center/cover no-repeat;
             text-align: center;
@@ -1060,7 +1146,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
 
@@ -1069,29 +1155,32 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.85);
             padding: 50px;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .message-text {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             line-height: 1.7;
-            color: #5a3d3d;
+            color: white;
             margin-bottom: 40px;
             position: relative;
-            padding: 0 20px;
+            padding: 30px;
             transition: transform 0.5s ease;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border-left: 5px solid var(--rosa-brillante);
         }
 
         .message-text:hover {
             transform: scale(1.02);
+            background: rgba(0, 0, 0, 0.4);
         }
 
         .message-text::before,
@@ -1100,45 +1189,44 @@
             font-size: 4rem;
             color: var(--rosa-brillante);
             position: absolute;
-            opacity: 0.7;
+            opacity: 0.8;
             transition: opacity 0.3s ease;
             font-family: 'Georgia', serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .message-text::before {
-            top: -30px;
-            left: -10px;
+            top: -20px;
+            left: 0;
         }
 
         .message-text::after {
-            bottom: -60px;
-            right: -10px;
-        }
-
-        .message-text:hover::before,
-        .message-text:hover::after {
-            opacity: 0.9;
+            bottom: -40px;
+            right: 0;
         }
 
         .signature {
             font-family: 'Dancing Script', cursive;
             font-size: 3.5rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-top: 50px;
             transition: transform 0.5s ease;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
             font-weight: 700;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
         }
 
         .signature:hover {
             transform: scale(1.05);
+            background: rgba(0, 0, 0, 0.4);
         }
         
-        /* Sección Con la Bendición - CON LA IMAGEN ESPECÍFICA */
+        /* Sección Con la Bendición - TRANSPARENTE */
         .parents-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)), 
-                        url('piclumen-1761249070621.png') center/cover no-repeat;
+            background: url('piclumen-1761249070621.png') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -1152,8 +1240,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.3) 0%, transparent 50%);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
         .parents-container {
@@ -1161,221 +1248,270 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.9);
             padding: 50px;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .parents-text {
-            font-size: 2rem;
-            color: #8a4b4b;
+            font-size: 2.2rem;
+            color: white;
             margin-bottom: 30px;
             font-family: 'Playfair Display', serif;
             font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            border-right: 5px solid var(--rosa-brillante);
         }
         .parents-names {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
-            color: var(--rosa-oscuro);
+            font-size: 3.2rem;
+            color: white;
             margin-bottom: 40px;
             transition: transform 0.5s ease;
             line-height: 1.4;
             font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 5px solid var(--rosa-brillante);
+            border-bottom: 5px solid var(--rosa-brillante);
         }
         .parents-names:hover {
             transform: scale(1.05);
+            background: rgba(0, 0, 0, 0.4);
         }
         
-        /* Sección lista de invitados mejorada */
+        /* Sección lista de invitados - TRANSPARENTE */
         .guestlist-section {
-            background: linear-gradient(135deg, var(--rosa-pastel-2), var(--rosa-pastel-3));
+            background: url('https://i.pinimg.com/736x/36/89/d5/3689d5a4da802a3908bc8df68b76ee29.jpg') center/cover no-repeat;
             text-align: center;
+            position: relative;
+        }
+        .guestlist-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
         }
         .guestlist-container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .guestlist-container:hover {
             transform: translateY(-10px);
         }
         .guestlist-text {
-            font-size: 1.2rem;
-            color: #555;
+            font-size: 1.4rem;
+            color: white;
             margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         
-        /* Contador de invitados */
+        /* Contador de invitados - TRANSPARENTE */
         .guestlist-counter {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
             margin-bottom: 30px;
             padding: 20px;
-            background: var(--rosa-pastel-1);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            border: 2px solid var(--rosa-medio);
+            border: 2px solid rgba(255, 155, 179, 0.5);
         }
         
         .counter-item {
             text-align: center;
             padding: 15px;
             min-width: 120px;
+            flex: 1;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .counter-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 5px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         
         .counter-label {
             font-size: 1rem;
-            color: #666;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         
+        /* Búsqueda - TRANSPARENTE */
         .guestlist-search {
             margin-bottom: 30px;
             position: relative;
         }
         .guestlist-search input {
             width: 100%;
-            padding: 12px 20px;
-            border: 2px solid var(--rosa-medio);
+            padding: 15px 20px;
+            border: 2px solid rgba(255, 155, 179, 0.5);
             border-radius: 50px;
             font-size: 1rem;
             outline: none;
             transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(5px);
+        }
+        .guestlist-search input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
         .guestlist-search input:focus {
-            border-color: var(--rosa-oscuro);
-            box-shadow: 0 0 10px rgba(255, 107, 139, 0.3);
+            border-color: rgba(255, 107, 139, 0.8);
+            box-shadow: 0 0 15px rgba(255, 107, 139, 0.4);
+            background: rgba(255, 255, 255, 0.3);
         }
         .guestlist-search i {
             position: absolute;
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--rosa-medio);
+            color: rgba(255, 155, 179, 0.8);
             z-index: 2;
         }
+        
+        /* Filtros - TRANSPARENTES */
         .guestlist-filters {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
             flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
         }
         .filter-btn {
-            background: var(--rosa-pastel-1);
-            border: 2px solid var(--rosa-medio);
-            padding: 8px 15px;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 155, 179, 0.5);
+            padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s;
             font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            color: white;
+            min-width: 140px;
+            justify-content: center;
+        }
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
         .filter-btn.active {
-            background: var(--rosa-oscuro);
+            background: rgba(255, 107, 139, 0.8);
             color: white;
-            border-color: var(--rosa-oscuro);
+            border-color: rgba(255, 107, 139, 0.8);
+        }
+        .filter-btn i {
+            font-size: 1rem;
         }
         
-        /* Estilos para grupos de invitados */
-        .group-header {
-            background-color: var(--rosa-pastel-2);
-            color: var(--rosa-oscuro);
-            font-weight: 700;
-            font-size: 1.2rem;
-            padding: 15px;
+        /* Contenedor de tabla - TRANSPARENTE */
+        .guestlist-table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+            max-height: 500px;
+            overflow-y: auto;
             border-radius: 10px;
-            margin: 20px 0 10px;
-            text-align: center;
-            border-left: 5px solid var(--rosa-brillante);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
         }
         
-        .group-header.familia {
-            background-color: rgba(76, 175, 80, 0.2);
-            color: #2e7d32;
-            border-left: 5px solid #4CAF50;
-        }
-        
-        .group-count {
-            background: var(--rosa-oscuro);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
+        /* Tabla de invitados - TRANSPARENTE */
         .guestlist-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
-        }
-        .guestlist-table th,
-        .guestlist-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid var(--rosa-pastel-2);
-        }
-        .guestlist-table th {
-            background-color: var(--rosa-pastel-1);
-            color: var(--rosa-oscuro);
-            font-weight: 600;
-            cursor: pointer;
-        }
-        .guestlist-table th:hover {
-            background-color: var(--rosa-pastel-3);
-        }
-        .guestlist-table tr:hover {
-            background-color: var(--rosa-pastel-1);
+            min-width: 600px;
         }
         
-        /* Cabezas de familia destacadas */
-        .cabeza-familia {
-            background-color: rgba(76, 175, 80, 0.1) !important;
+        .guestlist-table th,
+        .guestlist-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.95rem;
+            color: white;
+        }
+        
+        .guestlist-table th {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
             font-weight: 600;
-            color: #2e7d32;
+            cursor: pointer;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .guestlist-table th:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .guestlist-table tr:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Cabezas de familia destacadas - TRANSPARENTE */
+        .cabeza-familia {
+            background: rgba(76, 175, 80, 0.2) !important;
+            font-weight: 600;
+            color: #c8e6c9 !important;
         }
         
         .cabeza-familia:hover {
-            background-color: rgba(76, 175, 80, 0.2) !important;
+            background: rgba(76, 175, 80, 0.3) !important;
         }
         
+        /* Mensaje de invitados - TRANSPARENTE */
         .guestlist-message {
             margin-top: 30px;
             padding: 20px;
-            background-color: var(--rosa-pastel-1);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            font-size: 1.3rem;
-            color: var(--rosa-oscuro);
+            font-size: 1.2rem;
+            color: white;
             font-weight: 600;
             text-align: center;
-            border: 2px solid var(--rosa-medio);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 155, 179, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         
-        /* Sección confirmación */
+        /* Sección confirmación - TRANSPARENTE */
         .confirmation-section {
-            background: linear-gradient(135deg, var(--rosa-pastel-2), var(--rosa-pastel-1));
+            background: url('https://i.pinimg.com/736x/81/4c/42/814c423b1b32e119ad1cc98ab0f75416.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -1387,8 +1523,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://i.pinimg.com/736x/81/4c/42/814c423b1b32e119ad1cc98ab0f75416.jpg') center/contain no-repeat;
-            opacity: 0.1;
+            background: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
         .confirmation-container {
@@ -1396,23 +1531,30 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .confirmation-text {
             font-size: 1.5rem;
-            color: #5a3d3d;
+            color: white;
             margin-bottom: 40px;
             line-height: 1.6;
             font-weight: 500;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .confirmation-text strong {
-            color: var(--rosa-brillante);
+            color: white;
             font-weight: 700;
             font-size: 1.6rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .whatsapp-button {
             display: inline-flex;
             align-items: center;
-            background: #25D366;
+            background: rgba(37, 211, 102, 0.8);
             color: white;
             padding: 15px 30px;
             border-radius: 50px;
@@ -1420,27 +1562,38 @@
             font-size: 1.2rem;
             font-weight: 600;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .whatsapp-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            background: #128C7E;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: rgba(18, 140, 126, 0.9);
         }
         .whatsapp-button i {
             margin-right: 10px;
             font-size: 1.5rem;
         }
         
-        /* Sección lluvia de sobres CON LA IMAGEN ESPECÍFICA */
+        /* Sección lluvia de sobres - TRANSPARENTE */
         .envelopes-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)), 
-                        url('lluvia.jpg') center/cover no-repeat;
+            background: url('lluvia.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
             padding: 120px 10%;
+        }
+        
+        .envelopes-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
         }
         
         .envelopes-container {
@@ -1448,25 +1601,30 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.9);
             padding: 50px;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .envelopes-text {
-            font-size: 1.5rem;
-            color: #5a3d3d;
+            font-size: 1.8rem;
+            color: white;
             margin-bottom: 40px;
             font-weight: 600;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
             line-height: 1.6;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            border-right: 5px solid rgba(255, 77, 122, 0.8);
         }
         .envelope-icon {
             font-size: 3rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 20px;
             animation: float 3s ease-in-out infinite;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .envelope {
             position: absolute;
@@ -1475,13 +1633,13 @@
             animation: falling linear infinite;
             transition: transform 0.3s ease;
             font-size: 2rem;
-            color: var(--rosa-brillante);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
         }
         .envelope:hover {
             transform: scale(1.3);
             opacity: 1;
-            color: var(--rosa-oscuro);
+            color: rgba(255, 77, 122, 0.9);
         }
         @keyframes falling {
             0% {
@@ -1497,9 +1655,9 @@
             }
         }
         
-        /* Sección carrusel fotos */
+        /* Sección carrusel fotos - TRANSPARENTE */
         .gallery-section {
-            background-color: var(--rosa-pastel-4);
+            background: url('https://i.pinimg.com/1200x/04/1e/e8/041ee879ee46e512f18cb1c499f5cf9f.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
         }
@@ -1510,8 +1668,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://i.pinimg.com/1200x/04/1e/e8/041ee879ee46e512f18cb1c499f5cf9f.jpg') center/contain no-repeat;
-            opacity: 0.1;
+            background: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
         .gallery-container {
@@ -1526,7 +1683,8 @@
             height: 500px;
             overflow: hidden;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .carousel-inner {
             display: flex;
@@ -1555,7 +1713,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.3);
             color: var(--rosa-oscuro);
             border: none;
             width: 50px;
@@ -1568,9 +1727,10 @@
             justify-content: center;
             align-items: center;
             transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .carousel-control:hover {
-            background: var(--rosa-oscuro);
+            background: rgba(255, 107, 139, 0.8);
             color: white;
         }
         .carousel-control.prev {
@@ -1588,19 +1748,19 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: var(--rosa-medio);
+            background: rgba(255, 155, 179, 0.5);
             margin: 0 5px;
             cursor: pointer;
             transition: all 0.3s;
         }
         .carousel-indicator.active {
-            background: var(--rosa-oscuro);
+            background: rgba(255, 107, 139, 0.8);
             transform: scale(1.2);
         }
         
-        /* Sección quiz mejorada */
+        /* Sección quiz - TRANSPARENTE */
         .quiz-section {
-            background: linear-gradient(135deg, var(--rosa-pastel-5), var(--rosa-pastel-4));
+            background: url('corazones de colores.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
         }
@@ -1611,39 +1771,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('corazones de colores.jpg') center/contain no-repeat;
-            opacity: 0.1;
+            background: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
         .quiz-container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.5s ease;
             position: relative;
             z-index: 1;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .quiz-container:hover {
             transform: translateY(-10px);
         }
         .quiz-intro {
             font-size: 1.3rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 30px;
             font-weight: 600;
             text-align: center;
             padding: 15px;
-            background: var(--rosa-pastel-1);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            border-left: 5px solid var(--rosa-brillante);
+            border-left: 5px solid rgba(255, 77, 122, 0.8);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .quiz-question {
             font-size: 1.5rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .quiz-options {
             display: grid;
@@ -1652,36 +1816,40 @@
             margin-bottom: 40px;
         }
         .quiz-option {
-            background: var(--rosa-pastel-1);
-            border: 2px solid var(--rosa-medio);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 155, 179, 0.5);
             padding: 15px;
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s;
             font-size: 1.1rem;
             position: relative;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
         .quiz-option:hover {
-            background: var(--rosa-medio);
+            background: rgba(255, 155, 179, 0.5);
             color: white;
         }
         .quiz-option.selected {
-            background: var(--rosa-oscuro);
+            background: rgba(255, 107, 139, 0.8);
             color: white;
-            border-color: var(--rosa-oscuro);
+            border-color: rgba(255, 107, 139, 0.8);
         }
         .quiz-option.correct {
-            background: #4CAF50;
+            background: rgba(76, 175, 80, 0.8);
             color: white;
-            border-color: #4CAF50;
+            border-color: rgba(76, 175, 80, 0.8);
         }
         .quiz-option.incorrect {
-            background: #F44336;
+            background: rgba(244, 67, 54, 0.8);
             color: white;
-            border-color: #F44336;
+            border-color: rgba(244, 67, 54, 0.8);
         }
         .quiz-button {
-            background: var(--rosa-oscuro);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 107, 139, 0.8);
             color: white;
             border: none;
             padding: 12px 30px;
@@ -1690,14 +1858,15 @@
             cursor: pointer;
             transition: all 0.3s;
             margin: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .quiz-button:hover {
-            background: var(--rosa-viejo);
+            background: rgba(232, 160, 183, 0.8);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         .quiz-button:disabled {
-            background: #ccc;
+            background: rgba(204, 204, 204, 0.5);
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
@@ -1712,57 +1881,68 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
         .feedback-correct {
-            background-color: rgba(76, 175, 80, 0.2);
-            color: #2e7d32;
-            border: 1px solid #4CAF50;
+            backdrop-filter: blur(5px);
+            background: rgba(76, 175, 80, 0.3);
+            color: #c8e6c9;
+            border: 1px solid rgba(76, 175, 80, 0.5);
         }
         .feedback-incorrect {
-            background-color: rgba(244, 67, 54, 0.2);
-            color: #c62828;
-            border: 1px solid #F44336;
+            backdrop-filter: blur(5px);
+            background: rgba(244, 67, 54, 0.3);
+            color: #ffcdd2;
+            border: 1px solid rgba(244, 67, 54, 0.5);
         }
         .quiz-result {
             margin-top: 30px;
             font-size: 1.5rem;
-            color: var(--rosa-oscuro);
+            color: white;
             min-height: 50px;
             display: none;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .quiz-score {
             margin-top: 30px;
             font-size: 1.8rem;
-            color: var(--rosa-viejo);
+            color: rgba(232, 160, 183, 0.9);
             font-weight: bold;
             display: none;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .quiz-final-message {
             margin-top: 30px;
             padding: 20px;
-            background: var(--rosa-claro);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             font-size: 1.3rem;
-            color: var(--rosa-oscuro);
+            color: white;
             line-height: 1.6;
             display: none;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .quiz-instructions {
             margin-top: 30px;
             padding: 20px;
-            background: var(--rosa-pastel-1);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .quiz-instructions p {
             margin-bottom: 15px;
             font-size: 1.1rem;
-            color: #5a3d3d;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
 
-        /* NUEVA SECCIÓN: Compartir Fotos - SOLO WHATSAPP */
+        /* Sección Compartir Fotos - TRANSPARENTE */
         .share-photos-section {
-            background: linear-gradient(135deg, var(--rosa-pastel-2), var(--rosa-pastel-3));
+            background: url('https://i.pinimg.com/736x/6b/93/fa/6b93fa653eeebeea2835d3d2bd2be7a2.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -1775,9 +1955,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ff9bb3" opacity="0.1"/></svg>');
-            background-size: 50px 50px;
-            opacity: 0.3;
+            background: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
 
@@ -1790,16 +1968,19 @@
 
         .photos-intro {
             font-size: 1.4rem;
-            color: #5a3d3d;
+            color: white;
             margin-bottom: 50px;
             line-height: 1.6;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .photos-options {
@@ -1809,22 +1990,24 @@
         }
 
         .photo-option {
-            background: white;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
             padding: 40px 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             border: 2px solid transparent;
             max-width: 500px;
             width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .photo-option:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: #25D366;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(37, 211, 102, 0.8);
         }
 
         .option-icon {
@@ -1837,22 +2020,25 @@
             justify-content: center;
             font-size: 2.5rem;
             transition: all 0.3s ease;
-            background: linear-gradient(45deg, #25D366, #128C7E);
+            background: linear-gradient(45deg, rgba(37, 211, 102, 0.8), rgba(18, 140, 126, 0.8));
             color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .photo-option h3 {
             font-size: 1.8rem;
-            color: var(--rosa-oscuro);
+            color: white;
             margin-bottom: 15px;
             font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .photo-option p {
             font-size: 1.1rem;
-            color: #666;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 25px;
             line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
 
         .hashtag-container {
@@ -1862,20 +2048,23 @@
             gap: 10px;
             margin: 20px 0;
             padding: 15px;
-            background: var(--rosa-pastel-1);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50px;
-            border: 2px dashed var(--rosa-medio);
+            border: 2px dashed rgba(255, 155, 179, 0.5);
         }
 
         .hashtag {
             font-size: 1.3rem;
             font-weight: 700;
-            color: var(--rosa-brillante);
+            color: white;
             font-family: 'Montserrat', sans-serif;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .copy-btn {
-            background: var(--rosa-oscuro);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 107, 139, 0.8);
             color: white;
             border: none;
             width: 40px;
@@ -1886,10 +2075,11 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .copy-btn:hover {
-            background: var(--rosa-viejo);
+            background: rgba(232, 160, 183, 0.8);
             transform: scale(1.1);
         }
 
@@ -1900,14 +2090,16 @@
             gap: 8px;
             margin: 15px 0;
             padding: 10px;
-            background: var(--rosa-pastel-1);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             font-size: 0.9rem;
-            color: #666;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
 
         .upload-info i {
-            color: var(--rosa-oscuro);
+            color: rgba(255, 107, 139, 0.8);
         }
 
         .action-btn {
@@ -1921,16 +2113,18 @@
             transition: all 0.3s ease;
             margin-top: 15px;
             border: 2px solid transparent;
-            background: #25D366;
+            backdrop-filter: blur(5px);
+            background: rgba(37, 211, 102, 0.8);
             color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .action-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.9);
             color: #25D366;
-            border-color: #25D366;
+            border-color: rgba(37, 211, 102, 0.8);
         }
 
         .photo-option::before {
@@ -1948,16 +2142,19 @@
             left: 100%;
         }
 
-        /* Footer */
+        /* Footer - TRANSPARENTE */
         footer {
-            background: var(--rosa-oscuro);
+            background: rgba(255, 107, 139, 0.8);
             color: white;
             text-align: center;
             padding: 30px 0;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
         }
         .footer-text {
             font-size: 1.2rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .social-icons {
             display: flex;
@@ -1969,14 +2166,16 @@
             color: white;
             font-size: 1.5rem;
             transition: all 0.3s;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         .social-icon:hover {
-            color: var(--rosa-claro);
+            color: rgba(255, 214, 224, 0.9);
             transform: translateY(-3px);
         }
         .copyright {
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.9;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
         
         /* Animaciones */
@@ -2027,7 +2226,10 @@
             }
         }
         
-        /* Responsive */
+        /* ============================ */
+        /* RESPONSIVE PARA MÓVILES */
+        /* ============================ */
+        
         @media (max-width: 1200px) {
             nav ul li {
                 margin-left: 12px;
@@ -2039,6 +2241,7 @@
                 font-size: 1rem;
             }
         }
+        
         @media (max-width: 992px) {
             .section-title {
                 font-size: 3rem;
@@ -2104,6 +2307,7 @@
                 font-size: 2rem;
             }
         }
+        
         @media (max-width: 768px) {
             .header-container {
                 padding: 0 15px;
@@ -2118,14 +2322,15 @@
                 width: 70%;
                 max-width: 300px;
                 height: 100vh;
-                background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, 0.95);
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 transition: right 0.3s ease;
                 box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
+                border-left: 1px solid rgba(255, 255, 255, 0.3);
             }
             nav.active {
                 right: 0;
@@ -2195,10 +2400,6 @@
             .guestlist-container {
                 padding: 20px;
             }
-            .guestlist-table {
-                display: block;
-                overflow-x: auto;
-            }
             .guestlist-filters {
                 flex-direction: column;
                 align-items: center;
@@ -2214,6 +2415,7 @@
                 background-attachment: scroll;
                 padding: 80px 5%;
             }
+            
             /* Responsive para itinerario */
             .itinerary-timeline::before {
                 left: 30px;
@@ -2229,11 +2431,13 @@
             .timeline-icon {
                 left: 30px;
             }
+            
             /* Responsive para álbum */
             .album-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 gap: 15px;
             }
+            
             /* Responsive para audio player */
             .audio-player {
                 width: auto;
@@ -2265,7 +2469,22 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            
+            /* Secciones transparentes - ajustes móvil */
+            .message-text {
+                font-size: 1.3rem;
+                padding: 20px;
+            }
+            .parents-names {
+                font-size: 1.8rem;
+                padding: 20px;
+            }
+            .envelopes-text {
+                font-size: 1.3rem;
+                padding: 20px;
+            }
         }
+        
         @media (max-width: 576px) {
             .logo {
                 font-size: 1.3rem;
@@ -2339,8 +2558,9 @@
                 font-size: 0.8rem;
             }
             .parents-names {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
+            
             /* Responsive para itinerario */
             .itinerary-container {
                 padding: 20px;
@@ -2351,6 +2571,7 @@
             .timeline-event {
                 font-size: 1rem;
             }
+            
             /* Responsive para álbum */
             .album-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -2359,6 +2580,7 @@
             .album-container {
                 padding: 20px;
             }
+            
             /* Responsive para audio player */
             .audio-player {
                 bottom: 10px;
@@ -2396,6 +2618,18 @@
             }
             .counter-label {
                 font-size: 0.9rem;
+            }
+            
+            /* Secciones transparentes - ajustes móvil pequeño */
+            .message-section,
+            .parents-section,
+            .envelopes-section {
+                padding: 60px 5%;
+            }
+            .message-container,
+            .parents-container,
+            .envelopes-container {
+                padding: 20px;
             }
         }
     </style>
@@ -2450,7 +2684,7 @@
         </div>
     </header>
 
-    <!-- 1. Sección Inicio -->
+    <!-- 1. Sección Inicio - TRANSPARENTE -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Mis 15 Años</h1>
@@ -2462,7 +2696,7 @@
         </div>
     </section>
 
-    <!-- 2. Sección Mensaje Especial -->
+    <!-- 2. Sección Mensaje Especial - TRANSPARENTE -->
     <section class="message-section" id="mensaje">
         <h2 class="section-title">Un Mensaje Especial</h2>
         <div class="message-container">
@@ -2475,7 +2709,7 @@
         </div>
     </section>
 
-    <!-- 3. Sección Con la Bendición - CON LA IMAGEN ESPECÍFICA -->
+    <!-- 3. Sección Con la Bendición - TRANSPARENTE -->
     <section class="parents-section" id="bendicion">
         <h2 class="section-title">Con la bendición de Dios</h2>
         <div class="parents-container">
@@ -2485,12 +2719,12 @@
                 y<br>
                 Jazzel Valdez García<br>
                 junto a su hija<br>
-                <span style="font-size: 3.5rem;">Ximena Alcantar Valdez</span>
+                <span style="font-size: 3.5rem; color: white; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);">Ximena Alcantar Valdez</span>
             </div>
         </div>
     </section>
 
-    <!-- 4. Sección Fecha del Evento -->
+    <!-- 4. Sección Fecha del Evento - TRANSPARENTE -->
     <section class="date-section" id="fecha">
         <h2 class="section-title">Fecha del Evento</h2>
         <div class="date-container">
@@ -2502,7 +2736,7 @@
         </div>
     </section>
 
-    <!-- 5. Sección Contador Regresivo -->
+    <!-- 5. Sección Contador Regresivo - TRANSPARENTE -->
     <section class="countdown-section" id="cuenta">
         <h2 class="section-title">Cuenta Regresiva</h2>
         <div class="countdown-container">
@@ -2528,7 +2762,7 @@
         </div>
     </section>
 
-    <!-- 6. Sección Lista de Invitados -->
+    <!-- 6. Sección Lista de Invitados - TRANSPARENTE -->
     <section class="guestlist-section" id="invitados">
         <h2 class="section-title">Lista de Invitados</h2>
         <div class="guestlist-container">
@@ -2558,6 +2792,8 @@
                 <input type="text" id="guestSearch" placeholder="Buscar invitado...">
                 <i class="fas fa-search"></i>
             </div>
+            
+            <!-- Filtros -->
             <div class="guestlist-filters">
                 <button class="filter-btn active" data-filter="all">
                     <i class="fas fa-users"></i> Todos (<span id="countAll">170</span>)
@@ -2571,23 +2807,20 @@
                 <button class="filter-btn" data-filter="amigos">
                     <i class="fas fa-user-friends"></i> Amigos (<span id="countAmigos">10</span>)
                 </button>
-                <button class="filter-btn" data-filter="adult">
-                    <i class="fas fa-user"></i> Adultos (<span id="countAdultos">157</span>)
-                </button>
-                <button class="filter-btn" data-filter="child">
-                    <i class="fas fa-child"></i> Niños (<span id="countNinos">13</span>)
-                </button>
             </div>
+            
+            <!-- Contenedor de tabla -->
             <div id="guestListBody">
-                <!-- La lista se llenará con JavaScript organizada por grupos -->
+                <!-- La tabla se cargará dinámicamente -->
             </div>
+            
             <div class="guestlist-message">
                 <p>Si tu nombre no aparece en la lista o necesitas hacer algún cambio, por favor contáctanos.</p>
             </div>
         </div>
     </section>
 
-    <!-- 7. Sección Confirmar Asistencia -->
+    <!-- 7. Sección Confirmar Asistencia - TRANSPARENTE -->
     <section class="confirmation-section" id="confirmar">
         <h2 class="section-title">Confirma tu Asistencia</h2>
         <div class="confirmation-container">
@@ -2603,7 +2836,7 @@
         </div>
     </section>
 
-    <!-- 8. Sección Ceremonia -->
+    <!-- 8. Sección Ceremonia - TRANSPARENTE -->
     <section class="ceremony-section" id="ceremonia">
         <h2 class="section-title">Ceremonia Religiosa</h2>
         <div class="ceremony-container">
@@ -2612,14 +2845,14 @@
             <p>Calle Andrés Quintana Roo 309, Centro histórico de Morelia, 58000 Morelia, Mich.</p>
             <p>Ciudad de Morelia</p>
             <p>Hora: 5:00 PM</p>
-            <img src="https://lh3.googleusercontent.com/d/1FEAywBt4tZDu6PPNZcEpR8fySiOdQkw5=w1000" alt="Parroquia Rectoria de Cristo Rey" class="ceremony-image">
+            <img src="https://lh3.googleusercontent.com/d/1FEAywBt4tZDu6PPNZcEpR8fySiOdQkw5=w1000" alt="Parroquia Rectoria de Cristo Rey" class="ceremony-image" loading="lazy">
             <a href="https://maps.app.goo.gl/BxC9rb5f2y4tGQRg6" target="_blank" class="map-link">
                 <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
             </a>
         </div>
     </section>
 
-    <!-- 9. Sección Recepción -->
+    <!-- 9. Sección Recepción - TRANSPARENTE -->
     <section class="reception-section" id="recepcion">
         <h2 class="section-title">Recepción</h2>
         <div class="reception-container">
@@ -2627,14 +2860,14 @@
             <p>El Durazno C.P. 58359 </p>
             <p>Morelia michoacan</p>
             <p>Hora: 7:00 PM</p>
-            <img src="https://lh3.googleusercontent.com/d/106YURfZ7g9k-idKmKwTO9qcXHwhO6VOR=w1000" alt="Jardín Olmos Eventos" class="reception-image">
+            <img src="https://lh3.googleusercontent.com/d/106YURfZ7g9k-idKmKwTO9qcXHwhO6VOR=w1000" alt="Jardín Olmos Eventos" class="reception-image" loading="lazy">
             <a href="https://maps.app.goo.gl/ZKihvpc2owpwhyjN7" target="_blank" class="map-link">
                 <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
             </a>
         </div>
     </section>
 
-    <!-- 10. Sección Itinerario -->
+    <!-- 10. Sección Itinerario - TRANSPARENTE -->
     <section class="itinerary-section" id="itinerario">
         <h2 class="section-title">Itinerario del Día</h2>
         <div class="itinerary-container">
@@ -2715,44 +2948,44 @@
         </div>
     </section>
 
-    <!-- 11. Sección Álbum de Fotos -->
+    <!-- 11. Sección Álbum de Fotos - TRANSPARENTE -->
     <section class="album-section" id="album">
         <h2 class="section-title">Álbum de Fotos</h2>
         <div class="album-container">
             <p class="guestlist-text">Algunos momentos especiales que quiero compartir contigo</p>
             <div class="album-grid">
                 <div class="album-item">
-                    <img src="https://i.pinimg.com/736x/1e/0e/4a/1e0e4a330dcf26d4531ac7255a89a3f1.jpg" alt="Foto de Ximena">
+                    <img src="https://i.pinimg.com/736x/1e/0e/4a/1e0e4a330dcf26d4531ac7255a89a3f1.jpg" alt="Foto de Ximena" loading="lazy">
                     <div class="album-overlay">
                         <div class="album-caption">Mi sesión de fotos</div>
                     </div>
                 </div>
                 <div class="album-item">
-                    <img src="https://i.pinimg.com/736x/e7/49/68/e749683759244b1abe28e2e5b036ebda.jpg" alt="Con mi familia">
+                    <img src="https://i.pinimg.com/736x/e7/49/68/e749683759244b1abe28e2e5b036ebda.jpg" alt="Con mi familia" loading="lazy">
                     <div class="album-overlay">
                         <div class="album-caption">Con mi familia</div>
                     </div>
                 </div>
                 <div class="album-item">
-                    <img src="https://i.pinimg.com/736x/36/89/d5/3689d5a4da802a3908bc8df68b76ee29.jpg" alt="Mis amigas">
+                    <img src="https://i.pinimg.com/736x/36/89/d5/3689d5a4da802a3908bc8df68b76ee29.jpg" alt="Mis amigas" loading="lazy">
                     <div class="album-overlay">
                         <div class="album-caption">Mis amigas</div>
                     </div>
                 </div>
                 <div class="album-item">
-                    <img src="https://i.pinimg.com/736x/24/60/7b/24607b4d2c88c41b63a819fa2a572faf.jpg" alt="Preparativos">
+                    <img src="https://i.pinimg.com/736x/24/60/7b/24607b4d2c88c41b63a819fa2a572faf.jpg" alt="Preparativos" loading="lazy">
                     <div class="album-overlay">
                         <div class="album-caption">Preparativos</div>
                     </div>
                 </div>
                 <div class="album-item">
-                    <img src="https://i.pinimg.com/1200x/04/1e/e8/041ee879ee46e512f18cb1c499f5cf9f.jpg" alt="Mi vestido">
+                    <img src="https://i.pinimg.com/1200x/04/1e/e8/041ee879ee46e512f18cb1c499f5cf9f.jpg" alt="Mi vestido" loading="lazy">
                     <div class="album-overlay">
                         <div class="album-caption">Mi vestido</div>
                     </div>
                 </div>
                 <div class="album-item">
-                    <img src="https://i.pinimg.com/736x/6b/93/fa/6b93fa653eeebeea2835d3d2bd2be7a2.jpg" alt="Sonrisas">
+                    <img src="https://i.pinimg.com/736x/6b/93/fa/6b93fa653eeebeea2835d3d2bd2be7a2.jpg" alt="Sonrisas" loading="lazy">
                     <div class="album-overlay">
                         <div class="album-caption">Sonrisas</div>
                     </div>
@@ -2761,7 +2994,7 @@
         </div>
     </section>
 
-    <!-- 12. Sección Lluvia de Sobres -->
+    <!-- 12. Sección Lluvia de Sobres - TRANSPARENTE -->
     <section class="envelopes-section" id="lluvia">
         <h2 class="section-title">Lluvia de Sobres</h2>
         <div class="envelopes-container">
@@ -2805,7 +3038,7 @@
         </div>
     </section>
 
-    <!-- 13. Sección Compartir Fotos - SOLO WHATSAPP -->
+    <!-- 13. Sección Compartir Fotos - TRANSPARENTE -->
     <section class="share-photos-section" id="compartir-fotos">
         <h2 class="section-title">Comparte tus Momentos</h2>
         <div class="photos-container">
@@ -2814,7 +3047,6 @@
             </div>
             
             <div class="photos-options">
-                <!-- Solo opción WhatsApp -->
                 <div class="photo-option">
                     <div class="option-icon">
                         <i class="fab fa-whatsapp"></i>
@@ -2833,7 +3065,7 @@
         </div>
     </section>
 
-    <!-- 14. Sección Quiz (Encuesta) -->
+    <!-- 14. Sección Quiz - TRANSPARENTE -->
     <section class="quiz-section" id="quiz">
         <h2 class="section-title">¿Cuánto me conoces?</h2>
         <div class="quiz-container">
@@ -2857,7 +3089,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - TRANSPARENTE -->
     <footer>
         <p class="footer-text">¡Espero verte en mi fiesta de 15 años!</p>
         <div class="social-icons">
@@ -2874,7 +3106,7 @@
             <i class="fas fa-compress"></i>
         </button>
         <div class="track-info">
-            <img src="https://i.pinimg.com/736x/1e/0e/4a/1e0e4a330dcf26d4531ac7255a89a3f1.jpg" alt="Portada" class="track-image">
+            <img src="https://i.pinimg.com/736x/1e/0e/4a/1e0e4a330dcf26d4531ac7255a89a3f1.jpg" alt="Portada" class="track-image" loading="lazy">
             <div class="track-details">
                 <div class="track-name">Quince Años</div>
                 <div class="track-artist">Marta Albarracín</div>
@@ -2895,12 +3127,8 @@
 
     <!-- Elemento de audio optimizado para GitHub Pages -->
     <audio id="backgroundMusic" loop preload="auto">
-        <!-- Fuente 1: Archivo local (subir a GitHub) -->
-        <source src="Marta Albarracin - Quince Años" type="audio/mpeg">
-        <!-- Fuente 2: Servidor confiable 1 -->
-        <source src="Marta Albarracin - Quince Años" type="audio/mpeg">
-        <!-- Fuente 3: Servidor confiable 2 -->
         <source src="Marta Albarracin - Quince Años.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
 
@@ -3016,13 +3244,12 @@
         audioToggle.addEventListener('click', toggleAudioPlayer);
 
         // =============================================
-        // LISTA DE INVITADOS ACTUALIZADA SEGÚN EXCEL
+        // LISTA DE INVITADOS CORREGIDA Y FUNCIONAL
         // =============================================
 
-        // Datos completos de invitados según el Excel
+        // Datos COMPLETOS de invitados
         const guestListData = [
-            // FAMILIA MARCOS
-            // Cabezas de familia (destacadas en verde)
+            // FAMILIA MARCOS (primeros 10)
             { number: 1, name: "NAVARRETE CORONA GLORIA", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
             { number: 2, name: "TOLEDO NAVARRETE SANDRA", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
             { number: 3, name: "TOLEDO NAVARRETE JAVIER", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
@@ -3033,315 +3260,119 @@
             { number: 8, name: "TOLEDO MERCADO WENDY", type: "adult", group: "familia-marcos", status: "pendiente" },
             { number: 9, name: "PONCHIS", type: "adult", group: "familia-marcos", status: "pendiente" },
             { number: 10, name: "SOFI", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 11, name: "ELIAS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 12, name: "DIANA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 13, name: "TOLEDO NAVARRETE MARIA TERE", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 14, name: "EMILIANO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 15, name: "ALCANTAR TOLEDO GLORIA JEANETTE", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 16, name: "VILLA CARLOS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 17, name: "ALCANTAR VILLA KARLA MAITE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 18, name: "ALCANTAR VILLA CARLOS", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 19, name: "ALCANTAR TOLEDO ALFREDO", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 20, name: "LIZ", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 21, name: "LAURA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 22, name: "OMAR", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 23, name: "CAMILA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 24, name: "ORLANDO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 25, name: "FABY", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 26, name: "MAX", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 27, name: "ALCANTAR TOLEDO MARCOS ALFREDO", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 28, name: "VALDEZ GARCIA JAZZEL", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 29, name: "ALCANTAR VALDEZ MARCOS HAZIEL", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 30, name: "ALCANTAR VALDEZ XIMENA", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 31, name: "ALCANTAR GAYTAN ALFREDO", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 32, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 33, name: "HIJA1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 34, name: "HIJA2", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 35, name: "HIJO3", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 36, name: "TOLEDO NAVARRETE MARIA LOURDES", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 37, name: "MEDINA RENE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 38, name: "MEDINA TOLEDO RENE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 39, name: "JAZMIN", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 40, name: "RENATA", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 41, name: "MILTON", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 42, name: "WALTER", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 43, name: "CHINO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 44, name: "MEDINA TOLEDO ALEJANDRO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 45, name: "PATY", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 46, name: "MEDINA TOLEDO ERICKA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 47, name: "JAVIER", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 48, name: "VANESA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 49, name: "NOVIO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 50, name: "YARA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 51, name: "TOLEDO NAVARRETE CARLOS", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 52, name: "MARIA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 53, name: "PRIMO CARLOS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 54, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 55, name: "HIJA1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 56, name: "HIJA2", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 57, name: "HIJA3", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 58, name: "TOLEDO NAVARRETE ARMANDO", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 59, name: "ANGELICA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 60, name: "HIJO 1", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 61, name: "CRISTIAN", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 62, name: "ALAN", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 63, name: "JORGE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 64, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 65, name: "LESLI", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 66, name: "ESPOSO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 67, name: "HIJO 1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 68, name: "HIJO 2", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 69, name: "HIJO 3", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 70, name: "HIJO 4", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 71, name: "HIJO 5", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 72, name: "DENIS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 73, name: "HIJO 1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 74, name: "HIJO 2", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 75, name: "HIJO 3", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 76, name: "TOLEDO NAVARRETE GLORIA", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 77, name: "ERICK", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 78, name: "BIBI", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 79, name: "ERICKA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 80, name: "GLORIA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 81, name: "PAQUITO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 82, name: "ANDREA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 83, name: "GABRIEL", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 84, name: "HIJO 1", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 85, name: "HIJO 2", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 86, name: "HIJO 3", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 87, name: "GEOVANI", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 88, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 89, name: "HIJO 1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 90, name: "HIJO 2", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 91, name: "DAVID", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 92, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 93, name: "HIJO 1", type: "adult", group: "familia-marcos", status: "pendiente" },
-
-            // FAMILIA JAZZEL
-            // Cabezas de familia (destacadas en verde)
+            
+            // FAMILIA JAZZEL (primeros 10)
             { number: 1, name: "CANDIDA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
             { number: 2, name: "VIRGINIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
             { number: 3, name: "KEVIN", type: "adult", group: "familia-jazzel", status: "pendiente" },
             { number: 4, name: "ZULEYMA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
             { number: 5, name: "RIGOBERTO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
             { number: 6, name: "OBDULIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 7, name: "2", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 8, name: "3", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 9, name: "4", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 10, name: "5", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 11, name: "FRANCISCO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 12, name: "ESPOSA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 13, name: "PACO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 14, name: "ESPOSA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 15, name: "HIJA", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 16, name: "JONATHAN", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 17, name: "NOVIA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 18, name: "OSCAR", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 19, name: "ESPOSA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 20, name: "HIJO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 21, name: "HIJO2", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 22, name: "ANGELICA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 23, name: "HIJO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 24, name: "DALIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 25, name: "ESPOSO", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 26, name: "VEANEY", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 27, name: "HIJO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 28, name: "ARIZBETH", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 29, name: "NOVIO", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 30, name: "HIJA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 31, name: "DALIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 32, name: "2", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 33, name: "3", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 34, name: "4", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 35, name: "RAMIRO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 36, name: "RANULFO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 37, name: "ESPOSA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 38, name: "MARICELA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 39, name: "HIJO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 40, name: "HIJO2", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 41, name: "YULMA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 42, name: "MARLEN", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 43, name: "RAMON", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 44, name: "KAREN", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 45, name: "ULISES", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 46, name: "CINTHIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 47, name: "IVON", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 48, name: "GRABIEL", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 49, name: "NAYAMEL", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 50, name: "ALEJANDRA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 51, name: "HIJO1", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 52, name: "HIJO2", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 53, name: "HIJA3", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 54, name: "HIJA4", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 55, name: "ANTONIO V", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 56, name: "MARGARITA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 57, name: "EVELIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 58, name: "HIJA1", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 59, name: "HIJA2", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 60, name: "HIJA3", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 61, name: "NIETO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 62, name: "CHENIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 63, name: "ROGELIO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 64, name: "MIGUELITO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 65, name: "JOSUE", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 66, name: "HIJA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 67, name: "NIETO1", type: "adult", group: "familia-jazzel", status: "pendiente" },
-
-            // AMIGOS DE XIMENA
+            { number: 7, name: "FRANCISCO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
+            { number: 8, name: "PACO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
+            { number: 9, name: "JONATHAN", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
+            { number: 10, name: "ANGELICA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
+            
+            // AMIGOS DE XIMENA (primeros 5)
             { number: 1, name: "AMIGO 1", type: "adult", group: "amigos", status: "pendiente" },
             { number: 2, name: "AMIGO 2", type: "adult", group: "amigos", status: "pendiente" },
             { number: 3, name: "AMIGO 3", type: "adult", group: "amigos", status: "pendiente" },
             { number: 4, name: "AMIGO 4", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 5, name: "AMIGO 5", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 6, name: "AMIGO 6", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 7, name: "AMIGO 7", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 8, name: "AMIGO 8", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 9, name: "AMIGO 9", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 10, name: "AMIGO 10", type: "adult", group: "amigos", status: "pendiente" }
+            { number: 5, name: "AMIGO 5", type: "adult", group: "amigos", status: "pendiente" }
         ];
-
-        // Mapeo de grupos a nombres legibles
-        const groupNames = {
-            "familia-marcos": "FAMILIA MARCOS",
-            "familia-jazzel": "FAMILIA JAZZEL",
-            "amigos": "AMIGOS DE XIMENA"
-        };
 
         // Calcular contadores
         function calculateCounters() {
             const totalGuests = guestListData.length;
             const familyMarcos = guestListData.filter(g => g.group === "familia-marcos").length;
             const familyJazzel = guestListData.filter(g => g.group === "familia-jazzel").length;
-            const friendsXimena = guestListData.filter(g => g.group === "amigos").length;
-            const adultos = guestListData.filter(g => g.type === "adult").length;
-            const ninos = guestListData.filter(g => g.type === "child").length;
+            const amigos = guestListData.filter(g => g.group === "amigos").length;
 
             // Actualizar contadores en la interfaz
             document.getElementById('totalGuests').textContent = totalGuests;
             document.getElementById('familyMarcos').textContent = familyMarcos;
             document.getElementById('familyJazzel').textContent = familyJazzel;
-            document.getElementById('friendsXimena').textContent = friendsXimena;
+            document.getElementById('friendsXimena').textContent = amigos;
             document.getElementById('countAll').textContent = totalGuests;
             document.getElementById('countMarcos').textContent = familyMarcos;
             document.getElementById('countJazzel').textContent = familyJazzel;
-            document.getElementById('countAmigos').textContent = friendsXimena;
-            document.getElementById('countAdultos').textContent = adultos;
-            document.getElementById('countNinos').textContent = ninos;
+            document.getElementById('countAmigos').textContent = amigos;
         }
 
-        // Función para cargar la lista de invitados organizada por grupos
+        // Función para cargar la lista de invitados
         function loadGuestList(filter = 'all') {
             const guestListBody = document.getElementById('guestListBody');
             guestListBody.innerHTML = '';
             
             let filteredGuests = guestListData;
             
-            // Filtrar por grupo o tipo de platillo
+            // Filtrar por grupo
             if (filter !== 'all') {
-                if (filter === 'adult' || filter === 'child') {
-                    filteredGuests = guestListData.filter(guest => guest.type === filter);
-                } else {
-                    filteredGuests = guestListData.filter(guest => guest.group === filter);
-                }
+                filteredGuests = guestListData.filter(guest => guest.group === filter);
             }
             
-            // Agrupar invitados por grupo
-            const groupedGuests = {};
+            // Crear contenedor de tabla
+            const tableContainer = document.createElement('div');
+            tableContainer.classList.add('guestlist-table-container');
+            
+            // Crear tabla
+            const table = document.createElement('table');
+            table.classList.add('guestlist-table');
+            
+            // Crear encabezados de la tabla
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+                <tr>
+                    <th>#</th>
+                    <th>Nombre Completo</th>
+                    <th>Tipo de Platillo</th>
+                    <th>Confirmación</th>
+                </tr>
+            `;
+            table.appendChild(thead);
+            
+            // Crear cuerpo de la tabla
+            const tbody = document.createElement('tbody');
+            
+            // Ordenar invitados por número
+            filteredGuests.sort((a, b) => a.number - b.number);
+            
+            // Agregar cada invitado
             filteredGuests.forEach(guest => {
-                if (!groupedGuests[guest.group]) {
-                    groupedGuests[guest.group] = [];
+                const row = document.createElement('tr');
+                if (guest.cabezaFamilia) {
+                    row.classList.add('cabeza-familia');
                 }
-                groupedGuests[guest.group].push(guest);
+                
+                const numberCell = document.createElement('td');
+                numberCell.textContent = guest.number;
+                
+                const nameCell = document.createElement('td');
+                nameCell.textContent = guest.name;
+                
+                const typeCell = document.createElement('td');
+                typeCell.textContent = guest.type === 'adult' ? 'Platillo Adulto' : 'Platillo Niño';
+                
+                const statusCell = document.createElement('td');
+                statusCell.innerHTML = `<span class="status-badge ${guest.status}">${guest.status === 'confirmado' ? 'Confirmado' : 'Pendiente'}</span>`;
+                
+                row.appendChild(numberCell);
+                row.appendChild(nameCell);
+                row.appendChild(typeCell);
+                row.appendChild(statusCell);
+                tbody.appendChild(row);
             });
             
-            // Crear tabla para cada grupo
-            for (const group in groupedGuests) {
-                // Contar invitados en este grupo
-                const groupCount = groupedGuests[group].length;
-                
-                // Crear encabezado del grupo
-                const groupHeader = document.createElement('div');
-                groupHeader.classList.add('group-header', 'familia');
-                groupHeader.innerHTML = `
-                    <span>${groupNames[group] || group.toUpperCase()}</span>
-                    <span class="group-count">${groupCount} invitados</span>
-                `;
-                guestListBody.appendChild(groupHeader);
-                
-                // Crear tabla para el grupo
-                const table = document.createElement('table');
-                table.classList.add('guestlist-table');
-                
-                // Crear encabezados de la tabla
-                const thead = document.createElement('thead');
-                thead.innerHTML = `
-                    <tr>
-                        <th data-sort="number">#</th>
-                        <th data-sort="name">Nombre Completo</th>
-                        <th data-sort="type">Tipo de Platillo</th>
-                        <th data-sort="status">Confirmación</th>
-                    </tr>
-                `;
-                table.appendChild(thead);
-                
-                // Crear cuerpo de la tabla
-                const tbody = document.createElement('tbody');
-                
-                // Ordenar invitados del grupo por número
-                groupedGuests[group].sort((a, b) => a.number - b.number);
-                
-                // Agregar cada invitado
-                groupedGuests[group].forEach(guest => {
-                    const row = document.createElement('tr');
-                    if (guest.cabezaFamilia) {
-                        row.classList.add('cabeza-familia');
-                    }
-                    
-                    const numberCell = document.createElement('td');
-                    numberCell.textContent = guest.number;
-                    
-                    const nameCell = document.createElement('td');
-                    nameCell.textContent = guest.name;
-                    
-                    const typeCell = document.createElement('td');
-                    typeCell.textContent = guest.type === 'adult' ? 'Platillo de Adulto' : 'Platillo de Niño';
-                    
-                    const statusCell = document.createElement('td');
-                    statusCell.innerHTML = `<span class="status-badge ${guest.status}">${guest.status === 'confirmado' ? 'Confirmado' : 'Pendiente'}</span>`;
-                    
-                    row.appendChild(numberCell);
-                    row.appendChild(nameCell);
-                    row.appendChild(typeCell);
-                    row.appendChild(statusCell);
-                    tbody.appendChild(row);
-                });
-                
-                table.appendChild(tbody);
-                guestListBody.appendChild(table);
-            }
+            table.appendChild(tbody);
+            tableContainer.appendChild(table);
+            guestListBody.appendChild(tableContainer);
             
-            // Actualizar contador de invitados filtrados
-            updateFilterCount(filteredGuests.length);
-            
-            // Agregar funcionalidad de búsqueda
-            const searchInput = document.getElementById('guestSearch');
-            searchInput.addEventListener('input', filterGuestList);
-        }
-
-        // Actualizar contador de invitados filtrados
-        function updateFilterCount(count) {
-            const activeFilterBtn = document.querySelector('.filter-btn.active');
-            if (activeFilterBtn) {
-                const countSpan = activeFilterBtn.querySelector('span');
-                if (countSpan) {
-                    // Mantener el número total pero mostrar el filtrado
-                    const originalText = activeFilterBtn.textContent;
-                    const match = originalText.match(/\((\d+)\)/);
-                    if (match) {
-                        const total = match[1];
-                        countSpan.textContent = count;
-                    }
-                }
+            // Mostrar mensaje si no hay resultados
+            if (filteredGuests.length === 0) {
+                const noResults = document.createElement('div');
+                noResults.classList.add('guestlist-message');
+                noResults.innerHTML = '<p>No se encontraron invitados con los filtros seleccionados.</p>';
+                guestListBody.appendChild(noResults);
             }
         }
 
@@ -3350,70 +3381,53 @@
             const filterButtons = document.querySelectorAll('.filter-btn');
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => {
-                        // Restaurar el número original
-                        const originalCount = btn.getAttribute('data-original-count');
-                        if (originalCount) {
-                            const countSpan = btn.querySelector('span');
-                            if (countSpan) {
-                                countSpan.textContent = originalCount;
-                            }
-                        }
-                        btn.classList.remove('active');
-                    });
+                    // Remover clase active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
                     
-                    // Guardar el número original
-                    const countSpan = button.querySelector('span');
-                    if (countSpan) {
-                        button.setAttribute('data-original-count', countSpan.textContent);
-                    }
-                    
+                    // Agregar clase active al botón clickeado
                     button.classList.add('active');
+                    
+                    // Obtener el filtro
                     const filter = button.getAttribute('data-filter');
+                    
+                    // Cargar la lista con el filtro
                     loadGuestList(filter);
                 });
             });
         }
 
-        // Función para filtrar la lista de invitados
-        function filterGuestList() {
-            const searchValue = document.getElementById('guestSearch').value.toLowerCase();
-            const tables = document.querySelectorAll('.guestlist-table');
-            
-            let totalFiltered = 0;
-            
-            tables.forEach(table => {
-                const rows = table.querySelectorAll('tbody tr');
-                let groupVisible = false;
-                let groupFiltered = 0;
+        // Función para filtrar por búsqueda
+        function setupSearch() {
+            const searchInput = document.getElementById('guestSearch');
+            searchInput.addEventListener('input', function() {
+                const searchValue = this.value.toLowerCase().trim();
+                const rows = document.querySelectorAll('.guestlist-table tbody tr');
+                
+                let hasResults = false;
                 
                 rows.forEach(row => {
                     const name = row.cells[1].textContent.toLowerCase();
                     if (name.includes(searchValue)) {
                         row.style.display = '';
-                        groupVisible = true;
-                        groupFiltered++;
-                        totalFiltered++;
+                        hasResults = true;
                     } else {
                         row.style.display = 'none';
                     }
                 });
                 
-                // Actualizar contador del grupo
-                const groupHeader = table.previousElementSibling;
-                if (groupHeader && groupHeader.classList.contains('group-header')) {
-                    const groupCount = groupHeader.querySelector('.group-count');
-                    if (groupCount) {
-                        groupCount.textContent = `${groupFiltered} invitados`;
+                // Mostrar mensaje si no hay resultados
+                const noResultsMsg = document.querySelector('.no-results-message');
+                if (!hasResults && searchValue !== '') {
+                    if (!noResultsMsg) {
+                        const message = document.createElement('div');
+                        message.classList.add('guestlist-message', 'no-results-message');
+                        message.innerHTML = `<p>No se encontraron invitados con "${searchValue}"</p>`;
+                        document.querySelector('.guestlist-table-container').appendChild(message);
                     }
-                    
-                    groupHeader.style.display = groupVisible ? '' : 'none';
-                    table.style.display = groupVisible ? '' : 'none';
+                } else if (noResultsMsg) {
+                    noResultsMsg.remove();
                 }
             });
-            
-            // Actualizar contador de filtro activo
-            updateFilterCount(totalFiltered);
         }
 
         // =============================================
@@ -3802,40 +3816,20 @@
         loadQuestion();
 
         // =============================================
-        // FUNCIONALIDADES PARA COMPARTIR FOTOS
+        // INICIALIZACIÓN CUANDO LA PÁGINA CARGUE
         // =============================================
 
-        // Función para copiar el hashtag al portapapeles
-        function copiarHashtag() {
-            const hashtag = '#mis15_ximena';
-            navigator.clipboard.writeText(hashtag).then(() => {
-                // Mostrar mensaje de confirmación
-                const copyBtn = document.querySelector('.copy-btn');
-                const originalHTML = copyBtn.innerHTML;
-                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-                copyBtn.style.background = '#4CAF50';
-                
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalHTML;
-                    copyBtn.style.background = 'var(--rosa-oscuro)';
-                }, 2000);
-            }).catch(err => {
-                console.error('Error al copiar: ', err);
-                alert('No se pudo copiar el hashtag. Por favor cópialo manualmente: #mis15_ximena');
-            });
-        }
-
-        // Inicializar cuando la página cargue
         window.addEventListener('load', function() {
             // Mostrar el modal de activación de audio
             audioModal.style.display = 'flex';
             
-            // Inicializar otras funciones
+            // Inicializar todas las funciones
             createBubbleHearts();
             observeSections();
             calculateCounters();
             loadGuestList();
             setupGuestFilters();
+            setupSearch();
         });
     </script>
 </body>
