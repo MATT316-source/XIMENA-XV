@@ -320,7 +320,7 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
+            z-index: 1000; /* Menú más alto que las burbujas */
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             padding: 10px 0;
@@ -430,7 +430,7 @@
             background: var(--rosa-oscuro);
             color: white;
         }
-        /* Contenedor de burbujas de corazones transparentes */
+        /* Contenedor de burbujas de corazones transparentes - CORREGIDO */
         .bubble-hearts-container {
             position: fixed;
             top: 0;
@@ -438,14 +438,14 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
+            z-index: 1; /* Detrás del menú */
             overflow: hidden;
         }
         .heart-bubble {
             position: absolute;
             width: 40px;
             height: 40px;
-            bottom: -50px;
+            bottom: -50px; /* Comienzan desde abajo */
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent 40%);
             display: flex;
@@ -454,12 +454,13 @@
             color: var(--heart-color, #ff4d7a);
             font-size: 20px;
             cursor: pointer;
-            pointer-events: all;
+            pointer-events: auto; /* Mejor control */
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
             animation: floatBubble linear forwards;
             transition: transform 0.2s;
             border: 1px solid rgba(255, 255, 255, 0.5);
             opacity: 0.9;
+            z-index: 1; /* Asegurar que estén detrás del menú */
         }
         .heart-bubble i {
             z-index: 2;
@@ -470,13 +471,17 @@
             transform: scale(1.1);
             opacity: 1;
         }
+        /* ANIMACIÓN CORREGIDA - Termina ANTES de llegar al menú */
         @keyframes floatBubble {
             0% {
                 transform: translateY(0) scale(1);
                 opacity: 0.8;
             }
+            90% {
+                opacity: 0.6;
+            }
             100% {
-                transform: translateY(-100vh) scale(1);
+                transform: translateY(calc(-100vh + 100px)) scale(1); /* Se detiene 100px antes del menú */
                 opacity: 0;
             }
         }
@@ -1068,7 +1073,7 @@
         
         /* Sección álbum de fotos - TRANSPARENTE */
         .album-section {
-            background: url('https://i.pinimg.com/736x/24/60/7b/24607b4d2c88c41b63a819fa2a572faf.jpg') center/cover no-repeat;
+            background: url('https://i.pinimg.com/1200x/ad/0d/ee/ad0dee307c3df5ee084080f71df9aa32.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
         }
@@ -1527,7 +1532,7 @@
         
         /* Sección confirmación - TRANSPARENTE */
         .confirmation-section {
-            background: url('https://i.pinimg.com/736x/81/4c/42/814c423b1b32e119ad1cc98ab0f75416.jpg') center/cover no-repeat;
+            background: url('https://i.pinimg.com/1200x/4e/ae/15/4eae15131810c3fe141f5fa263cf00f8.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -1673,7 +1678,7 @@
         
         /* Sección carrusel fotos - TRANSPARENTE */
         .gallery-section {
-            background: url('https://i.pinimg.com/1200x/04/1e/e8/041ee879ee46e512f18cb1c499f5cf9f.jpg') center/cover no-repeat;
+            background: url("camara.jpg") center/cover no-repeat;
             text-align: center;
             position: relative;
         }
@@ -1776,7 +1781,7 @@
         
         /* Sección quiz - TRANSPARENTE */
         .quiz-section {
-            background: url('corazones de colores.jpg') center/cover no-repeat;
+            background: url('CARITAS.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
         }
@@ -1958,7 +1963,7 @@
 
         /* Sección Compartir Fotos - TRANSPARENTE */
         .share-photos-section {
-            background: url('https://i.pinimg.com/736x/6b/93/fa/6b93fa653eeebeea2835d3d2bd2be7a2.jpg') center/cover no-repeat;
+            background: url('https://i.pinimg.com/1200x/f5/c7/86/f5c78662623b429bd37b9d386f7ecd10.jpg') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -2371,6 +2376,10 @@
                 font-size: 1.2rem;
                 margin-right: 10px;
             }
+            /* CORRECCIÓN IMPORTANTE: Mostrar textos en móviles */
+            nav ul li a span {
+                display: inline;
+            }
             .music-control {
                 margin: 20px 0 0 0;
                 width: 45px;
@@ -2555,12 +2564,14 @@
             .quiz-question {
                 font-size: 1.2rem;
             }
-            nav ul li a span {
-                display: none;
+            /* CORRECCIÓN: Los textos se muestran junto a los íconos */
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 10px 0;
             }
             nav ul li a i {
-                margin-right: 0;
-                font-size: 1.3rem;
+                margin-right: 8px;
+                font-size: 1.1rem;
             }
             .music-control {
                 margin-top: 15px;
@@ -2646,6 +2657,20 @@
             .parents-container,
             .envelopes-container {
                 padding: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            nav {
+                width: 85%;
+            }
+            nav ul li a {
+                font-size: 0.85rem;
+                padding: 8px 0;
+            }
+            nav ul li a i {
+                margin-right: 6px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -3618,7 +3643,11 @@
             });
         }
 
-        // Crear corazones en forma de burbujas transparentes
+        // =============================================
+        // CORRECCIÓN COMPLETA DE BURBUJAS
+        // =============================================
+        
+        // Crear corazones en forma de burbujas transparentes - COMPLETAMENTE CORREGIDO
         function createBubbleHearts() {
             const container = document.getElementById('bubbleHeartsContainer');
             const colors = [
@@ -3635,38 +3664,49 @@
                 const heartColor = colors[colorIndex];
                 bubble.style.setProperty('--heart-color', heartColor);
                 
+                // Posición horizontal aleatoria
                 const leftPos = 5 + Math.random() * 90;
                 bubble.style.left = `${leftPos}%`;
                 
-                const size = 30 + Math.random() * 30;
+                // Tamaño aleatorio pero controlado
+                const size = 25 + Math.random() * 25; // 25-50px
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
                 
-                const duration = 5 + Math.random() * 10;
+                // Duración de animación más rápida para evitar acumulación
+                const duration = 8 + Math.random() * 7; // 8-15 segundos
                 bubble.style.animationDuration = `${duration}s`;
                 
+                // Añadir un pequeño delay aleatorio para que no todas empiecen juntas
+                const delay = Math.random() * 3;
+                bubble.style.animationDelay = `${delay}s`;
+                
+                // Crear el corazón dentro de la burbuja
                 const icon = document.createElement('i');
                 icon.classList.add('fas', 'fa-heart');
                 bubble.appendChild(icon);
                 
+                // Evento para hacer clic y explotar
                 bubble.addEventListener('click', function(e) {
                     e.stopPropagation();
                     createExplosion(this);
                     this.remove();
                 });
                 
+                // Remover la burbuja después de que termine la animación
                 setTimeout(() => {
                     if (bubble.parentNode) {
-                        createExplosion(bubble);
                         bubble.remove();
                     }
-                }, duration * 1000);
+                }, (duration + delay) * 1000);
                 
                 container.appendChild(bubble);
             }
 
-            setInterval(createBubble, 800);
-            for (let i = 0; i < 5; i++) {
+            // Crear burbujas con intervalos controlados
+            setInterval(createBubble, 1000); // Una burbuja por segundo
+            // Crear algunas burbujas iniciales
+            for (let i = 0; i < 3; i++) {
                 setTimeout(createBubble, i * 300);
             }
         }
