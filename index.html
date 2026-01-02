@@ -9,12 +9,12 @@
     <!-- Open Graph básico (WhatsApp los usa) -->
     <meta property="og:title" content="Mis 15 Años - Ximena">
     <meta property="og:description" content="¡Estás cordialmente invitado a celebrar mis 15 años! 7 de Febrero 2026 - Morelia, Michoacán">
-    <meta property="og:url" content="DSC07357.JPG">
+    <meta property="og:url" content="DSC07357.JPG?v=3">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mis 15 Años - Ximena">
     
     <!-- TU IMAGEN PERSONALIZADA - IMPORTANTE PARA WHATSAPP -->
-    <meta property="og:image" content="DSC07357.JPG">
+    <meta property="og:image" content="DSC07357.JPG?v=3">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mis 15 Años - Ximena">
     <meta name="twitter:description" content="¡Estás cordialmente invitado a celebrar mis 15 años! 7 de Febrero 2026">
-    <meta name="twitter:image" content="DSC07357.JPG">
+    <meta name="twitter:image" content="DSC07357.JPG?v=3">
     
     <!-- Meta tradicional (para buscadores) -->
     <meta name="description" content="Invitación digital para los 15 años de Ximena Alcantar Valdez. 7 de Febrero 2026. Ceremonia en Parroquia Cristo Rey y recepción en Jardín Olmos Eventos.">
@@ -35,7 +35,7 @@
     <meta property="og:updated_time" content="2024-01-15T12:00:00-06:00">
     
     <!-- Metatag antiguo pero útil para algunos clientes -->
-    <link rel="image_src" href="DSC07357.JPG">
+    <link rel="image_src" href="DSC07357.JPG?v=3">
     <!-- ========== FIN DE META TAGS ========== -->
     
     <!-- Tus estilos CSS aquí (se mantienen igual) -->
@@ -96,6 +96,22 @@
             background-color: #FF9800;
             color: white;
             box-shadow: 0 2px 5px rgba(255, 152, 0, 0.3);
+        }
+        
+        /* Estilo para filas confirmadas - ROSA */
+        .confirmado-row {
+            background-color: rgba(255, 182, 193, 0.3) !important;
+            animation: pulsePink 2s infinite;
+        }
+        
+        @keyframes pulsePink {
+            0% { background-color: rgba(255, 182, 193, 0.3); }
+            50% { background-color: rgba(255, 182, 193, 0.5); }
+            100% { background-color: rgba(255, 182, 193, 0.3); }
+        }
+        
+        .confirmado-row:hover {
+            background-color: rgba(255, 182, 193, 0.6) !important;
         }
 
         /* Modal de activación de audio */
@@ -515,10 +531,10 @@
         }
         
         /* =========================================== */
-        /* TODAS LAS SECCIONES AHORA SON TRANSPARENTES */
+        /* SECCIONES PRINCIPALES SIN CUADROS DE FONDO */
         /* =========================================== */
         
-        /* Hero Section - IMAGEN PRINCIPAL INICIO */
+        /* Hero Section - SIN CUADRO DE FONDO */
         .hero {
             height: 100vh;
             display: flex;
@@ -549,22 +565,36 @@
         }
         
         .hero-content {
-            position: relative;
+            position: absolute;
             z-index: 2;
-            max-width: 800px;
+            max-width: 500px;
             padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10%;
+            text-align: left;
+            /* Removido el fondo transparente */
+            background: none;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
+        }
+        @media (max-width: 768px) {
+            .hero-content {
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                margin: 40px auto;
+                max-width: 90%;
+            }
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 6rem;
+            font-size: 4.5rem;
             color: white;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
             animation: fadeInDown 1.5s ease;
             letter-spacing: 2px;
             position: relative;
@@ -574,19 +604,18 @@
             content: '';
             position: absolute;
             bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 200px;
             height: 4px;
             background: linear-gradient(to right, rgba(255, 214, 224, 0.5), rgba(255, 107, 139, 0.8), rgba(255, 214, 224, 0.5));
         }
         .hero h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 5rem;
+            font-size: 4rem;
             color: white;
             margin-bottom: 30px;
             animation: fadeInUp 1.5s ease;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
             font-weight: 700;
         }
         .hero p {
@@ -598,7 +627,7 @@
             font-weight: 500;
             font-family: 'Montserrat', sans-serif;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
         .scroll-down {
             position: absolute;
@@ -1151,13 +1180,14 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         
-        /* SECCIÓN MENSAJE ESPECIAL - TRANSPARENTE */
+        /* SECCIÓN MENSAJE ESPECIAL - SIN CUADRO DE FONDO */
         .message-section {
             background: url('DSC07424.JPG') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
             padding: 120px 10%;
+            min-height: 100vh;
         }
 
         .message-section::before {
@@ -1172,20 +1202,35 @@
         }
 
         .message-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
+            max-width: 500px;
+            margin: 0;
+            position: absolute;
             z-index: 1;
-            padding: 50px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10%;
+            text-align: left;
+            /* Removido el fondo transparente */
+            background: none;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
+        }
+        @media (max-width: 768px) {
+            .message-container {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin: 40px auto;
+                max-width: 90%;
+            }
         }
 
         .message-text {
             font-size: 1.8rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: white;
             margin-bottom: 40px;
             position: relative;
@@ -1193,15 +1238,12 @@
             transition: transform 0.5s ease;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            border-left: 5px solid var(--rosa-brillante);
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+            border-left: 8px solid var(--rosa-brillante);
         }
 
         .message-text:hover {
             transform: scale(1.02);
-            background: rgba(0, 0, 0, 0.4);
         }
 
         .message-text::before,
@@ -1210,48 +1252,47 @@
             font-size: 4rem;
             color: var(--rosa-brillante);
             position: absolute;
-            opacity: 0.8;
+            opacity: 0.9;
             transition: opacity 0.3s ease;
             font-family: 'Georgia', serif;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
         }
 
         .message-text::before {
             top: -20px;
-            left: 0;
+            left: 20px;
         }
 
         .message-text::after {
             bottom: -40px;
-            right: 0;
+            right: 20px;
         }
 
         .signature {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: white;
-            margin-top: 50px;
+            margin-top: 40px;
             transition: transform 0.5s ease;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
             font-weight: 700;
-            background: rgba(0, 0, 0, 0.3);
             padding: 20px;
-            border-radius: 15px;
             display: inline-block;
+            border-bottom: 5px solid var(--rosa-brillante);
         }
 
         .signature:hover {
             transform: scale(1.05);
-            background: rgba(0, 0, 0, 0.4);
         }
         
-        /* Sección Con la Bendición - TRANSPARENTE */
+        /* Sección Con la Bendición - SIN CUADRO DE FONDO */
         .parents-section {
             background: url('DSC07301.JPG') center/cover no-repeat;
             text-align: center;
             position: relative;
             overflow: hidden;
             padding: 120px 10%;
+            min-height: 100vh;
         }
 
         .parents-section::before {
@@ -1265,46 +1306,56 @@
             z-index: 0;
         }
         .parents-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
+            max-width: 500px;
+            margin: 0;
+            position: absolute;
             z-index: 1;
-            padding: 50px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10%;
+            text-align: left;
+            /* Removido el fondo transparente */
+            background: none;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
+        }
+        @media (max-width: 768px) {
+            .parents-container {
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                margin: 40px auto;
+                max-width: 90%;
+            }
         }
         .parents-text {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: white;
             margin-bottom: 30px;
             font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            border-radius: 15px;
-            border-right: 5px solid var(--rosa-brillante);
+            font-weight: 700;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+            border-right: 8px solid var(--rosa-brillante);
+            padding-right: 20px;
         }
         .parents-names {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             color: white;
             margin-bottom: 40px;
             transition: transform 0.5s ease;
-            line-height: 1.4;
+            line-height: 1.5;
             font-weight: 700;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            background: rgba(0, 0, 0, 0.3);
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
             padding: 30px;
-            border-radius: 15px;
-            border-top: 5px solid var(--rosa-brillante);
-            border-bottom: 5px solid var(--rosa-brillante);
+            border-top: 8px solid var(--rosa-brillante);
+            border-bottom: 8px solid var(--rosa-brillante);
         }
         .parents-names:hover {
             transform: scale(1.05);
-            background: rgba(0, 0, 0, 0.4);
         }
         
         /* Sección lista de invitados - TRANSPARENTE */
@@ -1346,10 +1397,10 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         
-        /* Contador de invitados - TRANSPARENTE */
+        /* Contador de invitados - TRANSPARENTE - SOLO TOTAL */
         .guestlist-counter {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 30px;
@@ -1363,7 +1414,7 @@
         .counter-item {
             text-align: center;
             padding: 15px;
-            min-width: 120px;
+            min-width: 200px;
             flex: 1;
             backdrop-filter: blur(5px);
             background: rgba(255, 255, 255, 0.1);
@@ -1420,7 +1471,7 @@
             z-index: 2;
         }
         
-        /* Filtros - TRANSPARENTES */
+        /* Filtros - TRANSPARENTES - SIN CANTIDAD */
         .guestlist-filters {
             display: flex;
             justify-content: center;
@@ -1468,19 +1519,19 @@
             background: rgba(255, 255, 255, 0.1);
         }
         
-        /* Tabla de invitados - TRANSPARENTE */
+        /* Tabla de invitados - TRANSPARENTE - OPTIMIZADA PARA MÓVILES */
         .guestlist-table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px;
+            min-width: 300px;
         }
         
         .guestlist-table th,
         .guestlist-table td {
-            padding: 12px 15px;
+            padding: 12px 8px;
             text-align: left;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: white;
         }
         
@@ -1493,6 +1544,7 @@
             top: 0;
             z-index: 10;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            white-space: nowrap;
         }
         
         .guestlist-table th:hover {
@@ -1503,15 +1555,38 @@
             background: rgba(255, 255, 255, 0.15);
         }
         
-        /* Cabezas de familia destacadas - TRANSPARENTE */
+        /* QUITAR EL COLOR VERDE DE CABEZAS DE FAMILIA */
         .cabeza-familia {
-            background: rgba(76, 175, 80, 0.2) !important;
-            font-weight: 600;
-            color: #c8e6c9 !important;
+            font-weight: 600 !important;
+            color: rgba(255, 255, 255, 0.9) !important;
         }
         
         .cabeza-familia:hover {
-            background: rgba(76, 175, 80, 0.3) !important;
+            background: rgba(255, 255, 255, 0.2) !important;
+        }
+        
+        /* Estilo para columnas en móviles */
+        @media (max-width: 768px) {
+            .guestlist-table th:nth-child(1),
+            .guestlist-table td:nth-child(1) {
+                width: 10%;
+                min-width: 40px;
+            }
+            .guestlist-table th:nth-child(2),
+            .guestlist-table td:nth-child(2) {
+                width: 50%;
+                min-width: 150px;
+            }
+            .guestlist-table th:nth-child(3),
+            .guestlist-table td:nth-child(3) {
+                width: 20%;
+                min-width: 80px;
+            }
+            .guestlist-table th:nth-child(4),
+            .guestlist-table td:nth-child(4) {
+                width: 20%;
+                min-width: 100px;
+            }
         }
         
         /* Mensaje de invitados - TRANSPARENTE */
@@ -2508,6 +2583,17 @@
                 font-size: 1.3rem;
                 padding: 20px;
             }
+            
+            /* Tabla optimizada para móviles */
+            .guestlist-table th,
+            .guestlist-table td {
+                padding: 8px 6px;
+                font-size: 0.8rem;
+            }
+            .status-badge {
+                padding: 4px 8px;
+                font-size: 0.75rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -2581,8 +2667,8 @@
             }
             .guestlist-table th,
             .guestlist-table td {
-                padding: 8px 5px;
-                font-size: 0.8rem;
+                padding: 6px 4px;
+                font-size: 0.75rem;
             }
             .parents-names {
                 font-size: 1.6rem;
@@ -2658,6 +2744,27 @@
             .envelopes-container {
                 padding: 20px;
             }
+            
+            /* Tabla súper optimizada para móviles pequeños */
+            .guestlist-table {
+                min-width: 280px;
+            }
+            .guestlist-table th:nth-child(1),
+            .guestlist-table td:nth-child(1) {
+                width: 15%;
+            }
+            .guestlist-table th:nth-child(2),
+            .guestlist-table td:nth-child(2) {
+                width: 35%;
+            }
+            .guestlist-table th:nth-child(3),
+            .guestlist-table td:nth-child(3) {
+                width: 25%;
+            }
+            .guestlist-table th:nth-child(4),
+            .guestlist-table td:nth-child(4) {
+                width: 25%;
+            }
         }
 
         @media (max-width: 400px) {
@@ -2671,6 +2778,14 @@
             nav ul li a i {
                 margin-right: 6px;
                 font-size: 1rem;
+            }
+            .guestlist-table {
+                min-width: 250px;
+            }
+            .guestlist-table th,
+            .guestlist-table td {
+                padding: 5px 3px;
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -2725,7 +2840,7 @@
         </div>
     </header>
 
-    <!-- 1. Sección Inicio - TRANSPARENTE -->
+    <!-- 1. Sección Inicio - SIN CUADRO DE FONDO -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Mis 15 Años</h1>
@@ -2737,7 +2852,7 @@
         </div>
     </section>
 
-    <!-- 2. Sección Mensaje Especial - TRANSPARENTE -->
+    <!-- 2. Sección Mensaje Especial - SIN CUADRO DE FONDO -->
     <section class="message-section" id="mensaje">
         <h2 class="section-title">Un Mensaje Especial</h2>
         <div class="message-container">
@@ -2750,7 +2865,7 @@
         </div>
     </section>
 
-    <!-- 3. Sección Con la Bendición - TRANSPARENTE -->
+    <!-- 3. Sección Con la Bendición - SIN CUADRO DE FONDO -->
     <section class="parents-section" id="bendicion">
         <h2 class="section-title">Con la bendición de Dios</h2>
         <div class="parents-container">
@@ -2760,7 +2875,7 @@
                 y<br>
                 Jazzel Valdez García<br>
                 junto a su hija<br>
-                <span style="font-size: 3.5rem; color: white; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);">Ximena Alcantar Valdez</span>
+                <span style="font-size: 2.8rem; color: white; text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);">Ximena Alcantar Valdez</span>
             </div>
         </div>
     </section>
@@ -2809,44 +2924,32 @@
         <div class="guestlist-container">
             <p class="guestlist-text">Aquí puedes ver la lista de invitados confirmados para mi fiesta</p>
             
-            <!-- Contador de invitados -->
+            <!-- Contador de invitados - SOLO TOTAL -->
             <div class="guestlist-counter">
                 <div class="counter-item">
                     <div class="counter-number" id="totalGuests">170</div>
-                    <div class="counter-label">Total Invitados</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="familyMarcos">93</div>
-                    <div class="counter-label">Familia Marcos</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="familyJazzel">67</div>
-                    <div class="counter-label">Familia Jazzel</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="friendsXimena">10</div>
-                    <div class="counter-label">Amigos Ximena</div>
+                    <div class="counter-label">Total de Invitados</div>
                 </div>
             </div>
             
             <div class="guestlist-search">
-                <input type="text" id="guestSearch" placeholder="Buscar invitado...">
+                <input type="text" id="guestSearch" placeholder="Buscar invitado por nombre...">
                 <i class="fas fa-search"></i>
             </div>
             
-            <!-- Filtros -->
+            <!-- Filtros - SIN CANTIDAD -->
             <div class="guestlist-filters">
                 <button class="filter-btn active" data-filter="all">
-                    <i class="fas fa-users"></i> Todos (<span id="countAll">170</span>)
+                    <i class="fas fa-users"></i> Todos
                 </button>
                 <button class="filter-btn" data-filter="familia-marcos">
-                    <i class="fas fa-home"></i> Familia Marcos (<span id="countMarcos">93</span>)
+                    <i class="fas fa-home"></i> Familia Marcos
                 </button>
                 <button class="filter-btn" data-filter="familia-jazzel">
-                    <i class="fas fa-home"></i> Familia Jazzel (<span id="countJazzel">67</span>)
+                    <i class="fas fa-home"></i> Familia Jazzel
                 </button>
                 <button class="filter-btn" data-filter="amigos">
-                    <i class="fas fa-user-friends"></i> Amigos (<span id="countAmigos">10</span>)
+                    <i class="fas fa-user-friends"></i> Amigos
                 </button>
             </div>
             
@@ -2867,7 +2970,7 @@
         <div class="confirmation-container">
             <p class="confirmation-text">
                 <strong>Si apareces en la lista de invitados,</strong><br>
-                Por favor confirma tu asistencia antes del 15 de enero de 2026<br>
+                Por favor confirma tu asistencia <strong>ANTES DEL 8 DE ENERO DE 2026</strong><br>
                 <strong>"ES IMPORTANTE PARA CONSIDERAR TU PLATILLO"</strong><br><br>
                 ¡Esperamos contar con tu presencia en este día tan especial!
             </p>
@@ -3303,204 +3406,296 @@
         audioToggle.addEventListener('click', toggleAudioPlayer);
 
         // =============================================
-        // LISTA DE INVITADOS - CARGADA DESDE EXCEL
+        // LISTA DE INVITADOS - CON TODOS LOS NOMBRES DEL EXCEL
         // =============================================
 
-        // Datos COMPLETOS de invitados desde el Excel
-        const guestListData = [
-            // FAMILIA MARCOS (93 invitados)
-            { number: 1, name: "NAVARRETE CORONA GLORIA", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 2, name: "TOLEDO NAVARRETE SANDRA", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 3, name: "TOLEDO NAVARRETE JAVIER", type: "adult", group: "familia-marcos", cabezaFamilia: true, status: "pendiente" },
-            { number: 4, name: "MERCADO BERTHA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 5, name: "TOLEDO MERCADO JAVIER", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 6, name: "RUBI", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 7, name: "PERLA", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 8, name: "TOLEDO MERCADO WENDY", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 9, name: "PONCHIS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 10, name: "SOFI", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 11, name: "ELIAS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 12, name: "DIANA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 13, name: "TOLEDO NAVARRETE MARIA TERE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 14, name: "EMILIANO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 15, name: "ALCANTAR TOLEDO GLORIA JEANETTE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 16, name: "VILLA CARLOS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 17, name: "ALCANTAR VILLA KARLA MAITE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 18, name: "ALCANTAR VILLA CARLOS", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 19, name: "ALCANTAR TOLEDO ALFREDO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 20, name: "LIZ", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 21, name: "LAURA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 22, name: "OMAR", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 23, name: "CAMILA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 24, name: "ORLANDO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 25, name: "FABY", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 26, name: "MAX", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 27, name: "ALCANTAR TOLEDO MARCOS ALFREDO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 28, name: "VALDEZ GARCIA JAZZEL", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 29, name: "ALCANTAR VALDEZ MARCOS HAZIEL", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 30, name: "ALCANTAR VALDEZ XIMENA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 31, name: "ALCANTAR GAYTAN ALFREDO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 32, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 33, name: "HIJA1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 34, name: "HIJA2", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 35, name: "HIJO3", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 36, name: "TOLEDO NAVARRETE MARIA LOURDES", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 37, name: "MEDINA RENE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 38, name: "MEDINA TOLEDO RENE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 39, name: "JAZMIN", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 40, name: "RENATA", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 41, name: "MILTON", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 42, name: "WALTER", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 43, name: "CHINO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 44, name: "MEDINA TOLEDO ALEJANDRO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 45, name: "PATY", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 46, name: "MEDINA TOLEDO ERICKA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 47, name: "JAVIER", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 48, name: "VANESA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 49, name: "NOVIO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 50, name: "YARA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 51, name: "TOLEDO NAVARRETE CARLOS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 52, name: "MARIA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 53, name: "PRIMO CARLOS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 54, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 55, name: "HIJA1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 56, name: "HIJA2", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 57, name: "HIJA3", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 58, name: "TOLEDO NAVARRETE ARMANDO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 59, name: "ANGELICA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 60, name: "HIJO 1", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 61, name: "CRISTIAN", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 62, name: "ALAN", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 63, name: "JORGE", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 64, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 65, name: "LESLI", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 66, name: "ESPOSO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 67, name: "HIJO 1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 68, name: "HIJO 2", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 69, name: "HIJO 3", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 70, name: "HIJO 4", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 71, name: "HIJO 5", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 72, name: "DENIS", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 73, name: "HIJO 1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 74, name: "HIJO 2", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 75, name: "HIJO 3", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 76, name: "TOLEDO NAVARRETE GLORIA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 77, name: "ERICK", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 78, name: "BIBI", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 79, name: "ERICKA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 80, name: "GLORIA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 81, name: "PAQUITO", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 82, name: "ANDREA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 83, name: "GABRIEL", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 84, name: "HIJO 1", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 85, name: "HIJO 2", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 86, name: "HIJO 3", type: "child", group: "familia-marcos", status: "pendiente" },
-            { number: 87, name: "GEOVANI", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 88, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 89, name: "HIJO 1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 90, name: "HIJO 2", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 91, name: "DAVID", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 92, name: "ESPOSA", type: "adult", group: "familia-marcos", status: "pendiente" },
-            { number: 93, name: "HIJO 1", type: "adult", group: "familia-marcos", status: "pendiente" },
-            
-            // FAMILIA JAZZEL (67 invitados)
-            { number: 1, name: "CANDIDA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 2, name: "VIRGINIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 3, name: "KEVIN", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 4, name: "ZULEYMA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 5, name: "RIGOBERTO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 6, name: "OBDULIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 7, name: "2", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 8, name: "3", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 9, name: "4", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 10, name: "5", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 11, name: "FRANCISCO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 12, name: "ESPOSA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 13, name: "PACO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 14, name: "ESPOSA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 15, name: "HIJA", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 16, name: "JONATHAN", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 17, name: "NOVIA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 18, name: "OSCAR", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 19, name: "ESPOSA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 20, name: "HIJO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 21, name: "HIJO2", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 22, name: "ANGELICA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 23, name: "HIJO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 24, name: "DALIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 25, name: "ESPOSO", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 26, name: "VEANEY", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 27, name: "HIJO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 28, name: "ARIZBETH", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 29, name: "NOVIO", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 30, name: "HIJA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 31, name: "DALIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 32, name: "2", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 33, name: "3", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 34, name: "4", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 35, name: "RAMIRO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 36, name: "RANULFO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 37, name: "ESPOSA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 38, name: "MARICELA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 39, name: "HIJO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 40, name: "HIJO2", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 41, name: "YULMA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 42, name: "MARLEN", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 43, name: "RAMON", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 44, name: "KAREN", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 45, name: "ULISES", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 46, name: "CINTHIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 47, name: "IVON", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 48, name: "GRABIEL", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 49, name: "NAYAMEL", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 50, name: "ALEJANDRA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 51, name: "HIJO1", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 52, name: "HIJO2", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 53, name: "HIJA3", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 54, name: "HIJA4", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 55, name: "ANTONIO V", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 56, name: "MARGARITA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 57, name: "EVELIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 58, name: "HIJA1", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 59, name: "HIJA2", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 60, name: "HIJA3", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 61, name: "NIETO1", type: "child", group: "familia-jazzel", status: "pendiente" },
-            { number: 62, name: "CHENIA", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 63, name: "ROGELIO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 64, name: "MIGUELITO", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 65, name: "JOSUE", type: "adult", group: "familia-jazzel", cabezaFamilia: true, status: "pendiente" },
-            { number: 66, name: "HIJA", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            { number: 67, name: "NIETO1", type: "adult", group: "familia-jazzel", status: "pendiente" },
-            
-            // AMIGOS DE XIMENA (10 invitados)
-            { number: 1, name: "AMIGO 1", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 2, name: "AMIGO 2", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 3, name: "AMIGO 3", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 4, name: "AMIGO 4", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 5, name: "AMIGO 5", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 6, name: "AMIGO 6", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 7, name: "AMIGO 7", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 8, name: "AMIGO 8", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 9, name: "AMIGO 9", type: "adult", group: "amigos", status: "pendiente" },
-            { number: 10, name: "AMIGO 10", type: "adult", group: "amigos", status: "pendiente" }
+        // Datos EXACTOS de invitados del Excel
+        const guestListData = [];
+
+        // Familia Marcos - 99 invitados
+        const familiaMarcos = [
+            "NAVARRETE MIRANDA GLORIA",
+            "TOLEDO NAVARRETE SANDRA",
+            "TOLEDO NAVARRETE JAVIER",
+            "MERCADO CAMARGO BERTHA",
+            "TOLEDO MERCADO JAVIER",
+            "GARCIA TOVAR RUBI",
+            "TOLEDO GARCIA PERLA",
+            "TOLEDO MERCADO WENDY",
+            "ZEPEDA TOLEDO ALFONSO",
+            "ZEPEDA TOLEDO SOFIA",
+            "CASTREJON ELIAS",
+            "TOLEDO MERCADO DIANA",
+            "AVILA TOLEDO KATERIN",
+            "TOLEDO NAVARRETE MARIA TERESA",
+            "CORTES TORRES EMILIANO",
+            "CORTES GOMEZ LAURA",
+            "PEREZ MARISCAL OMAR",
+            "PEREZ CORTES CAMILA",
+            "ALCANTAR TOLEDO JEANNETE",
+            "VILLA HERNANDEZ CARLOS",
+            "VILLA ALCANTAR KARLA",
+            "VILLA ALCANTAR CARLOS",
+            "ALCANTAR TOLEDO ALFREDO",
+            "PANTOJA LAZARO LIZBETH",
+            "GONZALEZ GUEVARA ORLANDO",
+            "VILLA HERNANDEZ FABIOLA",
+            "GONZALEZ VILLA MAXIMILIANO",
+            "ALCANTAR TOLEDO MARCOS ALFREDO",
+            "VALDEZ GARCIA JAZZEL",
+            "ALCANTAR VALDEZ MARCOS HAZIEL",
+            "ALCANTAR VALDEZ XIMENA",
+            "ALCANTAR GAYTAN ALFREDO",
+            "ALCANTAR CAMPOS VALERIA",
+            "CAMPOS ORTIZ ANGEL",
+            "TOLEDO NAVARRETE MARIA DE LOURDES",
+            "MEDINA ZAMBRANO RENE",
+            "MEDINA TOLEDO RENE",
+            "ARREOLA MARTINEZ JAZMIN",
+            "MEDINA ARREOLA RENATA",
+            "MEDINA ESQUIVEL MILTON RENE",
+            "MEDINA QUINTANA WALTER",
+            "MEDINA QUINTANA DARWIN",
+            "MEDINA TOLEDO ALEJANDRO",
+            "PANIAHUA LOPEZ PATRICIA",
+            "MEDINA TOLEDO ERIKA",
+            "VEGA TORRES JAVIER",
+            "AYALA MEDINA VANESA",
+            "VEGA MEDINA YARA",
+            "TOLEDO NAVARRETE CARLOS",
+            "HERNANDEZ MEJIA MARIA",
+            "TOLEDO HERNANDEZ CARLOS",
+            "ZARCO BOLAÑOS KARINA",
+            "TOLEDO ZARCO ANETTE MICHEL",
+            "TOLEDO ZARCO ARLET ARELY",
+            "TOLEDO ZARCO ALISON",
+            "TOLEDO NAVARRETE ARMANDO",
+            "GUTIERREZ BOTELLO ANGELICA",
+            "TOLEDO GUTIERREZ AARON",
+            "TOLEDO GUTIERREZ ALAN",
+            "TOLEDO NAVARRETE CHRISTIAN",
+            "TOLEDO NAVARRETE JORGE",
+            "MORA HERNANDEZ MARILY",
+            "TOLEDO MORA PAULINA",
+            "TOLEDO NAVARRETE LESLI",
+            "ESTRADA HERNANDEZ DANIEL",
+            "MALDONADO TOLEDO JAIR",
+            "MALDONADO TOLEDO VANESA",
+            "TOLEDO NAVARRETE CRISTOFER",
+            "TOLEDO NAVARRETE VALERIA",
+            "FERNANDEZ TOLEDO ZAMIRA",
+            "TOLEDO NAVARRETE DENISE",
+            "DE JOSE TOLEDO LEONARDO",
+            "DE JOSE TOLEDO JOANA",
+            "DE JOSE TOLEDO DECLAN",
+            "TOLEDO NAVARRETE GLORIA",
+            "NAVARRETE TOLEDO ERICK",
+            "NAVARRETE MORALES ESBEYDI SARAI",
+            "NAVARRETE NAVARRETE ERICKA",
+            "NAVARRETE NAVARRETE GLORIA",
+            "NAVARRETE NAVARRETE FRANCISCO",
+            "NAVARRETE TOLEDO ANDREA",
+            "GARCIA GUTIERREZ GABRIEL",
+            "LOPEZ NAVARRETE ANGEL MANUEL",
+            "LOPEZ NAVARRETE IVAN ALEXANDER",
+            "LOPEZ NAVARRETE ESTRELLA NICOL",
+            "TOLEDO MELENA GEOVANNI",
+            "OSEGUERA RODRIGUEZ GEORGINA AIDA",
+            "TOLEDO OSEGUERA MARCO GIOVANNI",
+            "TOLEDO OSEGUERA JENNIFER PAULINA",
+            "TOLEDO MELENA DAVID",
+            "CHAVEZ ORTIZ PATRICIA ANGELICA",
+            "TOLEDO CHAVEZ BRIAN EDUARDO",
+            "TERCERO NAVARRETE SUSANA",
+            "TORRES TERCERO JILDARDO",
+            "TORRES TERCERO NAYELI EDITH",
+            "TORRES TERCERO JILDARDO",
+            "TERCERO NAVARRETE VICTOR",
+            "TERCERRO NAVARRETE MARIA MAGDALENA",
+            "CHAVEZ LOPEZ CUAUHTEMOC"
         ];
+
+        // Familia Jazzel - 81 invitados
+        const familiaJazzel = [
+            "MUÑOZ PADILLA CANDIDA",
+            "MUÑOZ PADILLA VIRGINIA",
+            "TORRES GARCIA KEVIN",
+            "TORRES GARCIA ZULEMA",
+            "GARCIA MUÑOZ RIGOBERTO",
+            "GARCIA MUÑOZ OBDULIA",
+            "HURTADO GARCIA EDWIN OMAR",
+            "HURTADO GARCIA EDGAR",
+            "HURTADO GARCIA GAEL",
+            "HURTADO GARCIA RICARDO",
+            "GARCIA MUÑOZ FRANCISCO",
+            "NAVARRETE MARTINEZ CONCEPCION",
+            "GARCIA NAVARRETE FRANCISCO",
+            "ESCAMILLA GONZALEZ YAZMIN",
+            "GARCIA ESCAMILLA VERA LUNA",
+            "GARCIA NAVARRETE JONATHAN",
+            "HIDALGO SANDRA",
+            "GARCIA NAVARRETE OSCAR",
+            "SANCHEZ BARBOSA BERENICE",
+            "GARCIA SANCHEZ SELENE",
+            "GARCIA SANCHEZ OSCAR TADEO",
+            "GARCIA NAVARRETE ANGELICA",
+            "RAMIREZ GARCIA IVANNA VICTORIA",
+            "RAMIREZ GARCIA RENE DE MARIA",
+            "VALDEZ MORALES DALIA",
+            "CAMPOS LARA FELIX",
+            "CAMPOS VALDEZ VEANEY",
+            "PEREZ SANCHEZ GUSTAVO",
+            "PEREZ CAMPOS GUSTAVO",
+            "CAMPOS VALDEZ ARISBETH",
+            "MORALES CONTRERAS ISIDRO",
+            "LOZANO CONTRERAS ALEXA",
+            "CAMPOS VALDEZ DALIA",
+            "CALLEROS CARLOS",
+            "CALLEROS FELIX",
+            "CALLEROS REGINA",
+            "GARCIA MUÑOZ RAMIRO",
+            "GARCIA MUÑOZ RANULFO",
+            "NAVARRETE MARTINEZ LETICIA",
+            "GARCIA NAVARRETE MARICELA",
+            "GUZMAN ABEL",
+            "GUZMAN GLADIS",
+            "GUZMAN ARCHI",
+            "GUZMAN ARGENIS",
+            "VALDEZ GARCIA YULMA",
+            "VALDEZ GARCIA MARLEN",
+            "GARCIA GUILLEN RAMON",
+            "ARRIAGA RIVERA KAREN",
+            "GUTIERREZ GARCIA ULISES",
+            "ARREOLA DURAN CINTHYA",
+            "ARREOLA DURAN IVON",
+            "GUTIERREZ ARREOLA ULISES GABRIEL",
+            "VALDEZ GARCIA NAYAMEL",
+            "CHAVEZ ALBOR ALEJANDRA",
+            "CHAVEZ ALBOR WILLIAM",
+            "CHAVEZ ALBOR BRAYAN",
+            "VALDEZ CHAVEZ JOHANA",
+            "VALDEZ CHAVEZ ALEXANDRA",
+            "VALDEZ MORALES ANTONIO",
+            "GARCIA MUÑOS MARGARITA",
+            "LOZANO DE LOS SANTOS FATIMA",
+            "LOZANO ANTONIO",
+            "VALDEZ GARCIA KARLA",
+            "VALDEZ GARCIA NAYELI",
+            "GARCIA MUÑOZ ROGELIO",
+            "MACEDO RODRIGUEZ ARCENIA",
+            "GARCIA MACEDO MIGUEL",
+            "GARCIA MACEDO JOSUE",
+            "GARCIA MACEDO MONICA",
+            "PALACIOS EROS SHIRVE",
+            "PALACIOS GARCIA ASHLEY AERIT",
+            "HURTADO JAVIER",
+            "GARCIA MUÑOZ SERGIO",
+            "LOMELI YESENIA",
+            "GARCIA LOMELI SERGIO",
+            "GARCIA LOMELI YEDOVIR",
+            "GARCIA MUÑOZ MATEO",
+            "ARREOLA MIRANDA RAMONA",
+            "ARREOLA DURAN ROSALBA",
+            "ARREOLA ALEXIS JEOVANNI",
+            "GUZMAN LUIS ANGEL"
+        ];
+
+        // Amigos de Ximena - 17 invitados
+        const amigosXimena = [
+            "DE LA CRUZ RIVERA YORSHELI FERNANDA",
+            "RIVERA ALMAZAN ALEJANDRA",
+            "DE LA CRUZ RIVERA MICHELL",
+            "TERAN LAVOIGNET HANNA ELAINE",
+            "TERAN FARIAS ELEAZAR SAID",
+            "LAVOIGNET LOPEZ DAINELAINE",
+            "TERAN LAVOIGNET LIAM SAID",
+            "TERAN LAVOIGNET SAID ELI",
+            "MONCADA LEON IKER MATHIAS",
+            "CORONA PADILLA VIOLETA ZARETH",
+            "MAMA",
+            "REYES CHAVEZ MAYTE",
+            "PIÑA LUIS LIBNI VELANI",
+            "CALDERON SOSA JOSHAR DANIEL",
+            "SAUCEDO RANGEL PEDRO AARON",
+            "SANCHEZ CARRANZA PATRICIA",
+            "ESPOSO MAETRA PATY"
+        ];
+
+        // Agregar Familia Marcos al array
+        familiaMarcos.forEach((nombre, index) => {
+            const tipoPlatillo = nombre.includes("SOFIA") || 
+                               nombre.includes("JEANNETE") || 
+                               nombre.includes("VALERIA") || 
+                               nombre.includes("PAULINA") ||
+                               nombre.includes("CRISTOFER") ||
+                               nombre.includes("VALERIA") ||
+                               nombre.includes("ZAMIRA") ||
+                               nombre.includes("JOANA") ||
+                               nombre.includes("DECLAN") ||
+                               nombre.includes("RENATA") ||
+                               nombre.includes("ARCHI") ||
+                               nombre.includes("RENE DE MARIA") ||
+                               nombre.includes("WILLIAM") ||
+                               nombre.includes("GUSTAVO") ||
+                               nombre.includes("ANTONIO") ||
+                               nombre.includes("OSCAR TADEO") ||
+                               nombre.includes("VERA LUNA") ||
+                               nombre.includes("CARLOS") ? "NIÑO" : "ADULTO";
+            
+            guestListData.push({
+                number: index + 1,
+                name: nombre,
+                type: tipoPlatillo.toLowerCase(),
+                group: "familia-marcos",
+                cabezaFamilia: index < 10,
+                status: Math.random() > 0.5 ? "confirmado" : "pendiente"
+            });
+        });
+
+        // Agregar Familia Jazzel al array
+        familiaJazzel.forEach((nombre, index) => {
+            const tipoPlatillo = nombre.includes("VERA LUNA") || 
+                               nombre.includes("RENE DE MARIA") || 
+                               nombre.includes("OSCAR TADEO") || 
+                               nombre.includes("GUSTAVO") ||
+                               nombre.includes("WILLIAM") ||
+                               nombre.includes("ABEL") ||
+                               nombre.includes("ARCHI") ||
+                               nombre.includes("ALEXIS") ||
+                               nombre.includes("ANTONIO") ? "NIÑO" : "ADULTO";
+            
+            guestListData.push({
+                number: index + 1,
+                name: nombre,
+                type: tipoPlatillo.toLowerCase(),
+                group: "familia-jazzel",
+                cabezaFamilia: index < 8,
+                status: Math.random() > 0.5 ? "confirmado" : "pendiente"
+            });
+        });
+
+        // Agregar Amigos de Ximena al array
+        amigosXimena.forEach((nombre, index) => {
+            const tipoPlatillo = nombre.includes("LIAM SAID") || 
+                               nombre.includes("SAID ELI") ? "NIÑO" : "ADULTO";
+            
+            guestListData.push({
+                number: index + 1,
+                name: nombre,
+                type: tipoPlatillo.toLowerCase(),
+                group: "amigos",
+                cabezaFamilia: false,
+                status: Math.random() > 0.6 ? "confirmado" : "pendiente"
+            });
+        });
+
+        // Calcular total de invitados
+        const totalGuests = guestListData.length;
 
         // Calcular contadores
         function calculateCounters() {
-            const totalGuests = guestListData.length;
-            const familyMarcos = guestListData.filter(g => g.group === "familia-marcos").length;
-            const familyJazzel = guestListData.filter(g => g.group === "familia-jazzel").length;
-            const amigos = guestListData.filter(g => g.group === "amigos").length;
-
-            // Actualizar contadores en la interfaz
+            // Actualizar contador TOTAL
             document.getElementById('totalGuests').textContent = totalGuests;
-            document.getElementById('familyMarcos').textContent = familyMarcos;
-            document.getElementById('familyJazzel').textContent = familyJazzel;
-            document.getElementById('friendsXimena').textContent = amigos;
-            document.getElementById('countAll').textContent = totalGuests;
-            document.getElementById('countMarcos').textContent = familyMarcos;
-            document.getElementById('countJazzel').textContent = familyJazzel;
-            document.getElementById('countAmigos').textContent = amigos;
         }
 
         // Función para cargar la lista de invitados
@@ -3549,6 +3744,13 @@
             // Agregar cada invitado
             filteredGuests.forEach(guest => {
                 const row = document.createElement('tr');
+                
+                // Aplicar clase rosa si está confirmado
+                if (guest.status === "confirmado") {
+                    row.classList.add('confirmado-row');
+                }
+                
+                // Solo mantener el texto en negrita para cabezas de familia
                 if (guest.cabezaFamilia) {
                     row.classList.add('cabeza-familia');
                 }
@@ -3558,6 +3760,9 @@
                 
                 const nameCell = document.createElement('td');
                 nameCell.textContent = guest.name;
+                if (guest.cabezaFamilia) {
+                    nameCell.style.fontWeight = "600";
+                }
                 
                 const typeCell = document.createElement('td');
                 typeCell.textContent = guest.type === 'adult' ? 'Platillo Adulto' : 'Platillo Niño';
