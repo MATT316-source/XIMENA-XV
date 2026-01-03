@@ -129,7 +129,47 @@
         
         /* ========== CORRECCIONES SOLICITADAS ========== */
         
-        /* 1. Sección Inicio - Centrar texto "Mis Quince Años" */
+        /* 1. Cambiar tipo de cursiva en XIMENA a Playfair Display normal */
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif !important; /* Cambiar de 'Great Vibes' a 'Playfair Display' */
+            font-size: 5rem !important;
+            color: white !important;
+            margin-bottom: 30px !important;
+            animation: fadeInUp 1.5s ease !important;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7) !important;
+            font-weight: 700 !important; /* Negrita en lugar de cursiva */
+            font-style: normal !important; /* Sin cursiva */
+            position: relative !important;
+            display: inline-block !important;
+        }
+        
+        /* 2. Ajustar línea rosa debajo de "Mis 15 Años" */
+        .hero h1::after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: -15px !important; /* Aumentar separación */
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 250px !important; /* Ancho adecuado para "Mis 15 Años" */
+            height: 4px !important;
+            background: linear-gradient(to right, rgba(255, 214, 224, 0.5), rgba(255, 107, 139, 0.8), rgba(255, 214, 224, 0.5)) !important;
+        }
+        
+        /* 3. Ajustar imagen en "Con la bendición de Dios" para celulares */
+        @media (max-width: 768px) {
+            .parents-section {
+                background-position: 70% center !important; /* Recorrer la imagen para mostrar a la persona */
+            }
+        }
+        
+        /* Para pantallas aún más pequeñas */
+        @media (max-width: 480px) {
+            .parents-section {
+                background-position: 80% center !important; /* Ajustar más para mostrar rostro */
+            }
+        }
+        
+        /* 4. Sección Inicio - Centrar texto "Mis Quince Años" */
         .hero-content h1 {
             text-align: center !important;
             left: 0 !important;
@@ -145,7 +185,7 @@
             }
         }
         
-        /* 2. Mensaje Especial - Corregir comillas */
+        /* 5. Mensaje Especial - Corregir comillas */
         .message-text::before,
         .message-text::after {
             content: '"' !important;
@@ -166,7 +206,7 @@
             right: -15px !important;
         }
         
-        /* 3. Sección Fecha - Mejorar visibilidad */
+        /* 6. Sección Fecha - Mejorar visibilidad */
         .date-container .date-day {
             font-size: 7rem !important;
             color: #ffffff !important;
@@ -228,7 +268,7 @@
             }
         }
         
-        /* 4. Itinerario - Mejorar visibilidad */
+        /* 7. Itinerario - Mejorar visibilidad */
         .timeline-time {
             font-size: 2.3rem !important;
             font-weight: 800 !important;
@@ -264,7 +304,7 @@
             }
         }
         
-        /* 5. Álbum de Fotos - Carrusel */
+        /* 8. Álbum de Fotos - Carrusel */
         .album-carousel {
             margin: 40px auto !important;
             max-width: 800px !important;
@@ -324,7 +364,7 @@
             }
         }
         
-        /* 6. Comparte tus Momentos - Imagen completa en celular */
+        /* 9. Comparte tus Momentos - Imagen completa en celular */
         .share-photos-section {
             background-size: cover !important;
             background-position: center center !important;
@@ -360,7 +400,7 @@
             margin-bottom: 25px !important;
         }
         
-        /* 7. Botones WhatsApp ovalados */
+        /* 10. Botones WhatsApp ovalados */
         .whatsapp-button, .action-btn {
             border-radius: 50px !important;
             background: linear-gradient(45deg, #25D366, #128C7E) !important;
@@ -406,6 +446,97 @@
         .copy-btn:hover {
             background: #128C7E !important;
             transform: scale(1.1) !important;
+        }
+        
+        /* 11. MEJORAR DISEÑO DEL CONTADOR REGRESIVO CON TONOS ROSAS */
+        .countdown-item {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 105, 180, 0.4)) !important;
+            padding: 25px !important;
+            border-radius: 15px !important;
+            min-width: 150px !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            color: white !important;
+            animation: heartbeat 2s infinite !important;
+            border: 2px solid rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.3) !important;
+            margin: 0 10px !important; /* Espaciado entre elementos */
+        }
+        
+        /* Efecto de brillo interior */
+        .countdown-item::before {
+            content: '' !important;
+            position: absolute !important;
+            top: -50% !important;
+            left: -50% !important;
+            width: 200% !important;
+            height: 200% !important;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%) !important;
+            z-index: 1 !important;
+            pointer-events: none !important;
+        }
+        
+        .countdown-number {
+            font-size: 4rem !important;
+            font-weight: bold !important;
+            color: white !important;
+            margin-bottom: 5px !important;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+            font-family: 'Playfair Display', serif !important;
+            transition: color 0.3s ease !important;
+            position: relative !important;
+            z-index: 2 !important;
+            background: linear-gradient(45deg, #ffd6e0, #ff9bb3, #ff6b8b) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+        }
+        
+        .countdown-label {
+            font-size: 1.5rem !important;
+            color: rgba(255, 255, 255, 0.9) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            font-weight: 500 !important;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+            font-family: 'Cormorant Garamond', serif !important;
+            position: relative !important;
+            z-index: 2 !important;
+        }
+        
+        /* Mover el contador un poco hacia la derecha */
+        .countdown-container {
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            position: relative !important;
+            z-index: 1 !important;
+            /* SIN fondo transparente */
+            background: none !important;
+            backdrop-filter: none !important;
+            padding-left: 40px !important; /* Desplazamiento a la derecha */
+        }
+        
+        /* Para pantallas pequeñas ajustar el padding */
+        @media (max-width: 768px) {
+            .countdown-container {
+                padding-left: 20px !important;
+            }
+            .countdown {
+                justify-content: center !important;
+                gap: 15px !important;
+            }
+            .countdown-item {
+                min-width: 120px !important;
+                margin: 0 5px !important;
+            }
+        }
+        
+        /* Agregar para mantener el efecto de latidos */
+        .countdown-item.pulse {
+            animation: heartbeat 0.8s ease !important;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.5), rgba(255, 105, 180, 0.6)) !important;
+            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.5) !important;
         }
         
         /* ESTILOS PARA LOS ESTADOS DE CONFIRMACIÓN */
@@ -931,25 +1062,6 @@
             width: 100%;
             text-align: center;
         }
-        .hero h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 4px;
-            background: linear-gradient(to right, rgba(255, 214, 224, 0.5), rgba(255, 107, 139, 0.8), rgba(255, 214, 224, 0.5));
-        }
-        .hero h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            color: white;
-            margin-bottom: 30px;
-            animation: fadeInUp 1.5s ease;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-weight: 400;
-        }
         .hero p {
             font-size: 1.8rem;
             max-width: 800px;
@@ -1215,33 +1327,13 @@
             background: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
-        .countdown-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            /* SIN fondo transparente */
-            background: none;
-            backdrop-filter: none;
-        }
+        
         .countdown {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin-top: 60px;
             flex-wrap: wrap;
-        }
-        .countdown-item {
-            background: none;
-            padding: 20px;
-            border-radius: 0;
-            min-width: 150px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            color: white;
-            animation: heartbeat 2s infinite;
-            border: none;
         }
         .countdown-item.pulse {
             animation: heartbeat 0.8s ease;
@@ -1253,24 +1345,7 @@
             45% { transform: scale(1.15); }
             60% { transform: scale(1); }
         }
-        .countdown-number {
-            font-size: 4rem;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            font-family: 'Playfair Display', serif;
-            transition: color 0.3s ease;
-        }
-        .countdown-label {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
-        }
+        
         .countdown-message {
             margin-top: 60px;
             font-size: 2.5rem;
