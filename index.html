@@ -1180,14 +1180,17 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         
-        /* SECCIÓN MENSAJE ESPECIAL - SIN CUADRO DE FONDO */
+        /* SECCIÓN MENSAJE ESPECIAL - CON FONDO DE IMAGEN COMPLETO */
         .message-section {
-            background: url('DSC07424.JPG') center/cover no-repeat;
+            background: url('DSC07424.JPG') center/cover no-repeat fixed;
             text-align: center;
             position: relative;
             overflow: hidden;
             padding: 120px 10%;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .message-section::before {
@@ -1197,49 +1200,45 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
 
         .message-container {
-            max-width: 500px;
-            margin: 0;
-            position: absolute;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
             z-index: 1;
-            padding: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 10%;
-            text-align: left;
-            /* Removido el fondo transparente */
-            background: none;
-            backdrop-filter: none;
-            border: none;
-            box-shadow: none;
+            padding: 50px;
+            text-align: center;
+            /* Fondo semi-transparente elegante */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         @media (max-width: 768px) {
             .message-container {
-                position: relative;
-                top: auto;
-                left: auto;
-                transform: none;
-                margin: 40px auto;
+                padding: 30px 20px;
                 max-width: 90%;
             }
         }
 
         .message-text {
-            font-size: 1.8rem;
-            line-height: 1.8;
-            color: white;
+            font-size: 2.2rem;
+            line-height: 1.6;
+            color: #ffebf0; /* Rosa muy claro */
             margin-bottom: 40px;
             position: relative;
-            padding: 30px;
+            padding: 40px;
             transition: transform 0.5s ease;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
-            border-left: 8px solid var(--rosa-brillante);
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+            border-left: 5px solid var(--rosa-brillante);
+            border-right: 5px solid var(--rosa-brillante);
+            background: linear-gradient(135deg, rgba(255, 46, 116, 0.1), rgba(255, 107, 139, 0.05));
         }
 
         .message-text:hover {
@@ -1249,17 +1248,17 @@
         .message-text::before,
         .message-text::after {
             content: '"';
-            font-size: 4rem;
+            font-size: 5rem;
             color: var(--rosa-brillante);
             position: absolute;
-            opacity: 0.9;
+            opacity: 0.8;
             transition: opacity 0.3s ease;
             font-family: 'Georgia', serif;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
         }
 
         .message-text::before {
-            top: -20px;
+            top: 0;
             left: 20px;
         }
 
@@ -1270,29 +1269,36 @@
 
         .signature {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
-            color: white;
+            font-size: 3.5rem;
+            color: #ffd6e0;
             margin-top: 40px;
             transition: transform 0.5s ease;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
             font-weight: 700;
-            padding: 20px;
+            padding: 20px 40px;
             display: inline-block;
-            border-bottom: 5px solid var(--rosa-brillante);
+            border-bottom: 6px solid var(--rosa-brillante);
+            background: linear-gradient(45deg, rgba(255, 46, 116, 0.2), rgba(255, 107, 139, 0.15));
+            border-radius: 10px;
+            letter-spacing: 2px;
         }
 
         .signature:hover {
             transform: scale(1.05);
+            color: white;
         }
         
-        /* Sección Con la Bendición - SIN CUADRO DE FONDO */
+        /* Sección Con la Bendición - CON FONDO DE IMAGEN COMPLETO */
         .parents-section {
-            background: url('DSC07301.JPG') center/cover no-repeat;
+            background: url('DSC07301.JPG') center/cover no-repeat fixed;
             text-align: center;
             position: relative;
             overflow: hidden;
             padding: 120px 10%;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .parents-section::before {
@@ -1302,60 +1308,61 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
         .parents-container {
-            max-width: 500px;
-            margin: 0;
-            position: absolute;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
             z-index: 1;
-            padding: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 10%;
-            text-align: left;
-            /* Removido el fondo transparente */
-            background: none;
-            backdrop-filter: none;
-            border: none;
-            box-shadow: none;
+            padding: 50px;
+            text-align: center;
+            /* Fondo semi-transparente elegante */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         @media (max-width: 768px) {
             .parents-container {
-                position: relative;
-                top: auto;
-                right: auto;
-                transform: none;
-                margin: 40px auto;
+                padding: 30px 20px;
                 max-width: 90%;
             }
         }
         .parents-text {
-            font-size: 2rem;
-            color: white;
-            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #ffebf0;
+            margin-bottom: 40px;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+            border-left: 8px solid var(--rosa-brillante);
             border-right: 8px solid var(--rosa-brillante);
-            padding-right: 20px;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, rgba(255, 46, 116, 0.1), rgba(255, 107, 139, 0.05));
+            border-radius: 10px;
         }
         .parents-names {
             font-family: 'Dancing Script', cursive;
-            font-size: 2.8rem;
-            color: white;
+            font-size: 3.2rem;
+            color: #ffd6e0;
             margin-bottom: 40px;
             transition: transform 0.5s ease;
-            line-height: 1.5;
+            line-height: 1.4;
             font-weight: 700;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
-            padding: 30px;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+            padding: 40px;
             border-top: 8px solid var(--rosa-brillante);
             border-bottom: 8px solid var(--rosa-brillante);
+            background: linear-gradient(45deg, rgba(255, 46, 116, 0.15), rgba(255, 107, 139, 0.1));
+            border-radius: 15px;
+            letter-spacing: 1px;
         }
         .parents-names:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            color: white;
         }
         
         /* Sección lista de invitados - TRANSPARENTE */
@@ -2354,6 +2361,18 @@
             .date-month {
                 font-size: 2rem;
             }
+            .message-text {
+                font-size: 1.8rem;
+            }
+            .signature {
+                font-size: 2.8rem;
+            }
+            .parents-text {
+                font-size: 2rem;
+            }
+            .parents-names {
+                font-size: 2.5rem;
+            }
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
@@ -2392,9 +2411,6 @@
             .photos-options {
                 grid-template-columns: 1fr;
                 gap: 20px;
-            }
-            .parents-names {
-                font-size: 2.5rem;
             }
             .counter-item {
                 min-width: 100px;
@@ -2504,12 +2520,26 @@
                 flex-direction: column;
                 align-items: center;
             }
+            .message-section,
             .parents-section {
                 background-attachment: scroll;
                 padding: 80px 5%;
             }
+            .message-text {
+                font-size: 1.5rem;
+                padding: 30px 20px;
+            }
+            .signature {
+                font-size: 2.5rem;
+                padding: 15px 25px;
+            }
             .parents-names {
                 font-size: 2rem;
+                padding: 25px;
+            }
+            .parents-text {
+                font-size: 1.8rem;
+                padding: 15px 20px;
             }
             .envelopes-section {
                 background-attachment: scroll;
@@ -2570,20 +2600,6 @@
                 gap: 10px;
             }
             
-            /* Secciones transparentes - ajustes móvil */
-            .message-text {
-                font-size: 1.3rem;
-                padding: 20px;
-            }
-            .parents-names {
-                font-size: 1.8rem;
-                padding: 20px;
-            }
-            .envelopes-text {
-                font-size: 1.3rem;
-                padding: 20px;
-            }
-            
             /* Tabla optimizada para móviles */
             .guestlist-table th,
             .guestlist-table td {
@@ -2593,6 +2609,12 @@
             .status-badge {
                 padding: 4px 8px;
                 font-size: 0.75rem;
+            }
+            
+            /* Secciones transparentes - ajustes móvil */
+            .envelopes-text {
+                font-size: 1.3rem;
+                padding: 20px;
             }
         }
         
@@ -2627,6 +2649,22 @@
             .date-time {
                 font-size: 1.5rem;
             }
+            .message-text {
+                font-size: 1.3rem;
+                padding: 20px 15px;
+            }
+            .signature {
+                font-size: 2rem;
+                padding: 12px 20px;
+            }
+            .parents-text {
+                font-size: 1.5rem;
+                padding: 12px 15px;
+            }
+            .parents-names {
+                font-size: 1.8rem;
+                padding: 20px;
+            }
             .countdown {
                 gap: 10px;
             }
@@ -2636,9 +2674,6 @@
             }
             .countdown-number {
                 font-size: 2rem;
-            }
-            .message-text {
-                font-size: 1.2rem;
             }
             .carousel {
                 height: 300px;
@@ -2669,9 +2704,6 @@
             .guestlist-table td {
                 padding: 6px 4px;
                 font-size: 0.75rem;
-            }
-            .parents-names {
-                font-size: 1.6rem;
             }
             
             /* Responsive para itinerario */
@@ -2787,6 +2819,22 @@
                 padding: 5px 3px;
                 font-size: 0.7rem;
             }
+            .message-text {
+                font-size: 1.2rem;
+                padding: 15px 10px;
+            }
+            .signature {
+                font-size: 1.8rem;
+                padding: 10px 15px;
+            }
+            .parents-text {
+                font-size: 1.3rem;
+                padding: 10px;
+            }
+            .parents-names {
+                font-size: 1.5rem;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -2840,7 +2888,7 @@
         </div>
     </header>
 
-    <!-- 1. Sección Inicio - SIN CUADRO DE FONDO -->
+    <!-- 1. Sección Inicio - CON FONDO DE IMAGEN COMPLETO -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Mis 15 Años</h1>
@@ -2852,7 +2900,7 @@
         </div>
     </section>
 
-    <!-- 2. Sección Mensaje Especial - SIN CUADRO DE FONDO -->
+    <!-- 2. Sección Mensaje Especial - CON FONDO DE IMAGEN COMPLETO -->
     <section class="message-section" id="mensaje">
         <h2 class="section-title">Un Mensaje Especial</h2>
         <div class="message-container">
@@ -2865,7 +2913,7 @@
         </div>
     </section>
 
-    <!-- 3. Sección Con la Bendición - SIN CUADRO DE FONDO -->
+    <!-- 3. Sección Con la Bendición - CON FONDO DE IMAGEN COMPLETO -->
     <section class="parents-section" id="bendicion">
         <h2 class="section-title">Con la bendición de Dios</h2>
         <div class="parents-container">
@@ -2875,7 +2923,7 @@
                 y<br>
                 Jazzel Valdez García<br>
                 junto a su hija<br>
-                <span style="font-size: 2.8rem; color: white; text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);">Ximena Alcantar Valdez</span>
+                <span style="font-size: 3.5rem; color: #ffebf0; text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);">Ximena Alcantar Valdez</span>
             </div>
         </div>
     </section>
@@ -2949,7 +2997,7 @@
                     <i class="fas fa-home"></i> Familia Jazzel
                 </button>
                 <button class="filter-btn" data-filter="amigos">
-                    <i class="fas fa-user-friends"></i> Amigos
+                    <i class="fas fa-user-friends"></i> Amigos Ximena
                 </button>
             </div>
             
@@ -3597,10 +3645,11 @@
             "ARREOLA MIRANDA RAMONA",
             "ARREOLA DURAN ROSALBA",
             "ARREOLA ALEXIS JEOVANNI",
-            "GUZMAN LUIS ANGEL"
+            "GUZMAN LUIS ANGEL",
+            "GARCIA MUÑOZ ELVIA"  // Agregado solicitado
         ];
 
-        // Amigos de Ximena - 17 invitados
+        // Amigos de Ximena - 19 invitados (17 originales + 2 agregados)
         const amigosXimena = [
             "DE LA CRUZ RIVERA YORSHELI FERNANDA",
             "RIVERA ALMAZAN ALEJANDRA",
@@ -3618,7 +3667,9 @@
             "CALDERON SOSA JOSHAR DANIEL",
             "SAUCEDO RANGEL PEDRO AARON",
             "SANCHEZ CARRANZA PATRICIA",
-            "ESPOSO MAETRA PATY"
+            "ESPOSO MAETRA PATY",
+            "PADILLA LOPEZ MARIA ELENA",  // Agregado solicitado
+            "CORONA DOMINGUEZ ARNOLDO"    // Agregado solicitado
         ];
 
         // Agregar Familia Marcos al array
