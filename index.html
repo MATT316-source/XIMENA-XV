@@ -86,7 +86,8 @@
     
     <!-- Tus estilos CSS aquí (se mantienen igual) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- AGREGAR MAVEN PRO A LAS FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Maven+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Agregar Slick Carousel -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -119,7 +120,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro como fuente principal */
             background-color: var(--rosa-pastel-1);
             color: #333;
             overflow-x: hidden;
@@ -129,16 +130,16 @@
         
         /* ========== CORRECCIONES SOLICITADAS ========== */
         
-        /* 1. Cambiar tipo de cursiva en XIMENA a Playfair Display normal */
+        /* 1. Cambiar tipo de cursiva en XIMENA a Maven Pro cursiva */
         .hero-content h2 {
-            font-family: 'Playfair Display', serif !important; /* Cambiar de 'Great Vibes' a 'Playfair Display' */
-            font-size: 3rem !important;
+            font-family: 'Maven Pro', sans-serif !important;
+            font-size: 3% !important;
             color: white !important;
             margin-bottom: 30px !important;
             animation: fadeInUp 1.5s ease !important;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7) !important;
-            font-weight: 700 !important; /* Negrita en lugar de cursiva */
-            font-style: normal !important; /* Sin cursiva */
+            font-weight: 400 !important;
+            font-style: italic !important; /* Cursiva como solicitaste */
             position: relative !important;
             display: inline-block !important;
         }
@@ -483,7 +484,7 @@
             color: white !important;
             margin-bottom: 5px !important;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
-            font-family: 'Playfair Display', serif !important;
+            font-family: 'Maven Pro', sans-serif !important; /* CAMBIO: Maven Pro */
             transition: color 0.3s ease !important;
             position: relative !important;
             z-index: 2 !important;
@@ -500,7 +501,7 @@
             letter-spacing: 2px !important;
             font-weight: 500 !important;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
-            font-family: 'Cormorant Garamond', serif !important;
+            font-family: 'Maven Pro', sans-serif !important; /* CAMBIO: Maven Pro */
             position: relative !important;
             z-index: 2 !important;
         }
@@ -547,6 +548,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .status-badge.confirmado {
@@ -607,13 +609,14 @@
         .audio-modal h2 {
             color: var(--rosa-oscuro);
             margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .audio-modal p {
             margin-bottom: 25px;
             line-height: 1.6;
             color: #5a3d3d;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .audio-activate-btn {
@@ -628,6 +631,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .audio-activate-btn:hover {
@@ -689,11 +693,13 @@
             font-weight: 600;
             font-size: 0.9rem;
             color: #333;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .track-artist {
             font-size: 0.8rem;
             color: #666;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .audio-controls {
@@ -789,6 +795,7 @@
             border-radius: 5px;
             font-size: 0.8rem;
             white-space: nowrap;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         /* Encabezado fijo optimizado para móviles */
@@ -814,7 +821,7 @@
             margin: 0 auto;
         }
         .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--rosa-oscuro);
@@ -869,6 +876,7 @@
             align-items: center;
             white-space: nowrap;
             padding: 8px 5px;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         nav ul li a i {
             margin-right: 5px;
@@ -1050,7 +1058,7 @@
             }
         }
         .hero h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-size: 4.5rem;
             color: white;
             margin-bottom: 20px;
@@ -1069,7 +1077,7 @@
             animation: fadeIn 2s ease;
             line-height: 1.6;
             font-weight: 500;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             color: white;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
@@ -1101,7 +1109,7 @@
         }
         .section-title {
             text-align: center;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-size: 4rem;
             color: white;
             margin-bottom: 60px;
@@ -1180,7 +1188,7 @@
             position: relative;
             padding: 0 30px;
             transition: transform 0.5s ease;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-weight: 500;
             text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
             font-style: italic;
@@ -1257,7 +1265,7 @@
             font-size: 2.8rem;
             color: #ffebf0;
             margin: 40px 0 60px 0;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-weight: 600;
             text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
             padding: 0;
@@ -1353,7 +1361,7 @@
             font-style: italic;
             font-weight: 600;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         /* Sección ceremonia - SIN CUADRO DE FONDO */
@@ -1390,14 +1398,14 @@
             margin-bottom: 30px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .ceremony-container p {
             font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-weight: 500;
         }
         .ceremony-image {
@@ -1427,7 +1435,7 @@
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-size: 1.3rem;
         }
         .map-link i {
@@ -1474,14 +1482,14 @@
             margin-bottom: 30px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .reception-container p {
             font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-weight: 500;
         }
         .reception-image {
@@ -1644,7 +1652,7 @@
             color: white;
             margin-bottom: 40px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-weight: 500;
         }
         
@@ -1681,7 +1689,7 @@
             color: white;
             margin-bottom: 10px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .counter-label {
@@ -1689,7 +1697,7 @@
             color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -1710,11 +1718,11 @@
             background: rgba(255, 255, 255, 0.2);
             color: white;
             backdrop-filter: blur(5px);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .guestlist-search input::placeholder {
             color: rgba(255, 255, 255, 0.7);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .guestlist-search input:focus {
             border-color: rgba(255, 107, 139, 0.8);
@@ -1754,7 +1762,7 @@
             color: white;
             min-width: 160px;
             justify-content: center;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-weight: 500;
         }
         .filter-btn:hover {
@@ -1795,7 +1803,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 1.1rem;
             color: white;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .guestlist-table th {
@@ -1808,7 +1816,7 @@
             z-index: 10;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             white-space: nowrap;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         .guestlist-table th:hover {
@@ -1832,7 +1840,7 @@
             text-align: center;
             border: 2px solid rgba(255, 155, 179, 0.5);
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         /* Sección confirmación - SIN CUADRO DE FONDO */
@@ -1870,7 +1878,7 @@
             line-height: 1.6;
             font-weight: 500;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .confirmation-text strong {
             color: white;
@@ -1923,7 +1931,7 @@
             padding: 0;
             border-radius: 0;
             border: none;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-style: italic;
         }
         .envelope-icon {
@@ -2103,7 +2111,7 @@
             backdrop-filter: none;
             border-radius: 0;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-style: italic;
         }
         .quiz-question {
@@ -2111,7 +2119,7 @@
             color: white;
             margin-bottom: 40px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .quiz-options {
             display: grid;
@@ -2131,7 +2139,7 @@
             position: relative;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .quiz-option:hover {
             background: rgba(255, 155, 179, 0.3);
@@ -2163,7 +2171,7 @@
             cursor: pointer;
             transition: all 0.3s;
             margin: 15px;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-weight: 500;
             letter-spacing: 1px;
         }
@@ -2189,7 +2197,7 @@
             justify-content: center;
             transition: all 0.3s ease;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .feedback-correct {
             /* SIN fondo transparente */
@@ -2210,7 +2218,7 @@
             min-height: 60px;
             display: none;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .quiz-score {
             margin-top: 40px;
@@ -2219,7 +2227,7 @@
             font-weight: bold;
             display: none;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .quiz-final-message {
             margin-top: 40px;
@@ -2233,7 +2241,7 @@
             display: none;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
             border: 2px solid rgba(255, 255, 255, 0.2);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         .quiz-instructions {
             margin-top: 40px;
@@ -2249,7 +2257,7 @@
             font-size: 1.5rem;
             color: white;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
 
         /* Sección Compartir Fotos - SIN CUADRO DE FONDO */
@@ -2292,7 +2300,7 @@
             backdrop-filter: none;
             border-radius: 0;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-style: italic;
         }
 
@@ -2319,7 +2327,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: white;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
         }
 
@@ -2336,7 +2344,7 @@
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.9);
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
 
         .upload-info i {
@@ -2356,7 +2364,7 @@
             font-size: 1.8rem;
             margin-bottom: 25px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
             font-weight: 500;
         }
         .social-icons {
@@ -2379,7 +2387,7 @@
             font-size: 1.1rem;
             opacity: 0.9;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
         
         /* Animaciones */
