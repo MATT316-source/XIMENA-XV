@@ -133,7 +133,7 @@
         /* 1. Cambiar tipo de cursiva en XIMENA a Maven Pro cursiva */
         .hero-content h2 {
             font-family: 'Maven Pro', sans-serif !important;
-            font-size: 3% !important;
+            font-size: 5.5rem !important;
             color: var(--rosa-brillante) !important;
             margin-bottom: 30px !important;
             animation: fadeInUp 1.5s ease !important;
@@ -506,7 +506,7 @@
             z-index: 2 !important;
         }
         
-        /* Mover el contador un poco hacia la derecha */
+        /* Contador responsivo para móviles - EN UNA LÍNEA */
         .countdown-container {
             max-width: 800px !important;
             margin: 0 auto !important;
@@ -515,21 +515,50 @@
             /* SIN fondo transparente */
             background: none !important;
             backdrop-filter: none !important;
-            padding-left: 40px !important; /* Desplazamiento a la derecha */
         }
         
         /* Para pantallas pequeñas ajustar el padding */
         @media (max-width: 768px) {
             .countdown-container {
-                padding-left: 20px !important;
+                padding-left: 0 !important;
             }
             .countdown {
                 justify-content: center !important;
-                gap: 15px !important;
+                gap: 10px !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                padding: 10px !important;
             }
             .countdown-item {
-                min-width: 120px !important;
+                min-width: 100px !important;
                 margin: 0 5px !important;
+                padding: 15px !important;
+                flex: 1 !important;
+            }
+            .countdown-number {
+                font-size: 2.8rem !important;
+            }
+            .countdown-label {
+                font-size: 1rem !important;
+                letter-spacing: 1px !important;
+            }
+        }
+        
+        /* Para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .countdown {
+                gap: 5px !important;
+            }
+            .countdown-item {
+                min-width: 80px !important;
+                padding: 12px !important;
+                margin: 0 3px !important;
+            }
+            .countdown-number {
+                font-size: 2.2rem !important;
+            }
+            .countdown-label {
+                font-size: 0.9rem !important;
             }
         }
         
