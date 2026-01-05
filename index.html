@@ -3103,7 +3103,7 @@
         </div>
     </section>
 
-    <!-- 3. Sección Con la Bendición - CON IMAGEN Y TEXTO -->
+    <!-- 3. Sección Con la Bendición - CON IMAGEN Y TEXTO - NOMBRES ACTUALIZADOS -->
     <section class="parents-section" id="bendicion">
         <h2 class="section-title">Con la bendición de Dios</h2>
         <div class="parents-container">
@@ -3647,14 +3647,42 @@
         });
 
         // =============================================
-        // LISTA DE INVITADOS - CON TODOS LOS NOMBRES DEL EXCEL - CORREGIDO
+        // LISTA DE INVITADOS - CON TODOS LOS NOMBRES DEL EXCEL - ACTUALIZADOS
         // =============================================
 
-        // Datos EXACTOS de invitados del Excel - RESPETANDO EL ORDEN
+        // Datos EXACTOS de invitados del Excel - CON ESTADOS ACTUALIZADOS
         const guestListData = [];
 
-        // Crear invitados exactamente como aparecen en el Excel
-        // Familia Marcos (100 invitados)
+        // Invitados confirmados según el Excel
+        const confirmedGuestsFamiliaMarcos = [
+            "TOLEDO NAVARRETE MARIA TERESA",
+            "CORTES TORRES EMILIANO", 
+            "ALCANTAR TOLEDO JEANNETE",
+            "VILLA HERNANDEZ CARLOS",
+            "VILLA ALCANTAR KARLA",
+            "VILLA ALCANTAR CARLOS",
+            "ALCANTAR TOLEDO ALFREDO",
+            "PANTOJA LAZARO LIZBETH",
+            "ALCANTAR TOLEDO MARCOS ALFREDO",
+            "VALDEZ GARCIA JAZZEL",
+            "ALCANTAR VALDEZ MARCOS HAZIEL",
+            "ALCANTAR VALDEZ XIMENA",
+            "ALCANTAR GAYTAN ALFREDO",
+            "ALCANTAR CAMPOS VALERIA",
+            "CAMPOS ORTIZ ANGEL"
+        ];
+
+        const confirmedGuestsFamiliaJazzel = [
+            "VALDEZ GARCIA YULMA",
+            "VALDEZ GARCIA MARLEN", 
+            "GARCIA GUILLEN RAMON",
+            "ARRIAGA RIVERA KAREN",
+            "VALDEZ MORALES ANTONIO",
+            "GARCIA MUÑOS MARGARITA"
+        ];
+
+        // FUNCIONES PARA CREAR LISTA DE INVITADOS - ACTUALIZADAS
+        // Familia Marcos (100 invitados) - CON ESTADOS REALES
         const createFamiliaMarcosGuests = () => {
             const nombres = [
                 {nombre: "NAVARRETE MIRANDA GLORIA", tipo: "PLATILLO ADULTO"},
@@ -3760,17 +3788,18 @@
             ];
 
             nombres.forEach((item, index) => {
+                const isConfirmed = confirmedGuestsFamiliaMarcos.includes(item.nombre);
                 guestListData.push({
                     name: item.nombre,
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "familia-marcos",
                     cabezaFamilia: index < 10,
-                    status: "pendiente" // Todos inicialmente pendientes
+                    status: isConfirmed ? "confirmado" : "pendiente"
                 });
             });
         };
 
-        // Familia Jazzel (82 invitados)
+        // Familia Jazzel (82 invitados) - CON ESTADOS REALES
         const createFamiliaJazzelGuests = () => {
             const nombres = [
                 {nombre: "MUÑOZ PADILLA CANDIDA", tipo: "PLATILLO ADULTO"},
@@ -3858,17 +3887,18 @@
             ];
 
             nombres.forEach((item, index) => {
+                const isConfirmed = confirmedGuestsFamiliaJazzel.includes(item.nombre);
                 guestListData.push({
                     name: item.nombre,
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "familia-jazzel",
                     cabezaFamilia: index < 8,
-                    status: "pendiente" // Todos inicialmente pendientes
+                    status: isConfirmed ? "confirmado" : "pendiente"
                 });
             });
         };
 
-        // Amigos de Ximena (19 invitados)
+        // Amigos de Ximena (19 invitados) - TODOS PENDIENTES SEGÚN EXCEL
         const createAmigosXimenaGuests = () => {
             const nombres = [
                 {nombre: "DE LA CRUZ RIVERA YORSHELI FERNANDA", tipo: "PLATILLO ADULTO"},
@@ -3898,7 +3928,7 @@
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "amigos",
                     cabezaFamilia: false,
-                    status: "pendiente" // Todos inicialmente pendientes
+                    status: "pendiente" // Todos pendientes según el Excel
                 });
             });
         };
@@ -3969,8 +3999,6 @@
                 const statusBadge = document.createElement('span');
                 statusBadge.classList.add('status-badge', guest.status);
                 statusBadge.textContent = guest.status === 'confirmado' ? 'Confirmado' : 'Pendiente';
-                // NOTA: Los badges NO son clickeables para usuarios normales
-                // Solo tú podrás marcar confirmados desde el código
                 
                 statusCell.appendChild(statusBadge);
                 
@@ -3993,22 +4021,16 @@
             }
         }
 
-        // Función para cambiar el estado de confirmación (SOLO PARA ADMINISTRACIÓN)
+        // Función para cambiar el estado de confirmación
         function toggleConfirmation(guestName) {
             const guest = guestListData.find(g => g.name === guestName);
             if (guest) {
-                // Alternar entre pendiente y confirmado
                 guest.status = guest.status === 'pendiente' ? 'confirmado' : 'pendiente';
                 
-                // Actualizar la vista
                 const currentFilter = document.querySelector('.filter-btn.active').dataset.filter;
                 loadGuestList(currentFilter);
                 
-                // Guardar en localStorage
                 saveGuestStatusToLocalStorage();
-                
-                // Mostrar mensaje de confirmación
-                showConfirmationMessage(guest.name, guest.status);
             }
         }
 
@@ -4034,48 +4056,14 @@
             }
         }
 
-        // Función para mostrar mensaje de confirmación
-        function showConfirmationMessage(guestName, status) {
-            const message = document.createElement('div');
-            message.classList.add('guestlist-message');
-            message.style.position = 'fixed';
-            message.style.top = '20px';
-            message.style.right = '20px';
-            message.style.zIndex = '10000';
-            message.style.maxWidth = '300px';
-            message.style.animation = 'fadeIn 0.5s';
-            message.innerHTML = `
-                <p>${guestName} ha sido marcado como <strong>${status === 'confirmado' ? 'CONFIRMADO' : 'PENDIENTE'}</strong></p>
-            `;
-            
-            document.body.appendChild(message);
-            
-            // Remover el mensaje después de 3 segundos
-            setTimeout(() => {
-                message.style.animation = 'fadeIn 0.5s reverse';
-                setTimeout(() => {
-                    if (message.parentNode) {
-                        message.parentNode.removeChild(message);
-                    }
-                }, 500);
-            }, 3000);
-        }
-
         // Configurar filtros de invitados
         function setupGuestFilters() {
             const filterButtons = document.querySelectorAll('.filter-btn');
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Remover clase active de todos los botones
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Agregar clase active al botón clickeado
                     button.classList.add('active');
-                    
-                    // Obtener el filtro
                     const filter = button.getAttribute('data-filter');
-                    
-                    // Cargar la lista con el filtro
                     loadGuestList(filter);
                 });
             });
@@ -4100,7 +4088,6 @@
                     }
                 });
                 
-                // Mostrar mensaje si no hay resultados
                 const noResultsMsg = document.querySelector('.no-results-message');
                 if (!hasResults && searchValue !== '') {
                     if (!noResultsMsg) {
@@ -4119,7 +4106,7 @@
         // RESTO DEL CÓDIGO (FUNCIONALIDADES EXISTENTES)
         // =============================================
 
-        // Función para observar las secciones y aplicar transiciones
+        // Función para observar las secciones
         function observeSections() {
             const sections = document.querySelectorAll('section');
             const observer = new IntersectionObserver((entries) => {
@@ -4138,10 +4125,9 @@
         }
 
         // =============================================
-        // CORRECCIÓN COMPLETA DE BURBUJAS
+        // CORAZONES BURBUJA
         // =============================================
         
-        // Crear corazones en forma de burbujas transparentes - COMPLETAMENTE CORREGIDO
         function createBubbleHearts() {
             const container = document.getElementById('bubbleHeartsContainer');
             const colors = [
@@ -4158,36 +4144,29 @@
                 const heartColor = colors[colorIndex];
                 bubble.style.setProperty('--heart-color', heartColor);
                 
-                // Posición horizontal aleatoria
                 const leftPos = 5 + Math.random() * 90;
                 bubble.style.left = `${leftPos}%`;
                 
-                // Tamaño aleatorio pero controlado
-                const size = 25 + Math.random() * 25; // 25-50px
+                const size = 25 + Math.random() * 25;
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
                 
-                // Duración de animación más rápida para evitar acumulación
-                const duration = 8 + Math.random() * 7; // 8-15 segundos
+                const duration = 8 + Math.random() * 7;
                 bubble.style.animationDuration = `${duration}s`;
                 
-                // Añadir un pequeño delay aleatorio para que no todas empiecen juntas
                 const delay = Math.random() * 3;
                 bubble.style.animationDelay = `${delay}s`;
                 
-                // Crear el corazón dentro de la burbuja
                 const icon = document.createElement('i');
                 icon.classList.add('fas', 'fa-heart');
                 bubble.appendChild(icon);
                 
-                // Evento para hacer clic y explotar
                 bubble.addEventListener('click', function(e) {
                     e.stopPropagation();
                     createExplosion(this);
                     this.remove();
                 });
                 
-                // Remover la burbuja después de que termine la animación
                 setTimeout(() => {
                     if (bubble.parentNode) {
                         bubble.remove();
@@ -4197,15 +4176,12 @@
                 container.appendChild(bubble);
             }
 
-            // Crear burbujas con intervalos controlados
-            setInterval(createBubble, 1000); // Una burbuja por segundo
-            // Crear algunas burbujas iniciales
+            setInterval(createBubble, 1000);
             for (let i = 0; i < 3; i++) {
                 setTimeout(createBubble, i * 300);
             }
         }
 
-        // Crear efecto de explosión
         function createExplosion(bubble) {
             const explosion = document.createElement('div');
             explosion.classList.add('explosion');
@@ -4281,7 +4257,7 @@
             });
         });
 
-        // Contador regresivo con efecto de latido mejorado
+        // Contador regresivo
         function updateCountdown() {
             const eventDate = new Date('February 07, 2026 19:00:00').getTime();
             const now = new Date().getTime();
