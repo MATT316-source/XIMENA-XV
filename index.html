@@ -1810,44 +1810,7 @@
             font-weight: 500;
         }
         
-        /* Búsqueda - SIN CUADRO DE FONDO - MOVIDA ARRIBA */
-        .guestlist-search {
-            margin-bottom: 40px;
-            position: relative;
-        }
-        .guestlist-search input {
-            width: 100%;
-            padding: 18px 25px;
-            border: 2px solid rgba(255, 155, 179, 0.5);
-            border-radius: 50px;
-            font-size: 1.2rem;
-            outline: none;
-            transition: all 0.3s;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            backdrop-filter: blur(5px);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
-        }
-        .guestlist-search input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
-        }
-        .guestlist-search input:focus {
-            border-color: rgba(255, 107, 139, 0.8);
-            box-shadow: 0 0 20px rgba(255, 107, 139, 0.4);
-            background: rgba(255, 255, 255, 0.3);
-        }
-        .guestlist-search i {
-            position: absolute;
-            right: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255, 155, 179, 0.8);
-            z-index: 2;
-            font-size: 1.3rem;
-        }
-        
-        /* Filtros - SIN CUADRO DE FONDO */
+        /* Filtros - SIN CUADRO DE FONDO - BÚSQUEDA DEBAJO DE AMIGOS XIMENA */
         .guestlist-filters {
             display: flex;
             justify-content: center;
@@ -1883,6 +1846,43 @@
         }
         .filter-btn i {
             font-size: 1.2rem;
+        }
+        
+        /* Búsqueda - SIN CUADRO DE FONDO - MOVIDA ARRIBA */
+        .guestlist-search {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .guestlist-search input {
+            width: 100%;
+            padding: 18px 25px;
+            border: 2px solid rgba(255, 155, 179, 0.5);
+            border-radius: 50px;
+            font-size: 1.2rem;
+            outline: none;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(5px);
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+        }
+        .guestlist-search input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+        }
+        .guestlist-search input:focus {
+            border-color: rgba(255, 107, 139, 0.8);
+            box-shadow: 0 0 20px rgba(255, 107, 139, 0.4);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .guestlist-search i {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 155, 179, 0.8);
+            z-index: 2;
+            font-size: 1.3rem;
         }
         
         /* Contenedor de tabla - SIN CUADRO DE FONDO - CORREGIDO */
@@ -2393,7 +2393,7 @@
             font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
         }
 
-        /* Sección Compartir Fotos - SIN CUADRO DE FONDO */
+        /* Sección Compartir Fotos - SIN CUADRO DE FONDO - MODIFICADO */
         .share-photos-section {
             background: url('https://i.pinimg.com/1200x/f5/c7/86/f5c78662623b429bd37b9d386f7ecd10.jpg') center/cover no-repeat fixed;
             text-align: center;
@@ -3169,13 +3169,7 @@
         <div class="guestlist-container">
             <p class="guestlist-text">Aquí puedes ver la lista de invitados confirmados para mi fiesta</p>
             
-            <!-- CAMBIO: Búsqueda movida aquí, contador eliminado -->
-            <div class="guestlist-search">
-                <input type="text" id="guestSearch" placeholder="Buscar invitado por nombre...">
-                <i class="fas fa-search"></i>
-            </div>
-            
-            <!-- Filtros - SIN CANTIDAD -->
+            <!-- Filtros - SIN CANTIDAD - BÚSQUEDA DEBAJO DE AMIGOS XIMENA -->
             <div class="guestlist-filters">
                 <button class="filter-btn active" data-filter="all">
                     <i class="fas fa-users"></i> Todos
@@ -3189,6 +3183,12 @@
                 <button class="filter-btn" data-filter="amigos">
                     <i class="fas fa-user-friends"></i> Amigos Ximena
                 </button>
+            </div>
+            
+            <!-- CAMBIO: Búsqueda movida aquí, contador eliminado -->
+            <div class="guestlist-search">
+                <input type="text" id="guestSearch" placeholder="Buscar invitado por nombre...">
+                <i class="fas fa-search"></i>
             </div>
             
             <!-- Contenedor de tabla - CORREGIDO (3 columnas) -->
@@ -3676,7 +3676,7 @@
                 {nombre: "CORTES GOMEZ LAURA", tipo: "PLATILLO ADULTO"},
                 {nombre: "PEREZ MARISCAL OMAR", tipo: "PLATILLO ADULTO"},
                 {nombre: "PEREZ CORTES CAMILA", tipo: "PLATILLO ADULTO"},
-                {nombre: "ALCANTAR TOLEDO JEANNETE", tipo: "PLATILLO NIÑO"},
+                {nombre: "ALCANTAR TOLEDO JEANNETE", tipo: "PLATILLO ADULTO"},
                 {nombre: "VILLA HERNANDEZ CARLOS", tipo: "PLATILLO ADULTO"},
                 {nombre: "VILLA ALCANTAR KARLA", tipo: "PLATILLO ADULTO"},
                 {nombre: "VILLA ALCANTAR CARLOS", tipo: "PLATILLO NIÑO"},
@@ -3969,15 +3969,8 @@
                 const statusBadge = document.createElement('span');
                 statusBadge.classList.add('status-badge', guest.status);
                 statusBadge.textContent = guest.status === 'confirmado' ? 'Confirmado' : 'Pendiente';
-                statusBadge.dataset.name = guest.name; // Para identificar al invitado
-                statusBadge.style.cursor = 'pointer'; // Hacer clickable
-                
-                // Agregar evento para cambiar estado al hacer clic
-                statusBadge.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const guestName = this.dataset.name;
-                    toggleConfirmation(guestName);
-                });
+                // NOTA: Los badges NO son clickeables para usuarios normales
+                // Solo tú podrás marcar confirmados desde el código
                 
                 statusCell.appendChild(statusBadge);
                 
@@ -4000,7 +3993,7 @@
             }
         }
 
-        // Función para cambiar el estado de confirmación
+        // Función para cambiar el estado de confirmación (SOLO PARA ADMINISTRACIÓN)
         function toggleConfirmation(guestName) {
             const guest = guestListData.find(g => g.name === guestName);
             if (guest) {
