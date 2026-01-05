@@ -465,124 +465,186 @@
             transform: scale(1.1) !important;
         }
         
-        /* 12. MEJORAR DISEÑO DEL CONTADOR REGRESIVO CON TONOS ROSAS */
+        /* ========== CONTADOR REGRESIVO CON TONOS ROSAS NOTABLES ========== */
+        .countdown-container {
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            position: relative !important;
+            z-index: 1 !important;
+            background: none !important;
+            backdrop-filter: none !important;
+        }
+        
+        .countdown {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 40px !important;
+            margin-top: 60px !important;
+            flex-wrap: wrap !important;
+            padding: 30px !important;
+        }
+        
+        .countdown-days-container {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin-bottom: 40px !important;
+            width: 100% !important;
+        }
+        
+        .countdown-days-number {
+            font-size: 8rem !important;
+            font-weight: 900 !important;
+            color: #ff2e74 !important; /* ROSA NEÓN */
+            text-shadow: 5px 5px 15px rgba(255, 46, 116, 0.7) !important;
+            font-family: 'Maven Pro', sans-serif !important;
+            background: linear-gradient(45deg, #ff2e74, #ff6b8b, #ff2e74) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+            margin-bottom: 10px !important;
+            animation: pulseRose 2s infinite !important;
+        }
+        
+        .countdown-days-label {
+            font-size: 2.5rem !important;
+            font-weight: 700 !important;
+            color: white !important;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8) !important;
+            font-family: 'Maven Pro', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 3px !important;
+        }
+        
+        .countdown-details {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 30px !important;
+            width: 100% !important;
+            flex-wrap: wrap !important;
+        }
+        
         .countdown-item {
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 105, 180, 0.4)) !important;
-            padding: 25px !important;
-            border-radius: 15px !important;
-            min-width: 150px !important;
+            background: linear-gradient(135deg, rgba(255, 46, 116, 0.6), rgba(255, 107, 139, 0.7)) !important;
+            padding: 25px 35px !important;
+            border-radius: 20px !important;
+            min-width: 180px !important;
             transition: all 0.3s ease !important;
             position: relative !important;
             overflow: hidden !important;
             color: white !important;
-            animation: heartbeat 2s infinite !important;
-            border: 2px solid rgba(255, 255, 255, 0.2) !important;
-            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.3) !important;
-            margin: 0 10px !important; /* Espaciado entre elementos */
-        }
-        
-        /* Efecto de brillo interior */
-        .countdown-item::before {
-            content: '' !important;
-            position: absolute !important;
-            top: -50% !important;
-            left: -50% !important;
-            width: 200% !important;
-            height: 200% !important;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%) !important;
-            z-index: 1 !important;
-            pointer-events: none !important;
+            border: 3px solid rgba(255, 255, 255, 0.3) !important;
+            box-shadow: 0 10px 25px rgba(255, 46, 116, 0.4) !important;
         }
         
         .countdown-number {
             font-size: 4rem !important;
-            font-weight: bold !important;
+            font-weight: 900 !important;
             color: white !important;
             margin-bottom: 5px !important;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
-            font-family: 'Maven Pro', sans-serif !important; /* CAMBIO: Maven Pro */
-            transition: color 0.3s ease !important;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9) !important;
+            font-family: 'Maven Pro', sans-serif !important;
             position: relative !important;
             z-index: 2 !important;
-            background: linear-gradient(45deg, #ffd6e0, #ff9bb3, #ff6b8b) !important;
+            text-align: center !important;
+            background: linear-gradient(45deg, #ffffff, #ffe8ec, #ffffff) !important;
             -webkit-background-clip: text !important;
             background-clip: text !important;
             color: transparent !important;
         }
         
         .countdown-label {
-            font-size: 1.5rem !important;
-            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: 1.8rem !important;
+            color: rgba(255, 255, 255, 0.95) !important;
             text-transform: uppercase !important;
             letter-spacing: 2px !important;
-            font-weight: 500 !important;
+            font-weight: 600 !important;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
-            font-family: 'Maven Pro', sans-serif !important; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif !important;
             position: relative !important;
             z-index: 2 !important;
+            text-align: center !important;
         }
         
-        /* Contador responsivo para móviles - EN UNA LÍNEA */
-        .countdown-container {
-            max-width: 800px !important;
-            margin: 0 auto !important;
-            position: relative !important;
-            z-index: 1 !important;
-            /* SIN fondo transparente */
-            background: none !important;
-            backdrop-filter: none !important;
+        @keyframes pulseRose {
+            0% {
+                text-shadow: 5px 5px 15px rgba(255, 46, 116, 0.7);
+            }
+            50% {
+                text-shadow: 5px 5px 25px rgba(255, 46, 116, 0.9), 0 0 30px rgba(255, 46, 116, 0.6);
+            }
+            100% {
+                text-shadow: 5px 5px 15px rgba(255, 46, 116, 0.7);
+            }
         }
         
-        /* Para pantallas pequeñas ajustar el padding */
+        /* Contador responsivo para móviles */
         @media (max-width: 768px) {
-            .countdown-container {
-                padding-left: 0 !important;
-            }
             .countdown {
-                justify-content: center !important;
-                gap: 10px !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-                padding: 10px !important;
+                gap: 20px !important;
+                padding: 20px !important;
             }
+            
+            .countdown-days-number {
+                font-size: 5rem !important;
+            }
+            
+            .countdown-days-label {
+                font-size: 2rem !important;
+            }
+            
+            .countdown-details {
+                gap: 15px !important;
+            }
+            
             .countdown-item {
-                min-width: 100px !important;
-                margin: 0 5px !important;
-                padding: 15px !important;
-                flex: 1 !important;
+                min-width: 140px !important;
+                padding: 20px 25px !important;
             }
+            
             .countdown-number {
-                font-size: 2.8rem !important;
+                font-size: 3rem !important;
             }
+            
             .countdown-label {
-                font-size: 1rem !important;
+                font-size: 1.4rem !important;
                 letter-spacing: 1px !important;
             }
         }
         
-        /* Para pantallas muy pequeñas */
         @media (max-width: 480px) {
-            .countdown {
-                gap: 5px !important;
+            .countdown-days-number {
+                font-size: 4rem !important;
             }
+            
+            .countdown-days-label {
+                font-size: 1.6rem !important;
+            }
+            
+            .countdown-details {
+                gap: 10px !important;
+            }
+            
             .countdown-item {
-                min-width: 80px !important;
-                padding: 12px !important;
-                margin: 0 3px !important;
+                min-width: 120px !important;
+                padding: 15px 20px !important;
             }
+            
             .countdown-number {
-                font-size: 2.2rem !important;
+                font-size: 2.5rem !important;
             }
+            
             .countdown-label {
-                font-size: 0.9rem !important;
+                font-size: 1.2rem !important;
             }
         }
         
-        /* Agregar para mantener el efecto de latidos */
         .countdown-item.pulse {
             animation: heartbeat 0.8s ease !important;
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.5), rgba(255, 105, 180, 0.6)) !important;
-            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.5) !important;
+            background: linear-gradient(135deg, rgba(255, 46, 116, 0.8), rgba(255, 107, 139, 0.9)) !important;
+            box-shadow: 0 15px 30px rgba(255, 46, 116, 0.6) !important;
         }
         
         /* ESTILOS PARA LOS ESTADOS DE CONFIRMACIÓN */
@@ -593,7 +655,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         .status-badge.confirmado {
@@ -654,14 +716,14 @@
         .audio-modal h2 {
             color: var(--rosa-oscuro);
             margin-bottom: 20px;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         .audio-modal p {
             margin-bottom: 25px;
             line-height: 1.6;
             color: #5a3d3d;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         .audio-activate-btn {
@@ -676,7 +738,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         .audio-activate-btn:hover {
@@ -738,13 +800,13 @@
             font-weight: 600;
             font-size: 0.9rem;
             color: #333;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         .track-artist {
             font-size: 0.8rem;
             color: #666;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         .audio-controls {
@@ -840,7 +902,7 @@
             border-radius: 5px;
             font-size: 0.8rem;
             white-space: nowrap;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         /* Encabezado fijo optimizado para móviles */
@@ -851,7 +913,7 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000; /* Menú más alto que las burbujas */
+            z-index: 1000;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             padding: 10px 0;
@@ -866,7 +928,7 @@
             margin: 0 auto;
         }
         .logo {
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--rosa-oscuro);
@@ -921,7 +983,7 @@
             align-items: center;
             white-space: nowrap;
             padding: 8px 5px;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         nav ul li a i {
             margin-right: 5px;
@@ -962,7 +1024,7 @@
             background: var(--rosa-oscuro);
             color: white;
         }
-        /* Contenedor de burbujas de corazones transparentes - CORREGIDO */
+        /* Contenedor de burbujas de corazones transparentes */
         .bubble-hearts-container {
             position: fixed;
             top: 0;
@@ -970,14 +1032,14 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1; /* Detrás del menú */
+            z-index: 1;
             overflow: hidden;
         }
         .heart-bubble {
             position: absolute;
             width: 40px;
             height: 40px;
-            bottom: -50px; /* Comienzan desde abajo */
+            bottom: -50px;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent 40%);
             display: flex;
@@ -986,13 +1048,13 @@
             color: var(--heart-color, #ff4d7a);
             font-size: 20px;
             cursor: pointer;
-            pointer-events: auto; /* Mejor control */
+            pointer-events: auto;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
             animation: floatBubble linear forwards;
             transition: transform 0.2s;
             border: 1px solid rgba(255, 255, 255, 0.5);
             opacity: 0.9;
-            z-index: 1; /* Asegurar que estén detrás del menú */
+            z-index: 1;
         }
         .heart-bubble i {
             z-index: 2;
@@ -1009,7 +1071,7 @@
                 opacity: 0.6;
             }
             100% {
-                transform: translateY(calc(-100vh + 100px)) scale(1); /* Se detiene 100px antes del menú */
+                transform: translateY(calc(-100vh + 100px)) scale(1);
                 opacity: 0;
             }
         }
@@ -1084,7 +1146,6 @@
             transform: translateY(-50%);
             right: 10%;
             text-align: left;
-            /* Removido el fondo transparente */
             background: none;
             backdrop-filter: none;
             border: none;
@@ -1102,7 +1163,7 @@
             }
         }
         .hero h1 {
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-size: 4.5rem;
             color: white;
             margin-bottom: 20px;
@@ -1121,7 +1182,7 @@
             animation: fadeIn 2s ease;
             line-height: 1.6;
             font-weight: 500;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             color: white;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
@@ -1153,7 +1214,7 @@
         }
         .section-title {
             text-align: center;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-size: 4rem;
             color: white;
             margin-bottom: 60px;
@@ -1226,13 +1287,13 @@
         .message-text {
             font-size: 2.2rem;
             line-height: 1.8;
-            color: #ff4081 !important; /* CAMBIO: Color rosado más vibrante */
+            color: #ff4081 !important;
             margin: 0 0 40px 0;
             position: relative;
             padding: 0 0 0 30px;
             font-family: 'Maven Pro', sans-serif;
             font-weight: 500;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important; /* CAMBIO: Sombra más definida */
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important;
             font-style: italic;
             letter-spacing: 0.5px;
             border-left: 4px solid rgba(255, 107, 139, 0.8);
@@ -1261,11 +1322,11 @@
         /* Estilos específicos para Con la Bendición */
         .parents-text {
             font-size: 2.2rem;
-            color: #ff4081 !important; /* CAMBIO: Color rosado más vibrante */
+            color: #ff4081 !important;
             margin: 0 0 30px 0;
             font-family: 'Maven Pro', sans-serif;
             font-weight: 600;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important; /* CAMBIO: Sombra más definida */
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important;
             padding: 0;
             letter-spacing: 1px;
             font-style: italic;
@@ -1274,12 +1335,12 @@
         .parents-names {
             font-family: 'Great Vibes', cursive;
             font-size: 3.2rem;
-            color: #e91e63 !important; /* CAMBIO: Color rosado más intenso */
+            color: #e91e63 !important;
             margin: 0;
             transition: transform 0.5s ease;
             line-height: 1.4;
             font-weight: 400;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6) !important; /* CAMBIO: Sombra ajustada */
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6) !important;
             padding: 0;
             letter-spacing: 2px;
         }
@@ -1291,12 +1352,12 @@
 
         .highlight-name {
             font-size: 3.8rem;
-            color: #d81b60 !important; /* CAMBIO: Color rosado oscuro/vibrante */
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important; /* CAMBIO: Sombra más definida */
+            color: #d81b60 !important;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important;
             display: block;
             margin-top: 20px;
             font-weight: 700;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-style: italic;
         }
 
@@ -1408,7 +1469,7 @@
         /* Ajustar las secciones para la nueva estructura */
         .message-section,
         .parents-section {
-            background: none !important; /* Quitamos el fondo de imagen */
+            background: none !important;
             padding: 120px 5% !important;
             position: relative;
             overflow: hidden;
@@ -1466,7 +1527,6 @@
             border-radius: 0;
             max-width: 800px;
             margin: 0 auto;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             border: none;
@@ -1490,24 +1550,6 @@
             z-index: 0;
         }
         
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 60px;
-            flex-wrap: wrap;
-        }
-        .countdown-item.pulse {
-            animation: heartbeat 0.8s ease;
-        }
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            15% { transform: scale(1.1); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.15); }
-            60% { transform: scale(1); }
-        }
-        
         .countdown-message {
             margin-top: 60px;
             font-size: 2.5rem;
@@ -1515,7 +1557,7 @@
             font-style: italic;
             font-weight: 600;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         /* Sección ceremonia - SIN CUADRO DE FONDO */
@@ -1537,7 +1579,6 @@
         .ceremony-container {
             position: relative;
             z-index: 1;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             padding: 0;
@@ -1552,14 +1593,14 @@
             margin-bottom: 30px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .ceremony-container p {
             font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-weight: 500;
         }
         .ceremony-image {
@@ -1589,7 +1630,7 @@
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-size: 1.3rem;
         }
         .map-link i {
@@ -1621,7 +1662,6 @@
         .reception-container {
             position: relative;
             z-index: 1;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             padding: 0;
@@ -1636,14 +1676,14 @@
             margin-bottom: 30px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .reception-container p {
             font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-weight: 500;
         }
         .reception-image {
@@ -1682,7 +1722,6 @@
         .itinerary-container {
             max-width: 900px;
             margin: 0 auto;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             padding: 0;
@@ -1717,7 +1756,6 @@
         .timeline-content {
             width: 45%;
             padding: 30px;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             border-radius: 0;
@@ -1767,7 +1805,6 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             padding: 0;
@@ -1795,7 +1832,6 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             padding: 0;
@@ -1806,7 +1842,7 @@
             color: white;
             margin-bottom: 40px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-weight: 500;
         }
         
@@ -1819,7 +1855,6 @@
             margin-bottom: 40px;
         }
         .filter-btn {
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 155, 179, 0.5);
             padding: 12px 25px;
@@ -1833,7 +1868,7 @@
             color: white;
             min-width: 160px;
             justify-content: center;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-weight: 500;
         }
         .filter-btn:hover {
@@ -1864,11 +1899,11 @@
             background: rgba(255, 255, 255, 0.2);
             color: white;
             backdrop-filter: blur(5px);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .guestlist-search input::placeholder {
             color: rgba(255, 255, 255, 0.7);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .guestlist-search input:focus {
             border-color: rgba(255, 107, 139, 0.8);
@@ -1893,7 +1928,6 @@
             overflow-y: auto;
             border-radius: 0;
             border: 2px solid rgba(255, 255, 255, 0.2);
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.05);
         }
         
@@ -1911,7 +1945,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 1.1rem;
             color: white;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         .guestlist-table th {
@@ -1924,7 +1958,7 @@
             z-index: 10;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             white-space: nowrap;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         .guestlist-table th:hover {
@@ -1964,7 +1998,6 @@
         .guestlist-message {
             margin-top: 40px;
             padding: 25px;
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.1);
             border-radius: 0;
             font-size: 1.5rem;
@@ -1973,7 +2006,7 @@
             text-align: center;
             border: 2px solid rgba(255, 155, 179, 0.5);
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         /* Sección confirmación - SIN CUADRO DE FONDO */
@@ -1998,7 +2031,6 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             padding: 0;
@@ -2011,7 +2043,7 @@
             line-height: 1.6;
             font-weight: 500;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .confirmation-text strong {
             color: white;
@@ -2047,7 +2079,6 @@
             z-index: 1;
             padding: 0;
             border-radius: 0;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             border: none;
@@ -2059,12 +2090,11 @@
             font-weight: 600;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
             line-height: 1.6;
-            /* SIN fondo transparente */
             background: none;
             padding: 0;
             border-radius: 0;
             border: none;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-style: italic;
         }
         .envelope-icon {
@@ -2160,7 +2190,6 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.2);
             color: var(--rosa-oscuro);
             border: none;
@@ -2226,7 +2255,6 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             padding: 0;
@@ -2239,12 +2267,11 @@
             font-weight: 600;
             text-align: center;
             padding: 0;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             border-radius: 0;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-style: italic;
         }
         .quiz-question {
@@ -2252,7 +2279,7 @@
             color: white;
             margin-bottom: 40px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .quiz-options {
             display: grid;
@@ -2261,7 +2288,6 @@
             margin-bottom: 50px;
         }
         .quiz-option {
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 155, 179, 0.5);
             padding: 20px;
@@ -2272,7 +2298,7 @@
             position: relative;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .quiz-option:hover {
             background: rgba(255, 155, 179, 0.3);
@@ -2294,7 +2320,6 @@
             border-color: rgba(244, 67, 54, 0.8);
         }
         .quiz-button {
-            /* SIN fondo transparente */
             background: rgba(255, 107, 139, 0.7);
             color: white;
             border: none;
@@ -2304,7 +2329,7 @@
             cursor: pointer;
             transition: all 0.3s;
             margin: 15px;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-weight: 500;
             letter-spacing: 1px;
         }
@@ -2330,16 +2355,14 @@
             justify-content: center;
             transition: all 0.3s ease;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .feedback-correct {
-            /* SIN fondo transparente */
             background: rgba(76, 175, 80, 0.2);
             color: #c8e6c9;
             border: 2px solid rgba(76, 175, 80, 0.5);
         }
         .feedback-incorrect {
-            /* SIN fondo transparente */
             background: rgba(244, 67, 54, 0.2);
             color: #ffcdd2;
             border: 2px solid rgba(244, 67, 54, 0.5);
@@ -2351,7 +2374,7 @@
             min-height: 60px;
             display: none;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .quiz-score {
             margin-top: 40px;
@@ -2360,12 +2383,11 @@
             font-weight: bold;
             display: none;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .quiz-final-message {
             margin-top: 40px;
             padding: 25px;
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.1);
             border-radius: 0;
             font-size: 1.8rem;
@@ -2374,12 +2396,11 @@
             display: none;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
             border: 2px solid rgba(255, 255, 255, 0.2);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         .quiz-instructions {
             margin-top: 40px;
             padding: 25px;
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.1);
             border-radius: 0;
             text-align: center;
@@ -2390,7 +2411,7 @@
             font-size: 1.5rem;
             color: white;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
 
         /* Sección Compartir Fotos - SIN CUADRO DE FONDO - MODIFICADO */
@@ -2428,12 +2449,11 @@
             margin-left: auto;
             margin-right: auto;
             padding: 0;
-            /* SIN fondo transparente */
             background: none;
             backdrop-filter: none;
             border-radius: 0;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-style: italic;
         }
 
@@ -2450,7 +2470,6 @@
             gap: 15px;
             margin: 30px 0;
             padding: 20px;
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.1);
             border-radius: 0;
             border: 2px dashed rgba(255, 155, 179, 0.5);
@@ -2460,7 +2479,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: white;
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
         }
 
@@ -2471,13 +2490,12 @@
             gap: 10px;
             margin: 20px 0;
             padding: 15px;
-            /* SIN fondo transparente */
             background: rgba(255, 255, 255, 0.1);
             border-radius: 0;
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.9);
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
 
         .upload-info i {
@@ -2497,7 +2515,7 @@
             font-size: 1.8rem;
             margin-bottom: 25px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
             font-weight: 500;
         }
         .social-icons {
@@ -2520,7 +2538,7 @@
             font-size: 1.1rem;
             opacity: 0.9;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif; /* CAMBIO: Maven Pro */
+            font-family: 'Maven Pro', sans-serif;
         }
         
         /* Animaciones */
@@ -3075,7 +3093,7 @@
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Mis 15 Años</h1>
-            <h2>"XIMENA"</h2> <!-- CAMBIO: Comillas agregadas -->
+            <h2>"XIMENA"</h2> <!-- CAMBIO: Fuente Maven Pro cursiva -->
             <p>Con mucha alegría quiero compartir contigo este momento tan especial en mi vida. Te espero para celebrar juntos esta fecha inolvidable.</p>
         </div>
         <div class="scroll-down">
@@ -3097,7 +3115,7 @@
                         Agradezco a Dios por estos 15 años de bendiciones y a mis padres por su amor incondicional. 
                         Espero compartir este momento tan especial con las personas más importantes de mi vida.
                     </p>
-                    <div class="signature">"Ximena Alcantar Valdez"</div> <!-- CAMBIO: Comillas agregadas -->
+                    <div class="signature">"Ximena Alcantar Valdez"</div> <!-- CAMBIO: Fuente Maven Pro cursiva -->
                 </div>
             </div>
         </div>
@@ -3118,7 +3136,7 @@
                         y<br>
                         Jazzel Valdez García<br>
                         junto a su hija<br>
-                        <span class="highlight-name">Ximena Alcantar Valdez</span>
+                        <span class="highlight-name">Ximena Alcantar Valdez</span> <!-- CAMBIO: Fuente Maven Pro cursiva -->
                     </div>
                 </div>
             </div>
@@ -3137,26 +3155,31 @@
         </div>
     </section>
 
-    <!-- 5. Sección Contador Regresivo - SIN CUADRO DE FONDO -->
+    <!-- 5. Sección Contador Regresivo - CON CAMBIOS SOLICITADOS -->
     <section class="countdown-section" id="cuenta">
         <h2 class="section-title">Cuenta Regresiva</h2>
         <div class="countdown-container">
             <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">00</div>
-                    <div class="countdown-label">Días</div>
+                <!-- DÍAS SOLOS EN GRANDE Y DESTACADO -->
+                <div class="countdown-days-container">
+                    <div class="countdown-days-number" id="days">00</div>
+                    <div class="countdown-days-label">Días</div>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">00</div>
-                    <div class="countdown-label">Horas</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">00</div>
-                    <div class="countdown-label">Minutos</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">00</div>
-                    <div class="countdown-label">Segundos</div>
+                
+                <!-- HORAS, MINUTOS Y SEGUNDOS DEBAJO -->
+                <div class="countdown-details">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Horas</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutos</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Segundos</div>
+                    </div>
                 </div>
             </div>
             <div class="countdown-message" id="countdown-message">¡Faltan muy pocos días para este momento especial!</div>
@@ -3928,7 +3951,7 @@
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "amigos",
                     cabezaFamilia: false,
-                    status: "pendiente" // Todos pendientes según el Excel
+                    status: "pendiente"
                 });
             });
         };
@@ -4257,7 +4280,7 @@
             });
         });
 
-        // Contador regresivo
+        // Contador regresivo - ACTUALIZADO CON NUEVA ESTRUCTURA
         function updateCountdown() {
             const eventDate = new Date('February 07, 2026 19:00:00').getTime();
             const now = new Date().getTime();
@@ -4270,9 +4293,9 @@
 
             // Aplicar efecto de latido si el valor cambia
             if (previousValues.days !== days) {
-                document.getElementById('days').parentElement.classList.add('pulse');
+                document.getElementById('days').classList.add('pulse');
                 setTimeout(() => {
-                    document.getElementById('days').parentElement.classList.remove('pulse');
+                    document.getElementById('days').classList.remove('pulse');
                 }, 1000);
             }
             if (previousValues.hours !== hours) {
