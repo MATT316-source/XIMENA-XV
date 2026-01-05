@@ -3650,285 +3650,263 @@
         // LISTA DE INVITADOS - CON TODOS LOS NOMBRES DEL EXCEL - CORREGIDO
         // =============================================
 
-        // Datos EXACTOS de invitados del Excel
+        // Datos EXACTOS de invitados del Excel - RESPETANDO EL ORDEN
         const guestListData = [];
 
-        // Familia Marcos - 99 invitados
-        const familiaMarcos = [
-            "NAVARRETE MIRANDA GLORIA",
-            "TOLEDO NAVARRETE SANDRA",
-            "TOLEDO NAVARRETE JAVIER",
-            "MERCADO CAMARGO BERTHA",
-            "TOLEDO MERCADO JAVIER",
-            "GARCIA TOVAR RUBI",
-            "TOLEDO GARCIA PERLA",
-            "TOLEDO MERCADO WENDY",
-            "ZEPEDA TOLEDO ALFONSO",
-            "ZEPEDA TOLEDO SOFIA",
-            "CASTREJON ELIAS",
-            "TOLEDO MERCADO DIANA",
-            "AVILA TOLEDO KATERIN",
-            "TOLEDO NAVARRETE MARIA TERESA",
-            "CORTES TORRES EMILIANO",
-            "CORTES GOMEZ LAURA",
-            "PEREZ MARISCAL OMAR",
-            "PEREZ CORTES CAMILA",
-            "ALCANTAR TOLEDO JEANNETE",
-            "VILLA HERNANDEZ CARLOS",
-            "VILLA ALCANTAR KARLA",
-            "VILLA ALCANTAR CARLOS",
-            "ALCANTAR TOLEDO ALFREDO",
-            "PANTOJA LAZARO LIZBETH",
-            "GONZALEZ GUEVARA ORLANDO",
-            "VILLA HERNANDEZ FABIOLA",
-            "GONZALEZ VILLA MAXIMILIANO",
-            "ALCANTAR TOLEDO MARCOS ALFREDO",
-            "VALDEZ GARCIA JAZZEL",
-            "ALCANTAR VALDEZ MARCOS HAZIEL",
-            "ALCANTAR VALDEZ XIMENA",
-            "ALCANTAR GAYTAN ALFREDO",
-            "ALCANTAR CAMPOS VALERIA",
-            "CAMPOS ORTIZ ANGEL",
-            "TOLEDO NAVARRETE MARIA DE LOURDES",
-            "MEDINA ZAMBRANO RENE",
-            "MEDINA TOLEDO RENE",
-            "ARREOLA MARTINEZ JAZMIN",
-            "MEDINA ARREOLA RENATA",
-            "MEDINA ESQUIVEL MILTON RENE",
-            "MEDINA QUINTANA WALTER",
-            "MEDINA QUINTANA DARWIN",
-            "MEDINA TOLEDO ALEJANDRO",
-            "PANIAHUA LOPEZ PATRICIA",
-            "MEDINA TOLEDO ERIKA",
-            "VEGA TORRES JAVIER",
-            "AYALA MEDINA VANESA",
-            "VEGA MEDINA YARA",
-            "TOLEDO NAVARRETE CARLOS",
-            "HERNANDEZ MEJIA MARIA",
-            "TOLEDO HERNANDEZ CARLOS",
-            "ZARCO BOLAÑOS KARINA",
-            "TOLEDO ZARCO ANETTE MICHEL",
-            "TOLEDO ZARCO ARLET ARELY",
-            "TOLEDO ZARCO ALISON",
-            "TOLEDO NAVARRETE ARMANDO",
-            "GUTIERREZ BOTELLO ANGELICA",
-            "TOLEDO GUTIERREZ AARON",
-            "TOLEDO GUTIERREZ ALAN",
-            "TOLEDO NAVARRETE CHRISTIAN",
-            "TOLEDO NAVARRETE JORGE",
-            "MORA HERNANDEZ MARILY",
-            "TOLEDO MORA PAULINA",
-            "TOLEDO NAVARRETE LESLI",
-            "ESTRADA HERNANDEZ DANIEL",
-            "MALDONADO TOLEDO JAIR",
-            "MALDONADO TOLEDO VANESA",
-            "TOLEDO NAVARRETE CRISTOFER",
-            "TOLEDO NAVARRETE VALERIA",
-            "FERNANDEZ TOLEDO ZAMIRA",
-            "TOLEDO NAVARRETE DENISE",
-            "DE JOSE TOLEDO LEONARDO",
-            "DE JOSE TOLEDO JOANA",
-            "DE JOSE TOLEDO DECLAN",
-            "TOLEDO NAVARRETE GLORIA",
-            "NAVARRETE TOLEDO ERICK",
-            "NAVARRETE MORALES ESBEYDI SARAI",
-            "NAVARRETE NAVARRETE ERICKA",
-            "NAVARRETE NAVARRETE GLORIA",
-            "NAVARRETE NAVARRETE FRANCISCO",
-            "NAVARRETE TOLEDO ANDREA",
-            "GARCIA GUTIERREZ GABRIEL",
-            "LOPEZ NAVARRETE ANGEL MANUEL",
-            "LOPEZ NAVARRETE IVAN ALEXANDER",
-            "LOPEZ NAVARRETE ESTRELLA NICOL",
-            "TOLEDO MELENA GEOVANNI",
-            "OSEGUERA RODRIGUEZ GEORGINA AIDA",
-            "TOLEDO OSEGUERA MARCO GIOVANNI",
-            "TOLEDO OSEGUERA JENNIFER PAULINA",
-            "TOLEDO MELENA DAVID",
-            "CHAVEZ ORTIZ PATRICIA ANGELICA",
-            "TOLEDO CHAVEZ BRIAN EDUARDO",
-            "TERCERO NAVARRETE SUSANA",
-            "TORRES TERCERO JILDARDO",
-            "TORRES TERCERO NAYELI EDITH",
-            "TORRES TERCERO JILDARDO",
-            "TERCERO NAVARRETE VICTOR",
-            "TERCERRO NAVARRETE MARIA MAGDALENA",
-            "CHAVEZ LOPEZ CUAUHTEMOC"
-        ];
+        // Crear invitados exactamente como aparecen en el Excel
+        // Familia Marcos (99 invitados)
+        const createFamiliaMarcosGuests = () => {
+            const nombres = [
+                {nombre: "NAVARRETE MIRANDA GLORIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE MIRANDA CARMEN", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO NAVARRETE SANDRA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO NAVARRETE JAVIER", tipo: "PLATILLO ADULTO"},
+                {nombre: "MERCADO CAMARGO BERTHA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO MERCADO JAVIER", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA TOVAR RUBI", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO GARCIA PERLA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO MERCADO WENDY", tipo: "PLATILLO ADULTO"},
+                {nombre: "ZEPEDA TOLEDO ALFONSO", tipo: "PLATILLO ADULTO"},
+                {nombre: "ZEPEDA TOLEDO SOFIA", tipo: "PLATILLO NIÑO"},
+                {nombre: "CASTREJON ELIAS", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO MERCADO DIANA", tipo: "PLATILLO ADULTO"},
+                {nombre: "AVILA TOLEDO KATERIN", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO NAVARRETE MARIA TERESA", tipo: "PLATILLO ADULTO"},
+                {nombre: "CORTES TORRES EMILIANO", tipo: "PLATILLO ADULTO"},
+                {nombre: "CORTES GOMEZ LAURA", tipo: "PLATILLO ADULTO"},
+                {nombre: "PEREZ MARISCAL OMAR", tipo: "PLATILLO ADULTO"},
+                {nombre: "PEREZ CORTES CAMILA", tipo: "PLATILLO ADULTO"},
+                {nombre: "ALCANTAR TOLEDO JEANNETE", tipo: "PLATILLO NIÑO"},
+                {nombre: "VILLA HERNANDEZ CARLOS", tipo: "PLATILLO ADULTO"},
+                {nombre: "VILLA ALCANTAR KARLA", tipo: "PLATILLO ADULTO"},
+                {nombre: "VILLA ALCANTAR CARLOS", tipo: "PLATILLO NIÑO"},
+                {nombre: "ALCANTAR TOLEDO ALFREDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "PANTOJA LAZARO LIZBETH", tipo: "PLATILLO ADULTO"},
+                {nombre: "GONZALEZ GUEVARA ORLANDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "VILLA HERNANDEZ FABIOLA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GONZALEZ VILLA MAXIMILIANO", tipo: "PLATILLO ADULTO"},
+                {nombre: "ALCANTAR TOLEDO MARCOS ALFREDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "VALDEZ GARCIA JAZZEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "ALCANTAR VALDEZ MARCOS HAZIEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "ALCANTAR VALDEZ XIMENA", tipo: "PLATILLO ADULTO"},
+                {nombre: "ALCANTAR GAYTAN ALFREDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "ALCANTAR CAMPOS VALERIA", tipo: "PLATILLO NIÑO"},
+                {nombre: "CAMPOS ORTIZ ANGEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO NAVARRETE MARIA DE LOURDES", tipo: "PLATILLO ADULTO"},
+                {nombre: "MEDINA ZAMBRANO RENE", tipo: "PLATILLO ADULTO"},
+                {nombre: "MEDINA TOLEDO RENE", tipo: "PLATILLO ADULTO"},
+                {nombre: "ARREOLA MARTINEZ JAZMIN", tipo: "PLATILLO ADULTO"},
+                {nombre: "MEDINA ARREOLA RENATA", tipo: "PLATILLO NIÑO"},
+                {nombre: "MEDINA ESQUIVEL MILTON RENE", tipo: "PLATILLO ADULTO"},
+                {nombre: "MEDINA QUINTANA WALTER", tipo: "PLATILLO ADULTO"},
+                {nombre: "MEDINA QUINTANA DARWIN", tipo: "PLATILLO ADULTO"},
+                {nombre: "MEDINA TOLEDO ALEJANDRO", tipo: "PLATILLO ADULTO"},
+                {nombre: "PANIAHUA LOPEZ PATRICIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "MEDINA TOLEDO ERIKA", tipo: "PLATILLO ADULTO"},
+                {nombre: "VEGA TORRES JAVIER", tipo: "PLATILLO ADULTO"},
+                {nombre: "AYALA MEDINA VANESA", tipo: "PLATILLO ADULTO"},
+                {nombre: "VEGA MEDINA YARA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO NAVARRETE CARLOS", tipo: "PLATILLO ADULTO"},
+                {nombre: "HERNANDEZ MEJIA MARIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO HERNANDEZ CARLOS", tipo: "PLATILLO ADULTO"},
+                {nombre: "ZARCO BOLAÑOS KARINA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO ZARCO ANETTE MICHEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO ZARCO ARLET ARELY", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO ZARCO ALISON", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO NAVARRETE ARMANDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "GUTIERREZ BOTELLO ANGELICA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO GUTIERREZ AARON", tipo: "PLATILLO NIÑO"},
+                {nombre: "TOLEDO GUTIERREZ ALAN", tipo: "PLATILLO NIÑO"},
+                {nombre: "TOLEDO NAVARRETE CHRISTIAN", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO NAVARRETE JORGE", tipo: "PLATILLO ADULTO"},
+                {nombre: "MORA HERNANDEZ MARILY", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO MORA PAULINA", tipo: "PLATILLO NIÑO"},
+                {nombre: "TOLEDO NAVARRETE LESLI", tipo: "PLATILLO ADULTO"},
+                {nombre: "ESTRADA HERNANDEZ DANIEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "MALDONADO TOLEDO JAIR", tipo: "PLATILLO ADULTO"},
+                {nombre: "MALDONADO TOLEDO VANESA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO NAVARRETE CRISTOFER", tipo: "PLATILLO NIÑO"},
+                {nombre: "TOLEDO NAVARRETE VALERIA", tipo: "PLATILLO NIÑO"},
+                {nombre: "FERNANDEZ TOLEDO ZAMIRA", tipo: "PLATILLO NIÑO"},
+                {nombre: "TOLEDO NAVARRETE DENISE", tipo: "PLATILLO ADULTO"},
+                {nombre: "DE JOSE TOLEDO LEONARDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "DE JOSE TOLEDO JOANA", tipo: "PLATILLO NIÑO"},
+                {nombre: "DE JOSE TOLEDO DECLAN", tipo: "PLATILLO NIÑO"},
+                {nombre: "TOLEDO NAVARRETE GLORIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE TOLEDO ERICK", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE MORALES ESBEYDI SARAI", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE NAVARRETE ERICKA", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE NAVARRETE GLORIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE NAVARRETE FRANCISCO", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE TOLEDO ANDREA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA GUTIERREZ GABRIEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "LOPEZ NAVARRETE ANGEL MANUEL", tipo: "PLATILLO NIÑO"},
+                {nombre: "LOPEZ NAVARRETE IVAN ALEXANDER", tipo: "PLATILLO NIÑO"},
+                {nombre: "LOPEZ NAVARRETE ESTRELLA NICOL", tipo: "PLATILLO NIÑO"},
+                {nombre: "TOLEDO MELENA GEOVANNI", tipo: "PLATILLO ADULTO"},
+                {nombre: "OSEGUERA RODRIGUEZ GEORGINA AIDA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO OSEGUERA MARCO GIOVANNI", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO OSEGUERA JENNIFER PAULINA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO MELENA DAVID", tipo: "PLATILLO ADULTO"},
+                {nombre: "CHAVEZ ORTIZ PATRICIA ANGELICA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TOLEDO CHAVEZ BRIAN EDUARDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "TERCERO NAVARRETE SUSANA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TORRES TERCERO JILDARDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "TORRES TERCERO NAYELI EDITH", tipo: "PLATILLO ADULTO"},
+                {nombre: "TORRES TERCERO JILDARDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "TERCERO NAVARRETE VICTOR", tipo: "PLATILLO ADULTO"},
+                {nombre: "TERCERRO NAVARRETE MARIA MAGDALENA", tipo: "PLATILLO ADULTO"},
+                {nombre: "CHAVEZ LOPEZ CUAUHTEMOC", tipo: "PLATILLO ADULTO"}
+            ];
 
-        // Familia Jazzel - 82 invitados (81 originales + 1 agregado)
-        const familiaJazzel = [
-            "MUÑOZ PADILLA CANDIDA",
-            "MUÑOZ PADILLA VIRGINIA",
-            "TORRES GARCIA KEVIN",
-            "TORRES GARCIA ZULEMA",
-            "GARCIA MUÑOZ RIGOBERTO",
-            "GARCIA MUÑOZ OBDULIA",
-            "HURTADO GARCIA EDWIN OMAR",
-            "HURTADO GARCIA EDGAR",
-            "HURTADO GARCIA GAEL",
-            "HURTADO GARCIA RICARDO",
-            "GARCIA MUÑOZ FRANCISCO",
-            "NAVARRETE MARTINEZ CONCEPCION",
-            "GARCIA NAVARRETE FRANCISCO",
-            "ESCAMILLA GONZALEZ YAZMIN",
-            "GARCIA ESCAMILLA VERA LUNA",
-            "GARCIA NAVARRETE JONATHAN",
-            "HIDALGO SANDRA",
-            "GARCIA NAVARRETE OSCAR",
-            "SANCHEZ BARBOSA BERENICE",
-            "GARCIA SANCHEZ SELENE",
-            "GARCIA SANCHEZ OSCAR TADEO",
-            "GARCIA NAVARRETE ANGELICA",
-            "RAMIREZ GARCIA IVANNA VICTORIA",
-            "RAMIREZ GARCIA RENE DE MARIA",
-            "VALDEZ MORALES DALIA",
-            "CAMPOS LARA FELIX",
-            "CAMPOS VALDEZ VEANEY",
-            "PEREZ SANCHEZ GUSTAVO",
-            "PEREZ CAMPOS GUSTAVO",
-            "CAMPOS VALDEZ ARISBETH",
-            "MORALES CONTRERAS ISIDRO",
-            "LOZANO CONTRERAS ALEXA",
-            "CAMPOS VALDEZ DALIA",
-            "CALLEROS CARLOS",
-            "CALLEROS FELIX",
-            "CALLEROS REGINA",
-            "GARCIA MUÑOZ RAMIRO",
-            "GARCIA MUÑOZ RANULFO",
-            "NAVARRETE MARTINEZ LETICIA",
-            "GARCIA NAVARRETE MARICELA",
-            "GUZMAN ABEL",
-            "GUZMAN GLADIS",
-            "GUZMAN ARCHI",
-            "GUZMAN ARGENIS",
-            "VALDEZ GARCIA YULMA",
-            "VALDEZ GARCIA MARLEN",
-            "GARCIA GUILLEN RAMON",
-            "ARRIAGA RIVERA KAREN",
-            "GUTIERREZ GARCIA ULISES",
-            "ARREOLA DURAN CINTHYA",
-            "ARREOLA DURAN IVON",
-            "GUTIERREZ ARREOLA ULISES GABRIEL",
-            "VALDEZ GARCIA NAYAMEL",
-            "CHAVEZ ALBOR ALEJANDRA",
-            "CHAVEZ ALBOR WILLIAM",
-            "CHAVEZ ALBOR BRAYAN",
-            "VALDEZ CHAVEZ JOHANA",
-            "VALDEZ CHAVEZ ALEXANDRA",
-            "VALDEZ MORALES ANTONIO",
-            "GARCIA MUÑOS MARGARITA",
-            "LOZANO DE LOS SANTOS FATIMA",
-            "LOZANO ANTONIO",
-            "VALDEZ GARCIA KARLA",
-            "VALDEZ GARCIA NAYELI",
-            "GARCIA MUÑOZ ROGELIO",
-            "MACEDO RODRIGUEZ ARCENIA",
-            "GARCIA MACEDO MIGUEL",
-            "GARCIA MACEDO JOSUE",
-            "GARCIA MACEDO MONICA",
-            "PALACIOS EROS SHIRVE",
-            "PALACIOS GARCIA ASHLEY AERIT",
-            "HURTADO JAVIER",
-            "GARCIA MUÑOZ SERGIO",
-            "LOMELI YESENIA",
-            "GARCIA LOMELI SERGIO",
-            "GARCIA LOMELI YEDOVIR",
-            "GARCIA MUÑOZ MATEO",
-            "ARREOLA MIRANDA RAMONA",
-            "ARREOLA DURAN ROSALBA",
-            "ARREOLA ALEXIS JEOVANNI",
-            "GUZMAN LUIS ANGEL",
-            "GARCIA MUÑOZ ELVIA"  // Agregado solicitado
-        ];
-
-        // Amigos de Ximena - 19 invitados (17 originales + 2 agregados)
-        const amigosXimena = [
-            "DE LA CRUZ RIVERA YORSHELI FERNANDA",
-            "RIVERA ALMAZAN ALEJANDRA",
-            "DE LA CRUZ RIVERA MICHELL",
-            "TERAN LAVOIGNET HANNA ELAINE",
-            "TERAN FARIAS ELEAZAR SAID",
-            "LAVOIGNET LOPEZ DAINELAINE",
-            "TERAN LAVOIGNET LIAM SAID",
-            "TERAN LAVOIGNET SAID ELI",
-            "MONCADA LEON IKER MATHIAS",
-            "CORONA PADILLA VIOLETA ZARETH",
-            "MAMA",
-            "REYES CHAVEZ MAYTE",
-            "PIÑA LUIS LIBNI VELANI",
-            "CALDERON SOSA JOSHAR DANIEL",
-            "SAUCEDO RANGEL PEDRO AARON",
-            "SANCHEZ CARRANZA PATRICIA",
-            "ESPOSO MAETRA PATY",
-            "PADILLA LOPEZ MARIA ELENA",  // Agregado solicitado
-            "CORONA DOMINGUEZ ARNOLDO"    // Agregado solicitado
-        ];
-
-        // Agregar Familia Marcos al array
-        familiaMarcos.forEach((nombre, index) => {
-            const tipoPlatillo = nombre.includes("SOFIA") || 
-                               nombre.includes("JEANNETE") || 
-                               nombre.includes("VALERIA") || 
-                               nombre.includes("PAULINA") ||
-                               nombre.includes("CRISTOFER") ||
-                               nombre.includes("VALERIA") ||
-                               nombre.includes("ZAMIRA") ||
-                               nombre.includes("JOANA") ||
-                               nombre.includes("DECLAN") ||
-                               nombre.includes("RENATA") ||
-                               nombre.includes("ARCHI") ||
-                               nombre.includes("RENE DE MARIA") ||
-                               nombre.includes("WILLIAM") ||
-                               nombre.includes("GUSTAVO") ||
-                               nombre.includes("ANTONIO") ||
-                               nombre.includes("OSCAR TADEO") ||
-                               nombre.includes("VERA LUNA") ||
-                               nombre.includes("CARLOS") ? "NIÑO" : "ADULTO";
-            
-            guestListData.push({
-                name: nombre,
-                type: tipoPlatillo.toLowerCase(),
-                group: "familia-marcos",
-                cabezaFamilia: index < 10,
-                status: Math.random() > 0.5 ? "confirmado" : "pendiente"
+            nombres.forEach((item, index) => {
+                guestListData.push({
+                    name: item.nombre,
+                    type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
+                    group: "familia-marcos",
+                    cabezaFamilia: index < 10,
+                    status: "pendiente" // Todos inicialmente pendientes
+                });
             });
-        });
+        };
 
-        // Agregar Familia Jazzel al array
-        familiaJazzel.forEach((nombre, index) => {
-            const tipoPlatillo = nombre.includes("VERA LUNA") || 
-                               nombre.includes("RENE DE MARIA") || 
-                               nombre.includes("OSCAR TADEO") || 
-                               nombre.includes("GUSTAVO") ||
-                               nombre.includes("WILLIAM") ||
-                               nombre.includes("ABEL") ||
-                               nombre.includes("ARCHI") ||
-                               nombre.includes("ALEXIS") ||
-                               nombre.includes("ANTONIO") ? "NIÑO" : "ADULTO";
-            
-            guestListData.push({
-                name: nombre,
-                type: tipoPlatillo.toLowerCase(),
-                group: "familia-jazzel",
-                cabezaFamilia: index < 8,
-                status: Math.random() > 0.5 ? "confirmado" : "pendiente"
-            });
-        });
+        // Familia Jazzel (82 invitados)
+        const createFamiliaJazzelGuests = () => {
+            const nombres = [
+                {nombre: "MUÑOZ PADILLA CANDIDA", tipo: "PLATILLO ADULTO"},
+                {nombre: "MUÑOZ PADILLA VIRGINIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "TORRES GARCIA KEVIN", tipo: "PLATILLO ADULTO"},
+                {nombre: "TORRES GARCIA ZULEMA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ RIGOBERTO", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ OBDULIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "HURTADO GARCIA EDWIN OMAR", tipo: "PLATILLO ADULTO"},
+                {nombre: "HURTADO GARCIA EDGAR", tipo: "PLATILLO ADULTO"},
+                {nombre: "HURTADO GARCIA GAEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "HURTADO GARCIA RICARDO", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ FRANCISCO", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE MARTINEZ CONCEPCION", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA NAVARRETE FRANCISCO", tipo: "PLATILLO ADULTO"},
+                {nombre: "ESCAMILLA GONZALEZ YAZMIN", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA ESCAMILLA VERA LUNA", tipo: "PLATILLO NIÑO"},
+                {nombre: "GARCIA NAVARRETE JONATHAN", tipo: "PLATILLO ADULTO"},
+                {nombre: "HIDALGO SANDRA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA NAVARRETE OSCAR", tipo: "PLATILLO ADULTO"},
+                {nombre: "SANCHEZ BARBOSA BERENICE", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA SANCHEZ SELENE", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA SANCHEZ OSCAR TADEO", tipo: "PLATILLO NIÑO"},
+                {nombre: "GARCIA NAVARRETE ANGELICA", tipo: "PLATILLO ADULTO"},
+                {nombre: "RAMIREZ GARCIA IVANNA VICTORIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "RAMIREZ GARCIA RENE DE MARIA", tipo: "PLATILLO NIÑO"},
+                {nombre: "VALDEZ MORALES DALIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "CAMPOS LARA FELIX", tipo: "PLATILLO ADULTO"},
+                {nombre: "CAMPOS VALDEZ VEANEY", tipo: "PLATILLO ADULTO"},
+                {nombre: "PEREZ SANCHEZ GUSTAVO", tipo: "PLATILLO ADULTO"},
+                {nombre: "PEREZ CAMPOS GUSTAVO", tipo: "PLATILLO NIÑO"},
+                {nombre: "CAMPOS VALDEZ ARISBETH", tipo: "PLATILLO ADULTO"},
+                {nombre: "MORALES CONTRERAS ISIDRO", tipo: "PLATILLO ADULTO"},
+                {nombre: "LOZANO CONTRERAS ALEXA", tipo: "PLATILLO ADULTO"},
+                {nombre: "CAMPOS VALDEZ DALIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "CALLEROS CARLOS", tipo: "PLATILLO ADULTO"},
+                {nombre: "CALLEROS FELIX", tipo: "PLATILLO ADULTO"},
+                {nombre: "CALLEROS REGINA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ RAMIRO", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ RANULFO", tipo: "PLATILLO ADULTO"},
+                {nombre: "NAVARRETE MARTINEZ LETICIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA NAVARRETE MARICELA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GUZMAN ABEL", tipo: "PLATILLO NIÑO"},
+                {nombre: "GUZMAN GLADIS", tipo: "PLATILLO ADULTO"},
+                {nombre: "GUZMAN ARCHI", tipo: "PLATILLO NIÑO"},
+                {nombre: "GUZMAN ARGENIS", tipo: "PLATILLO ADULTO"},
+                {nombre: "VALDEZ GARCIA YULMA", tipo: "PLATILLO ADULTO"},
+                {nombre: "VALDEZ GARCIA MARLEN", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA GUILLEN RAMON", tipo: "PLATILLO ADULTO"},
+                {nombre: "ARRIAGA RIVERA KAREN", tipo: "PLATILLO ADULTO"},
+                {nombre: "GUTIERREZ GARCIA ULISES", tipo: "PLATILLO ADULTO"},
+                {nombre: "ARREOLA DURAN CINTHYA", tipo: "PLATILLO ADULTO"},
+                {nombre: "ARREOLA DURAN IVON", tipo: "PLATILLO ADULTO"},
+                {nombre: "GUTIERREZ ARREOLA ULISES GABRIEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "VALDEZ GARCIA NAYAMEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "CHAVEZ ALBOR ALEJANDRA", tipo: "PLATILLO ADULTO"},
+                {nombre: "CHAVEZ ALBOR WILLIAM", tipo: "PLATILLO NIÑO"},
+                {nombre: "CHAVEZ ALBOR BRAYAN", tipo: "PLATILLO ADULTO"},
+                {nombre: "VALDEZ CHAVEZ JOHANA", tipo: "PLATILLO ADULTO"},
+                {nombre: "VALDEZ CHAVEZ ALEXANDRA", tipo: "PLATILLO ADULTO"},
+                {nombre: "VALDEZ MORALES ANTONIO", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOS MARGARITA", tipo: "PLATILLO ADULTO"},
+                {nombre: "LOZANO DE LOS SANTOS FATIMA", tipo: "PLATILLO ADULTO"},
+                {nombre: "LOZANO ANTONIO", tipo: "PLATILLO NIÑO"},
+                {nombre: "VALDEZ GARCIA KARLA", tipo: "PLATILLO ADULTO"},
+                {nombre: "VALDEZ GARCIA NAYELI", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ ROGELIO", tipo: "PLATILLO ADULTO"},
+                {nombre: "MACEDO RODRIGUEZ ARCENIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MACEDO MIGUEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MACEDO JOSUE", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MACEDO MONICA", tipo: "PLATILLO ADULTO"},
+                {nombre: "PALACIOS EROS SHIRVE", tipo: "PLATILLO ADULTO"},
+                {nombre: "PALACIOS GARCIA ASHLEY AERIT", tipo: "PLATILLO ADULTO"},
+                {nombre: "HURTADO JAVIER", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ SERGIO", tipo: "PLATILLO ADULTO"},
+                {nombre: "LOMELI YESENIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA LOMELI SERGIO", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA LOMELI YEDOVIR", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ MATEO", tipo: "PLATILLO ADULTO"},
+                {nombre: "ARREOLA MIRANDA RAMONA", tipo: "PLATILLO ADULTO"},
+                {nombre: "ARREOLA DURAN ROSALBA", tipo: "PLATILLO ADULTO"},
+                {nombre: "ARREOLA ALEXIS JEOVANNI", tipo: "PLATILLO NIÑO"},
+                {nombre: "GUZMAN LUIS ANGEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "GARCIA MUÑOZ ELVIA", tipo: "PLATILLO ADULTO"}
+            ];
 
-        // Agregar Amigos de Ximena al array
-        amigosXimena.forEach((nombre, index) => {
-            const tipoPlatillo = nombre.includes("LIAM SAID") || 
-                               nombre.includes("SAID ELI") ? "NIÑO" : "ADULTO";
-            
-            guestListData.push({
-                name: nombre,
-                type: tipoPlatillo.toLowerCase(),
-                group: "amigos",
-                cabezaFamilia: false,
-                status: Math.random() > 0.6 ? "confirmado" : "pendiente"
+            nombres.forEach((item, index) => {
+                guestListData.push({
+                    name: item.nombre,
+                    type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
+                    group: "familia-jazzel",
+                    cabezaFamilia: index < 8,
+                    status: "pendiente" // Todos inicialmente pendientes
+                });
             });
-        });
+        };
+
+        // Amigos de Ximena (19 invitados)
+        const createAmigosXimenaGuests = () => {
+            const nombres = [
+                {nombre: "DE LA CRUZ RIVERA YORSHELI FERNANDA", tipo: "PLATILLO ADULTO"},
+                {nombre: "RIVERA ALMAZAN ALEJANDRA", tipo: "PLATILLO ADULTO"},
+                {nombre: "DE LA CRUZ RIVERA MICHELL", tipo: "PLATILLO ADULTO"},
+                {nombre: "TERAN LAVOIGNET HANNA ELAINE", tipo: "PLATILLO ADULTO"},
+                {nombre: "TERAN FARIAS ELEAZAR SAID", tipo: "PLATILLO ADULTO"},
+                {nombre: "LAVOIGNET LOPEZ DAINELAINE", tipo: "PLATILLO ADULTO"},
+                {nombre: "TERAN LAVOIGNET LIAM SAID", tipo: "PLATILLO NIÑO"},
+                {nombre: "TERAN LAVOIGNET SAID ELI", tipo: "PLATILLO NIÑO"},
+                {nombre: "MONCADA LEON IKER MATHIAS", tipo: "PLATILLO ADULTO"},
+                {nombre: "CORONA PADILLA VIOLETA ZARETH", tipo: "PLATILLO ADULTO"},
+                {nombre: "MAMA", tipo: "PLATILLO ADULTO"},
+                {nombre: "REYES CHAVEZ MAYTE", tipo: "PLATILLO ADULTO"},
+                {nombre: "PIÑA LUIS LIBNI VELANI", tipo: "PLATILLO ADULTO"},
+                {nombre: "CALDERON SOSA JOSHAR DANIEL", tipo: "PLATILLO ADULTO"},
+                {nombre: "SAUCEDO RANGEL PEDRO AARON", tipo: "PLATILLO ADULTO"},
+                {nombre: "SANCHEZ CARRANZA PATRICIA", tipo: "PLATILLO ADULTO"},
+                {nombre: "ESPOSO MAETRA PATY", tipo: "PLATILLO ADULTO"},
+                {nombre: "PADILLA LOPEZ MARIA ELENA", tipo: "PLATILLO ADULTO"},
+                {nombre: "CORONA DOMINGUEZ ARNOLDO", tipo: "PLATILLO ADULTO"}
+            ];
+
+            nombres.forEach((item, index) => {
+                guestListData.push({
+                    name: item.nombre,
+                    type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
+                    group: "amigos",
+                    cabezaFamilia: false,
+                    status: "pendiente" // Todos inicialmente pendientes
+                });
+            });
+        };
+
+        // Crear todos los invitados en el orden correcto
+        createFamiliaMarcosGuests();
+        createFamiliaJazzelGuests();
+        createAmigosXimenaGuests();
 
         // Función para cargar la lista de invitados
         function loadGuestList(filter = 'all') {
@@ -3964,15 +3942,7 @@
             // Crear cuerpo de la tabla
             const tbody = document.createElement('tbody');
             
-            // Ordenar invitados por grupo y nombre
-            filteredGuests.sort((a, b) => {
-                if (a.group === b.group) {
-                    return a.name.localeCompare(b.name);
-                }
-                return a.group.localeCompare(b.group);
-            });
-            
-            // Agregar cada invitado
+            // Agregar cada invitado EN EL ORDEN ORIGINAL
             filteredGuests.forEach(guest => {
                 const row = document.createElement('tr');
                 
@@ -3993,10 +3963,23 @@
                 }
                 
                 const typeCell = document.createElement('td');
-                typeCell.textContent = guest.type === 'adult' ? 'Platillo Adulto' : 'Platillo Niño';
+                typeCell.textContent = guest.type === 'adulto' ? 'Platillo Adulto' : 'Platillo Niño';
                 
                 const statusCell = document.createElement('td');
-                statusCell.innerHTML = `<span class="status-badge ${guest.status}">${guest.status === 'confirmado' ? 'Confirmado' : 'Pendiente'}</span>`;
+                const statusBadge = document.createElement('span');
+                statusBadge.classList.add('status-badge', guest.status);
+                statusBadge.textContent = guest.status === 'confirmado' ? 'Confirmado' : 'Pendiente';
+                statusBadge.dataset.name = guest.name; // Para identificar al invitado
+                statusBadge.style.cursor = 'pointer'; // Hacer clickable
+                
+                // Agregar evento para cambiar estado al hacer clic
+                statusBadge.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const guestName = this.dataset.name;
+                    toggleConfirmation(guestName);
+                });
+                
+                statusCell.appendChild(statusBadge);
                 
                 row.appendChild(nameCell);
                 row.appendChild(typeCell);
@@ -4015,6 +3998,74 @@
                 noResults.innerHTML = '<p>No se encontraron invitados con los filtros seleccionados.</p>';
                 guestListBody.appendChild(noResults);
             }
+        }
+
+        // Función para cambiar el estado de confirmación
+        function toggleConfirmation(guestName) {
+            const guest = guestListData.find(g => g.name === guestName);
+            if (guest) {
+                // Alternar entre pendiente y confirmado
+                guest.status = guest.status === 'pendiente' ? 'confirmado' : 'pendiente';
+                
+                // Actualizar la vista
+                const currentFilter = document.querySelector('.filter-btn.active').dataset.filter;
+                loadGuestList(currentFilter);
+                
+                // Guardar en localStorage
+                saveGuestStatusToLocalStorage();
+                
+                // Mostrar mensaje de confirmación
+                showConfirmationMessage(guest.name, guest.status);
+            }
+        }
+
+        // Función para guardar el estado en localStorage
+        function saveGuestStatusToLocalStorage() {
+            const statusData = {};
+            guestListData.forEach(guest => {
+                statusData[guest.name] = guest.status;
+            });
+            localStorage.setItem('guestStatus', JSON.stringify(statusData));
+        }
+
+        // Función para cargar el estado desde localStorage
+        function loadGuestStatusFromLocalStorage() {
+            const savedStatus = localStorage.getItem('guestStatus');
+            if (savedStatus) {
+                const statusData = JSON.parse(savedStatus);
+                guestListData.forEach(guest => {
+                    if (statusData[guest.name]) {
+                        guest.status = statusData[guest.name];
+                    }
+                });
+            }
+        }
+
+        // Función para mostrar mensaje de confirmación
+        function showConfirmationMessage(guestName, status) {
+            const message = document.createElement('div');
+            message.classList.add('guestlist-message');
+            message.style.position = 'fixed';
+            message.style.top = '20px';
+            message.style.right = '20px';
+            message.style.zIndex = '10000';
+            message.style.maxWidth = '300px';
+            message.style.animation = 'fadeIn 0.5s';
+            message.innerHTML = `
+                <p>${guestName} ha sido marcado como <strong>${status === 'confirmado' ? 'CONFIRMADO' : 'PENDIENTE'}</strong></p>
+            `;
+            
+            document.body.appendChild(message);
+            
+            // Remover el mensaje después de 3 segundos
+            setTimeout(() => {
+                message.style.animation = 'fadeIn 0.5s reverse';
+                setTimeout(() => {
+                    if (message.parentNode) {
+                        message.parentNode.removeChild(message);
+                    }
+                }, 500);
+            }, 3000);
         }
 
         // Configurar filtros de invitados
@@ -4478,6 +4529,9 @@
         window.addEventListener('load', function() {
             // Mostrar el modal de activación de audio
             audioModal.style.display = 'flex';
+            
+            // Cargar estados guardados
+            loadGuestStatusFromLocalStorage();
             
             // Inicializar todas las funciones
             createBubbleHearts();
