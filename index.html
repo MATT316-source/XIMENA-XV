@@ -393,8 +393,8 @@
         }
         
         .photo-option {
-            background: rgba(255, 255, 255, 0.2) !important;
-            backdrop-filter: blur(10px) !important;
+            background: none !important; /* QUITADO: recuadro transparente */
+            backdrop-filter: none !important; /* QUITADO: efecto de vidrio */
             border-radius: 20px !important;
             padding: 40px !important;
             margin: 20px auto !important;
@@ -2449,8 +2449,8 @@
             margin-left: auto;
             margin-right: auto;
             padding: 0;
-            background: none;
-            backdrop-filter: none;
+            background: none; /* QUITADO: recuadro transparente */
+            backdrop-filter: none; /* QUITADO: efecto de vidrio */
             border-radius: 0;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
             font-family: 'Maven Pro', sans-serif;
@@ -3676,7 +3676,7 @@
         // Datos EXACTOS de invitados del Excel - CON ESTADOS ACTUALIZADOS
         const guestListData = [];
 
-        // Invitados confirmados según el Excel
+        // Invitados confirmados según el Excel - MODIFICA AQUÍ PARA CAMBIAR ESTADOS
         const confirmedGuestsFamiliaMarcos = [
             "TOLEDO NAVARRETE MARIA TERESA",
             "CORTES TORRES EMILIANO", 
@@ -3692,7 +3692,9 @@
             "ALCANTAR VALDEZ XIMENA",
             "ALCANTAR GAYTAN ALFREDO",
             "ALCANTAR CAMPOS VALERIA",
-            "CAMPOS ORTIZ ANGEL"
+            "CAMPOS ORTIZ ANGEL",
+            "NAVARRETE MIRANDA GLORIA", // AGREGADO: ejemplo de cambio a confirmado
+            "NAVARRETE MIRANDA CARMEN"  // AGREGADO: ejemplo de cambio a confirmado
         ];
 
         const confirmedGuestsFamiliaJazzel = [
@@ -3701,7 +3703,15 @@
             "GARCIA GUILLEN RAMON",
             "ARRIAGA RIVERA KAREN",
             "VALDEZ MORALES ANTONIO",
-            "GARCIA MUÑOS MARGARITA"
+            "GARCIA MUÑOS MARGARITA",
+            "MUÑOZ PADILLA CANDIDA", // AGREGADO: ejemplo de cambio a confirmado
+            "MUÑOZ PADILLA VIRGINIA"  // AGREGADO: ejemplo de cambio a confirmado
+        ];
+
+        // AGREGADO: Amigos Ximena confirmados (ejemplo)
+        const confirmedGuestsAmigosXimena = [
+            "DE LA CRUZ RIVERA YORSHELI FERNANDA", // AGREGADO: ejemplo de cambio a confirmado
+            "RIVERA ALMAZAN ALEJANDRA" // AGREGADO: ejemplo de cambio a confirmado
         ];
 
         // FUNCIONES PARA CREAR LISTA DE INVITADOS - ACTUALIZADAS
@@ -3921,7 +3931,7 @@
             });
         };
 
-        // Amigos de Ximena (19 invitados) - TODOS PENDIENTES SEGÚN EXCEL
+        // Amigos de Ximena (19 invitados) - CON ESTADOS MODIFICABLES
         const createAmigosXimenaGuests = () => {
             const nombres = [
                 {nombre: "DE LA CRUZ RIVERA YORSHELI FERNANDA", tipo: "PLATILLO ADULTO"},
@@ -3946,12 +3956,13 @@
             ];
 
             nombres.forEach((item, index) => {
+                const isConfirmed = confirmedGuestsAmigosXimena.includes(item.nombre);
                 guestListData.push({
                     name: item.nombre,
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "amigos",
                     cabezaFamilia: false,
-                    status: "pendiente"
+                    status: isConfirmed ? "confirmado" : "pendiente"
                 });
             });
         };
