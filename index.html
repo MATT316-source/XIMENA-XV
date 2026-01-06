@@ -467,13 +467,13 @@
         
         /* ========== CONTADOR REGRESIVO - NUEVO DISEÑO CON LATIDOS Y TONOS ROSAS ========== */
         .countdown-section {
-            background: url('https://i.pinimg.com/736x/f5/f8/c5/f5f8c536bfeb5b8fd45443ad5d8491f1.jpg') center/cover no-repeat fixed;
+            background: linear-gradient(135deg, #ffe8ec, #ffb5c4, #ffd9e0);
             text-align: center;
             position: relative;
-            padding: 120px 5%;
+            padding: 100px 5%;
             overflow: hidden;
         }
-        
+
         .countdown-section::before {
             content: '';
             position: absolute;
@@ -481,126 +481,115 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.05) 100%);
             z-index: 0;
         }
-        
-        .countdown-section .section-title {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 40px;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-        }
-        
+
         .countdown-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            padding: 40px 20px;
+            padding: 50px 20px;
             border-radius: 30px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 20px 40px rgba(255, 46, 116, 0.3);
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 107, 139, 0.4);
+            box-shadow: 
+                0 15px 30px rgba(255, 46, 116, 0.2),
+                inset 0 0 30px rgba(255, 214, 224, 0.5);
         }
-        
+
         .countdown {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
+            gap: 30px;
         }
-        
-        /* Contenedor principal de días - con latido */
+
         .countdown-days-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
-            width: 100%;
             position: relative;
+            margin-bottom: 20px;
         }
-        
-        /* Efecto de latido para los días */
+
         .countdown-days-number {
-            font-size: 9rem;
+            font-size: 10rem;
             font-weight: 900;
             font-family: 'Maven Pro', sans-serif;
             background: linear-gradient(45deg, #ff2e74, #ff6b8b, #ff2e74, #ff4d7a);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 15px;
-            animation: heartbeat 1.5s infinite;
-            text-shadow: 0 0 30px rgba(255, 46, 116, 0.8);
+            margin-bottom: 10px;
+            animation: heartbeat 1.8s infinite ease-in-out;
+            text-shadow: 0 0 30px rgba(255, 46, 116, 0.6);
             line-height: 1;
             position: relative;
-            padding: 0 30px;
-            border-radius: 20px;
+            padding: 0 40px;
+            letter-spacing: -5px;
         }
-        
-        /* Efecto de resplandor alrededor del número de días */
+
         .countdown-days-number::before {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 110%;
-            height: 120%;
-            background: radial-gradient(circle, rgba(255, 46, 116, 0.2) 0%, transparent 70%);
+            width: 120%;
+            height: 130%;
+            background: radial-gradient(circle, rgba(255, 46, 116, 0.25) 0%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
-            filter: blur(20px);
+            filter: blur(25px);
         }
-        
+
         .countdown-days-label {
             font-size: 2.8rem;
             font-weight: 700;
             color: white;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.85);
             font-family: 'Maven Pro', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             margin-top: 5px;
-            background: rgba(255, 107, 139, 0.3);
-            padding: 10px 30px;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 107, 139, 0.4);
+            padding: 12px 35px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
-        
-        /* Contenedor de horas, minutos, segundos */
+
         .countdown-details {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 25px;
             width: 100%;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 15px;
         }
-        
+
         .countdown-item {
-            background: linear-gradient(135deg, 
-                rgba(255, 46, 116, 0.7), 
-                rgba(255, 107, 139, 0.8),
-                rgba(255, 155, 179, 0.9));
-            padding: 30px 40px;
-            border-radius: 25px;
-            min-width: 200px;
-            transition: all 0.4s ease;
+            background: linear-gradient(145deg,
+                rgba(255, 107, 139, 0.7),
+                rgba(255, 156, 179, 0.8),
+                rgba(255, 214, 224, 0.6));
+            padding: 28px 35px;
+            border-radius: 22px;
+            min-width: 180px;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             color: white;
-            border: 3px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 15px 35px rgba(255, 46, 116, 0.5);
-            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 30px rgba(255, 46, 116, 0.3);
+            backdrop-filter: blur(8px);
         }
-        
-        /* Efecto de brillo interior */
+
         .countdown-item::before {
             content: '';
             position: absolute;
@@ -609,15 +598,14 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            opacity: 0.5;
+            opacity: 0.4;
             z-index: 0;
         }
-        
-        /* Números de horas, minutos, segundos - con tonos rosas degradados */
+
         .countdown-number {
-            font-size: 5rem;
+            font-size: 5.5rem;
             font-weight: 900;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             position: relative;
             z-index: 2;
             text-align: center;
@@ -626,233 +614,102 @@
             background-clip: text;
             color: transparent;
             line-height: 1;
-            text-shadow: 0 0 20px rgba(255, 46, 116, 0.6);
+            text-shadow: 0 0 20px rgba(255, 46, 116, 0.5);
             animation: pulseSoft 2s infinite;
+            letter-spacing: -2px;
         }
-        
+
         .countdown-label {
-            font-size: 2rem;
+            font-size: 1.9rem;
             color: rgba(255, 255, 255, 0.95);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-weight: 600;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             font-family: 'Maven Pro', sans-serif;
             position: relative;
             z-index: 2;
             text-align: center;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             padding: 8px 15px;
-            border-radius: 10px;
-            margin-top: 10px;
+            border-radius: 12px;
+            margin-top: 5px;
         }
-        
-        /* Animación de latido para los días */
+
         @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-                text-shadow: 0 0 30px rgba(255, 46, 116, 0.8);
-            }
-            50% {
-                transform: scale(1.05);
-                text-shadow: 0 0 50px rgba(255, 46, 116, 1), 0 0 60px rgba(255, 46, 116, 0.7);
-            }
-            100% {
-                transform: scale(1);
-                text-shadow: 0 0 30px rgba(255, 46, 116, 0.8);
-            }
+            0% { transform: scale(1); text-shadow: 0 0 30px rgba(255, 46, 116, 0.6); }
+            14% { transform: scale(1.08); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.06); }
+            70% { transform: scale(1); }
+            100% { transform: scale(1); text-shadow: 0 0 30px rgba(255, 46, 116, 0.6); }
         }
-        
-        /* Animación de pulso suave para horas, minutos, segundos */
+
         @keyframes pulseSoft {
-            0% {
-                text-shadow: 0 0 20px rgba(255, 46, 116, 0.6);
-            }
-            50% {
-                text-shadow: 0 0 35px rgba(255, 46, 116, 0.9), 0 0 45px rgba(255, 46, 116, 0.5);
-            }
-            100% {
-                text-shadow: 0 0 20px rgba(255, 46, 116, 0.6);
-            }
+            0% { text-shadow: 0 0 15px rgba(255, 46, 116, 0.4); }
+            50% { text-shadow: 0 0 30px rgba(255, 46, 116, 0.8), 0 0 40px rgba(255, 46, 116, 0.5); }
+            100% { text-shadow: 0 0 15px rgba(255, 46, 116, 0.4); }
         }
-        
-        /* Efecto de latido para cada unidad cuando cambia */
+
         .countdown-item.pulse {
-            animation: heartbeatItem 0.8s ease;
-            background: linear-gradient(135deg, 
-                rgba(255, 46, 116, 0.9), 
-                rgba(255, 107, 139, 1),
-                rgba(255, 155, 179, 1));
-            box-shadow: 0 20px 45px rgba(255, 46, 116, 0.7);
+            animation: heartbeatItem 0.6s ease;
         }
-        
+
         @keyframes heartbeatItem {
             0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
+            30% { transform: scale(1.12); }
             100% { transform: scale(1); }
         }
-        
-        /* Efecto hover para los items */
-        .countdown-item:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(255, 46, 116, 0.6);
-            background: linear-gradient(135deg, 
-                rgba(255, 46, 116, 0.8), 
-                rgba(255, 107, 139, 0.9),
-                rgba(255, 155, 179, 1));
-        }
-        
-        /* Mensaje debajo del contador */
+
         .countdown-message {
-            margin-top: 60px;
-            font-size: 2.5rem;
+            margin-top: 50px;
+            font-size: 2.4rem;
             color: white;
             font-style: italic;
             font-weight: 600;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
             font-family: 'Maven Pro', sans-serif;
-            background: rgba(255, 107, 139, 0.3);
-            padding: 25px 40px;
-            border-radius: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            max-width: 800px;
+            background: rgba(255, 107, 139, 0.4);
+            padding: 22px 35px;
+            border-radius: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             animation: fadeInOut 3s infinite;
+            backdrop-filter: blur(8px);
         }
-        
+
         @keyframes fadeInOut {
-            0%, 100% { opacity: 0.9; }
+            0%, 100% { opacity: 0.85; }
             50% { opacity: 1; }
         }
-        
-        /* Responsive para contador */
+
+        /* ==== Responsive ==== */
         @media (max-width: 992px) {
-            .countdown-days-number {
-                font-size: 7rem;
-            }
-            
-            .countdown-days-label {
-                font-size: 2.2rem;
-            }
-            
-            .countdown-item {
-                min-width: 180px;
-                padding: 25px 35px;
-            }
-            
-            .countdown-number {
-                font-size: 4rem;
-            }
-            
-            .countdown-label {
-                font-size: 1.7rem;
-            }
-            
-            .countdown-message {
-                font-size: 2rem;
-                padding: 20px 30px;
-            }
+            .countdown-days-number { font-size: 8rem; }
+            .countdown-days-label { font-size: 2.3rem; }
+            .countdown-item { min-width: 170px; padding: 25px 30px; }
+            .countdown-number { font-size: 4.5rem; }
+            .countdown-label { font-size: 1.7rem; }
+            .countdown-message { font-size: 2rem; }
         }
-        
+
         @media (max-width: 768px) {
-            .countdown-container {
-                padding: 30px 15px;
-            }
-            
-            .countdown-days-number {
-                font-size: 5rem;
-                padding: 0 20px;
-            }
-            
-            .countdown-days-label {
-                font-size: 1.8rem;
-                letter-spacing: 3px;
-                padding: 8px 20px;
-            }
-            
-            .countdown-details {
-                gap: 20px;
-            }
-            
-            .countdown-item {
-                min-width: 150px;
-                padding: 20px 25px;
-            }
-            
-            .countdown-number {
-                font-size: 3.2rem;
-            }
-            
-            .countdown-label {
-                font-size: 1.4rem;
-                letter-spacing: 2px;
-                padding: 6px 12px;
-            }
-            
-            .countdown-message {
-                font-size: 1.6rem;
-                padding: 15px 20px;
-                margin-top: 40px;
-            }
+            .countdown-days-number { font-size: 6rem; padding: 0 25px; }
+            .countdown-days-label { font-size: 1.9rem; }
+            .countdown-details { gap: 15px; }
+            .countdown-item { min-width: 150px; padding: 20px 22px; }
+            .countdown-number { font-size: 3.5rem; }
+            .countdown-label { font-size: 1.4rem; }
+            .countdown-message { font-size: 1.7rem; margin-top: 35px; }
         }
-        
+
         @media (max-width: 576px) {
-            .countdown-days-number {
-                font-size: 4rem;
-            }
-            
-            .countdown-days-label {
-                font-size: 1.5rem;
-                letter-spacing: 2px;
-            }
-            
-            .countdown-details {
-                gap: 15px;
-            }
-            
-            .countdown-item {
-                min-width: 130px;
-                padding: 18px 22px;
-            }
-            
-            .countdown-number {
-                font-size: 2.8rem;
-            }
-            
-            .countdown-label {
-                font-size: 1.2rem;
-                letter-spacing: 1px;
-            }
-            
-            .countdown-message {
-                font-size: 1.4rem;
-                padding: 12px 18px;
-                margin-top: 30px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .countdown-days-number {
-                font-size: 3.5rem;
-            }
-            
-            .countdown-details {
-                gap: 10px;
-            }
-            
-            .countdown-item {
-                min-width: 110px;
-                padding: 15px 20px;
-            }
-            
-            .countdown-number {
-                font-size: 2.5rem;
-            }
-            
-            .countdown-label {
-                font-size: 1.1rem;
-            }
+            .countdown-days-number { font-size: 4.5rem; }
+            .countdown-number { font-size: 2.8rem; }
+            .countdown-label { font-size: 1.2rem; }
+            .countdown-message { font-size: 1.4rem; }
         }
         
         /* FIN DEL NUEVO DISEÑO DE CONTADOR REGRESIVO */
