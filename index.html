@@ -134,7 +134,7 @@
         /* 1. Título principal - MÁS ELEGANTE Y ATTRACTIVO */
         .hero h1 {
             font-family: 'Parisienne', cursive !important; /* TIPOGRAFÍA ELEGANTE NUEVA */
-            font-size: 4rem !important;
+            font-size: 6rem !important;
             color: white !important;
             margin-bottom: 20px !important;
             animation: fadeInDown 1.5s ease !important;
@@ -151,25 +151,21 @@
             padding-top: 20px !important;
         }
         
-        /* 2. Nombre XIMENA - CAMBIADO A GREAT VIBES COMO SOLICITASTE */
+        /* 2. Nombre XIMENA - MÁS ELEGANTE */
         .hero-content h2 {
-            font-family: 'Great Vibes', cursive !important; /* TIPOGRAFÍA ELEGANTE CAMBIADA */
+            font-family: 'Alex Brush', cursive !important; /* TIPOGRAFÍA ELEGANTE */
             font-size: 5.5rem !important;
-            color: #ffffff !important; /* CAMBIO: Blanco puro para mejor visibilidad */
+            color: #ffebf0 !important;
             margin-bottom: 30px !important;
             animation: fadeInUp 1.8s ease !important;
             text-shadow: 
                 4px 4px 12px rgba(0, 0, 0, 0.9),
-                0 0 40px rgba(255, 46, 116, 0.9) !important; /* Aumentado el brillo */
+                0 0 40px rgba(255, 46, 116, 0.7) !important;
             font-weight: 400 !important;
             position: relative !important;
             display: inline-block !important;
             letter-spacing: 1px !important;
             margin-top: 10px !important;
-            background: linear-gradient(45deg, #ffffff, #ffebf0, #ffffff);
-            -webkit-background-clip: text !important;
-            background-clip: text !important;
-            color: transparent !important;
         }
         
         /* 3. Párrafo descriptivo - MEJORADO */
@@ -181,10 +177,10 @@
             line-height: 1.7 !important;
             font-weight: 400 !important;
             font-family: 'Cormorant Garamond', serif !important; /* TIPOGRAFÍA ELEGANTE */
-            color: #ffffff !important; /* CAMBIO: Blanco puro */
+            color: #fff8fb !important;
             text-shadow: 
                 2px 2px 8px rgba(0, 0, 0, 0.8),
-                0 0 20px rgba(255, 46, 116, 0.6) !important; /* Aumentado el brillo */
+                0 0 20px rgba(255, 46, 116, 0.5) !important;
             padding: 0 20px !important;
             font-style: italic !important;
         }
@@ -200,11 +196,11 @@
             height: 2px !important;
             background: linear-gradient(90deg, 
                 transparent, 
-                rgba(255, 214, 224, 0.9), 
-                rgba(255, 107, 139, 1), 
-                rgba(255, 214, 224, 0.9), 
+                rgba(255, 214, 224, 0.8), 
+                rgba(255, 107, 139, 0.9), 
+                rgba(255, 214, 224, 0.8), 
                 transparent) !important;
-            box-shadow: 0 0 15px rgba(255, 107, 139, 0.7) !important; /* Aumentado el brillo */
+            box-shadow: 0 0 15px rgba(255, 107, 139, 0.5) !important;
         }
         
         /* 5. Efecto de brillo sutil en el nombre */
@@ -217,7 +213,7 @@
             bottom: -10px !important;
             background: radial-gradient(
                 circle at center,
-                rgba(255, 255, 255, 0.15) 0%,
+                rgba(255, 255, 255, 0.1) 0%,
                 transparent 70%
             ) !important;
             z-index: -1 !important;
@@ -226,8 +222,8 @@
         }
         
         @keyframes gentleGlow {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 0.9; }
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
         }
         
         /* 6. Responsive para sección inicio */
@@ -273,36 +269,7 @@
         
         /* ========== CORRECCIONES SOLICITADAS ========== */
         
-        /* 2. Mensaje Especial - Texto justificado y marco completo */
-        .message-text {
-            text-align: justify !important; /* AÑADIDO: Texto justificado */
-            font-size: 2.2rem !important;
-            line-height: 1.8 !important;
-            color: #ff4081 !important;
-            margin: 0 0 40px 0 !important;
-            position: relative !important;
-            padding: 30px !important; /* AÑADIDO: Padding en los 4 lados */
-            font-family: 'Maven Pro', sans-serif !important;
-            font-weight: 500 !important;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important;
-            font-style: italic !important;
-            letter-spacing: 0.5px !important;
-            border: 4px solid var(--rosa-brillante) !important; /* CAMBIADO: Marco completo en 4 lados */
-            border-radius: 20px !important; /* AÑADIDO: Bordes redondeados */
-            background: rgba(255, 255, 255, 0.1) !important; /* AÑADIDO: Fondo sutil */
-            backdrop-filter: blur(5px) !important; /* AÑADIDO: Efecto vidrio */
-        }
-        
-        /* 3. Cambiar tipografía en Título de Mensaje Especial - CORREGIDO */
-        .message-section .section-title {
-            font-family: 'Parisienne', cursive !important; /* NUEVA TIPOGRAFÍA SOLICITADA */
-            font-size: 4rem !important;
-            color: var(--rosa-oscuro) !important;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) !important;
-            margin-bottom: 80px !important;
-            letter-spacing: 2px !important;
-        }
-        
+        /* 3. Cambiar tipografía en Mensaje Especial - CORREGIDO */
         .signature {
             font-family: 'Alex Brush', cursive !important; /* TIPOGRAFÍA ELEGANTE */
             font-size: 3.5rem !important;
@@ -358,56 +325,13 @@
         }
         
         .message-text::before {
-            top: -10px !important;
-            left: 15px !important;
+            top: -30px !important;
+            left: -15px !important;
         }
         
         .message-text::after {
-            bottom: -20px !important;
-            right: 15px !important;
-        }
-        
-        /* Responsive para el marco rosa */
-        @media (max-width: 768px) {
-            .message-text {
-                padding: 20px !important; /* Menos padding en móviles */
-                border-width: 3px !important; /* Marco más delgado */
-                font-size: 1.8rem !important; /* Texto más pequeño */
-            }
-            
-            .message-section .section-title {
-                font-size: 3.2rem !important; /* Título más pequeño */
-            }
-            
-            .message-text::before {
-                top: -5px !important;
-                left: 10px !important;
-                font-size: 3rem !important;
-            }
-            
-            .message-text::after {
-                bottom: -15px !important;
-                right: 10px !important;
-                font-size: 3rem !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .message-text {
-                padding: 15px !important;
-                border-width: 2px !important;
-                font-size: 1.5rem !important;
-                line-height: 1.6 !important;
-            }
-            
-            .message-section .section-title {
-                font-size: 2.5rem !important;
-            }
-            
-            .message-text::before,
-            .message-text::after {
-                font-size: 2.5rem !important;
-            }
+            bottom: -40px !important;
+            right: -15px !important;
         }
         
         /* 7. Sección Fecha - Mejorar visibilidad */
@@ -1554,17 +1478,13 @@
             color: #ff4081 !important;
             margin: 0 0 40px 0;
             position: relative;
-            padding: 30px;
+            padding: 0 0 0 30px;
             font-family: 'Maven Pro', sans-serif;
             font-weight: 500;
             text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important;
             font-style: italic;
             letter-spacing: 0.5px;
-            border: 4px solid var(--rosa-brillante) !important;
-            border-radius: 20px !important;
-            background: rgba(255, 255, 255, 0.1) !important;
-            backdrop-filter: blur(5px) !important;
-            text-align: justify !important;
+            border-left: 4px solid rgba(255, 107, 139, 0.8);
         }
 
         .message-text::before,
@@ -1578,13 +1498,13 @@
         }
 
         .message-text::before {
-            top: -10px;
-            left: 15px;
+            top: -20px;
+            left: 0;
         }
 
         .message-text::after {
-            bottom: -20px;
-            right: 15px;
+            bottom: -40px;
+            right: 0;
         }
 
         /* Estilos específicos para Con la Bendición */
@@ -1675,21 +1595,18 @@
             
             .message-text {
                 font-size: 1.8rem;
-                padding: 20px;
-                border-width: 3px;
-                text-align: justify !important;
+                padding: 0 20px;
+                border-left: none;
+                border-top: 4px solid rgba(255, 107, 139, 0.8);
+                padding-top: 20px;
             }
             
             .message-text::before {
-                top: -5px;
-                left: 10px;
-                font-size: 3rem;
+                left: 20px;
             }
             
             .message-text::after {
-                bottom: -15px;
-                right: 10px;
-                font-size: 3rem;
+                right: 20px;
             }
             
             .signature {
@@ -1717,8 +1634,7 @@
             
             .message-text {
                 font-size: 1.5rem;
-                padding: 15px;
-                border-width: 2px;
+                padding: 0 15px;
             }
             
             .signature {
@@ -1769,13 +1685,11 @@
         }
 
         /* Títulos ajustados */
-        .message-section .section-title {
-            font-family: 'Parisienne', cursive !important;
-            font-size: 4rem !important;
-            color: var(--rosa-oscuro) !important;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) !important;
-            margin-bottom: 80px !important;
-            letter-spacing: 2px !important;
+        .message-section .section-title,
+        .parents-section .section-title {
+            color: var(--rosa-oscuro);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 80px;
         }
         
         /* Sección de fecha - SIN CUADRO DE FONDO */
@@ -3296,7 +3210,7 @@
         </div>
     </header>
 
-    <!-- 1. Sección Inicio - MEJORADA CON TIPOGRAFÍAS ELEGANTES Y CLARAS -->
+    <!-- 1. Sección Inicio - MEJORADA CON TIPOGRAFÍAS ELEGANTES -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Mis 15 Años</h1>
@@ -3308,7 +3222,7 @@
         </div>
     </section>
 
-    <!-- 2. Sección Mensaje Especial - CON IMAGEN Y TEXTO JUSTIFICADO -->
+    <!-- 2. Sección Mensaje Especial - CON IMAGEN Y TEXTO -->
     <section class="message-section" id="mensaje">
         <h2 class="section-title">Un Mensaje Especial</h2>
         <div class="message-container">
@@ -3394,7 +3308,7 @@
         </div>
     </section>
 
-    <!-- 6. Sección Lista de Invitados - MODIFICADA SIN CONTADORES, CON NUEVOS INVITADOS -->
+    <!-- 6. Sección Lista de Invitados - MODIFICADA SIN CONTADORES -->
     <section class="guestlist-section" id="invitados">
         <h2 class="section-title">Lista de Invitados</h2>
         <div class="guestlist-container">
@@ -3426,7 +3340,7 @@
             
             <!-- Contenedor de tabla -->
             <div id="guestListBody">
-                <!-- La tabla se cargará dinámicamente con los nuevos invitados -->
+                <!-- La tabla se cargará dinámicamente -->
             </div>
             
             <div class="guestlist-message">
@@ -3893,13 +3807,13 @@
         });
 
         // =============================================
-        // LISTA DE INVITADOS - CON NUEVOS INVITADOS DEL EXCEL
+        // LISTA DE INVITADOS - CON TODOS LOS ESTADOS
         // =============================================
         
-        // Datos de invitados del Excel - TODOS LOS INVITADOS ACTUALIZADOS
+        // Datos de invitados del Excel - ESTADOS ACTUALIZADOS Y CORREGIDOS
         const guestListData = [];
 
-        // Familia Marcos (103 invitados) - CON ESTADOS REALES DEL EXCEL
+        // Familia Marcos (100 invitados) - CON ESTADOS REALES
         const createFamiliaMarcosGuests = () => {
             const nombres = [
                 {nombre: "NAVARRETE MIRANDA GLORIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3916,7 +3830,6 @@
                 {nombre: "CASTREJON ELIAS", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO MERCADO DIANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "AVILA TOLEDO KATERIN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "TOLEDO MERCADO DANIELA", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO NAVARRETE MARIA TERESA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "CORTES TORRES EMILIANO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "CORTES GOMEZ LAURA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3931,7 +3844,7 @@
                 {nombre: "GONZALEZ GUEVARA ORLANDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "VILLA HERNANDEZ FABIOLA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "GONZALEZ VILLA MAXIMILIANO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "ALCANTAR TOLEDO MARCOS ALFREDO", tipo: "PLATILLO ADULTO", estado: "NO ASISTIRÁ"},
+                {nombre: "ALCANTAR TOLEDO MARCOS ALFREDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "VALDEZ GARCIA JAZZEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "ALCANTAR VALDEZ MARCOS HAZIEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "ALCANTAR VALDEZ XIMENA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
@@ -3996,11 +3909,9 @@
                 {nombre: "TOLEDO MELENA DAVID", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "CHAVEZ ORTIZ PATRICIA ANGELICA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO CHAVEZ BRIAN EDUARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "TERCERO NAVARRETE ESPERANZA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERO NAVARRETE SUSANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TORRES TERCERO JILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TORRES TERCERO NAYELI EDITH", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "TORRES TERCERO JILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERO NAVARRETE VICTOR", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERRO NAVARRETE MARIA MAGDALENA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "CHAVEZ LOPEZ CUAUHTEMOC", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"}
@@ -4018,7 +3929,7 @@
             });
         };
 
-        // Familia Jazzel (82 invitados) - CON ESTADOS REALES DEL EXCEL
+        // Familia Jazzel (82 invitados) - CON ESTADOS REALES
         const createFamiliaJazzelGuests = () => {
             const nombres = [
                 {nombre: "MUÑOZ PADILLA CANDIDA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -4154,7 +4065,7 @@
             });
         };
 
-        // Crear todos los invitados (total: 103 + 82 + 20 = 205 invitados)
+        // Crear todos los invitados
         createFamiliaMarcosGuests();
         createFamiliaJazzelGuests();
         createAmigosXimenaGuests();
