@@ -151,21 +151,25 @@
             padding-top: 20px !important;
         }
         
-        /* 2. Nombre XIMENA - MÁS ELEGANTE */
+        /* 2. Nombre XIMENA - MÁS ELEGANTE Y CLARO */
         .hero-content h2 {
             font-family: 'Alex Brush', cursive !important; /* TIPOGRAFÍA ELEGANTE */
             font-size: 5.5rem !important;
-            color: #ffebf0 !important;
+            color: #ffffff !important; /* CAMBIO: Blanco puro para mejor visibilidad */
             margin-bottom: 30px !important;
             animation: fadeInUp 1.8s ease !important;
             text-shadow: 
                 4px 4px 12px rgba(0, 0, 0, 0.9),
-                0 0 40px rgba(255, 46, 116, 0.7) !important;
+                0 0 40px rgba(255, 46, 116, 0.9) !important; /* Aumentado el brillo */
             font-weight: 400 !important;
             position: relative !important;
             display: inline-block !important;
             letter-spacing: 1px !important;
             margin-top: 10px !important;
+            background: linear-gradient(45deg, #ffffff, #ffebf0, #ffffff);
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
         }
         
         /* 3. Párrafo descriptivo - MEJORADO */
@@ -177,10 +181,10 @@
             line-height: 1.7 !important;
             font-weight: 400 !important;
             font-family: 'Cormorant Garamond', serif !important; /* TIPOGRAFÍA ELEGANTE */
-            color: #fff8fb !important;
+            color: #ffffff !important; /* CAMBIO: Blanco puro */
             text-shadow: 
                 2px 2px 8px rgba(0, 0, 0, 0.8),
-                0 0 20px rgba(255, 46, 116, 0.5) !important;
+                0 0 20px rgba(255, 46, 116, 0.6) !important; /* Aumentado el brillo */
             padding: 0 20px !important;
             font-style: italic !important;
         }
@@ -196,11 +200,11 @@
             height: 2px !important;
             background: linear-gradient(90deg, 
                 transparent, 
-                rgba(255, 214, 224, 0.8), 
-                rgba(255, 107, 139, 0.9), 
-                rgba(255, 214, 224, 0.8), 
+                rgba(255, 214, 224, 0.9), 
+                rgba(255, 107, 139, 1), 
+                rgba(255, 214, 224, 0.9), 
                 transparent) !important;
-            box-shadow: 0 0 15px rgba(255, 107, 139, 0.5) !important;
+            box-shadow: 0 0 15px rgba(255, 107, 139, 0.7) !important; /* Aumentado el brillo */
         }
         
         /* 5. Efecto de brillo sutil en el nombre */
@@ -213,7 +217,7 @@
             bottom: -10px !important;
             background: radial-gradient(
                 circle at center,
-                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.15) 0%,
                 transparent 70%
             ) !important;
             z-index: -1 !important;
@@ -222,8 +226,8 @@
         }
         
         @keyframes gentleGlow {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.8; }
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.9; }
         }
         
         /* 6. Responsive para sección inicio */
@@ -268,6 +272,23 @@
         /* ========== FIN DE MEJORAS EN INICIO ========== */
         
         /* ========== CORRECCIONES SOLICITADAS ========== */
+        
+        /* 2. Mensaje Especial - Texto justificado */
+        .message-text {
+            text-align: justify !important; /* AÑADIDO: Texto justificado */
+            font-size: 2.2rem !important;
+            line-height: 1.8 !important;
+            color: #ff4081 !important;
+            margin: 0 0 40px 0 !important;
+            position: relative !important;
+            padding: 0 0 0 30px !important;
+            font-family: 'Maven Pro', sans-serif !important;
+            font-weight: 500 !important;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7) !important;
+            font-style: italic !important;
+            letter-spacing: 0.5px !important;
+            border-left: 4px solid rgba(255, 107, 139, 0.8) !important;
+        }
         
         /* 3. Cambiar tipografía en Mensaje Especial - CORREGIDO */
         .signature {
@@ -1485,6 +1506,7 @@
             font-style: italic;
             letter-spacing: 0.5px;
             border-left: 4px solid rgba(255, 107, 139, 0.8);
+            text-align: justify !important; /* AÑADIDO: Texto justificado */
         }
 
         .message-text::before,
@@ -1599,6 +1621,7 @@
                 border-left: none;
                 border-top: 4px solid rgba(255, 107, 139, 0.8);
                 padding-top: 20px;
+                text-align: justify !important; /* AÑADIDO: Texto justificado */
             }
             
             .message-text::before {
@@ -3210,7 +3233,7 @@
         </div>
     </header>
 
-    <!-- 1. Sección Inicio - MEJORADA CON TIPOGRAFÍAS ELEGANTES -->
+    <!-- 1. Sección Inicio - MEJORADA CON TIPOGRAFÍAS ELEGANTES Y CLARAS -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Mis 15 Años</h1>
@@ -3222,7 +3245,7 @@
         </div>
     </section>
 
-    <!-- 2. Sección Mensaje Especial - CON IMAGEN Y TEXTO -->
+    <!-- 2. Sección Mensaje Especial - CON IMAGEN Y TEXTO JUSTIFICADO -->
     <section class="message-section" id="mensaje">
         <h2 class="section-title">Un Mensaje Especial</h2>
         <div class="message-container">
@@ -3308,7 +3331,7 @@
         </div>
     </section>
 
-    <!-- 6. Sección Lista de Invitados - MODIFICADA SIN CONTADORES -->
+    <!-- 6. Sección Lista de Invitados - MODIFICADA SIN CONTADORES, CON NUEVOS INVITADOS -->
     <section class="guestlist-section" id="invitados">
         <h2 class="section-title">Lista de Invitados</h2>
         <div class="guestlist-container">
@@ -3340,7 +3363,7 @@
             
             <!-- Contenedor de tabla -->
             <div id="guestListBody">
-                <!-- La tabla se cargará dinámicamente -->
+                <!-- La tabla se cargará dinámicamente con los nuevos invitados -->
             </div>
             
             <div class="guestlist-message">
@@ -3807,13 +3830,13 @@
         });
 
         // =============================================
-        // LISTA DE INVITADOS - CON TODOS LOS ESTADOS
+        // LISTA DE INVITADOS - CON NUEVOS INVITADOS DEL EXCEL
         // =============================================
         
-        // Datos de invitados del Excel - ESTADOS ACTUALIZADOS Y CORREGIDOS
+        // Datos de invitados del Excel - TODOS LOS INVITADOS ACTUALIZADOS
         const guestListData = [];
 
-        // Familia Marcos (100 invitados) - CON ESTADOS REALES
+        // Familia Marcos (103 invitados) - CON ESTADOS REALES DEL EXCEL
         const createFamiliaMarcosGuests = () => {
             const nombres = [
                 {nombre: "NAVARRETE MIRANDA GLORIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3830,6 +3853,7 @@
                 {nombre: "CASTREJON ELIAS", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO MERCADO DIANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "AVILA TOLEDO KATERIN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "TOLEDO MERCADO DANIELA", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO NAVARRETE MARIA TERESA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "CORTES TORRES EMILIANO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "CORTES GOMEZ LAURA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3844,7 +3868,7 @@
                 {nombre: "GONZALEZ GUEVARA ORLANDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "VILLA HERNANDEZ FABIOLA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "GONZALEZ VILLA MAXIMILIANO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "ALCANTAR TOLEDO MARCOS ALFREDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+                {nombre: "ALCANTAR TOLEDO MARCOS ALFREDO", tipo: "PLATILLO ADULTO", estado: "NO ASISTIRÁ"},
                 {nombre: "VALDEZ GARCIA JAZZEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "ALCANTAR VALDEZ MARCOS HAZIEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "ALCANTAR VALDEZ XIMENA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
@@ -3909,9 +3933,11 @@
                 {nombre: "TOLEDO MELENA DAVID", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "CHAVEZ ORTIZ PATRICIA ANGELICA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO CHAVEZ BRIAN EDUARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "TERCERO NAVARRETE ESPERANZA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERO NAVARRETE SUSANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TORRES TERCERO JILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TORRES TERCERO NAYELI EDITH", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "TORRES TERCERO JILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERO NAVARRETE VICTOR", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERRO NAVARRETE MARIA MAGDALENA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "CHAVEZ LOPEZ CUAUHTEMOC", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"}
@@ -3929,7 +3955,7 @@
             });
         };
 
-        // Familia Jazzel (82 invitados) - CON ESTADOS REALES
+        // Familia Jazzel (82 invitados) - CON ESTADOS REALES DEL EXCEL
         const createFamiliaJazzelGuests = () => {
             const nombres = [
                 {nombre: "MUÑOZ PADILLA CANDIDA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -4065,7 +4091,7 @@
             });
         };
 
-        // Crear todos los invitados
+        // Crear todos los invitados (total: 103 + 82 + 20 = 205 invitados)
         createFamiliaMarcosGuests();
         createFamiliaJazzelGuests();
         createAmigosXimenaGuests();
