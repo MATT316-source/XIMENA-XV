@@ -87,7 +87,7 @@
     <!-- Tus estilos CSS aquí (se mantienen igual) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- AGREGAR MAVEN PRO A LAS FUENTES -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Maven+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Maven+Pro:wght@400;500;600;700&family=Parisienne&family=Alex+Brush&family=Petit+Formal+Script&display=swap" rel="stylesheet">
     
     <!-- Agregar Slick Carousel -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -113,6 +113,7 @@
             --verde: #4CAF50;
             --rojo: #F44336;
             --naranja: #FF9800;
+            --gris: #808080;
         }
         * {
             margin: 0;
@@ -128,45 +129,174 @@
             scroll-behavior: smooth;
         }
         
-        /* ========== CORRECCIONES SOLICITADAS ========== */
+        /* ========== MEJORAS EN LA SECCIÓN INICIO ========== */
         
-        /* 1. Cambiar tipo de cursiva en XIMENA a Maven Pro cursiva - CORREGIDO */
-        .hero-content h2 {
-            font-family: 'Maven Pro', sans-serif !important;
-            font-size: 4rem !important;
-            color: var(--rosa-brillante) !important;
-            margin-bottom: 30px !important;
-            animation: fadeInUp 1.5s ease !important;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7) !important;
-            font-weight: 400 !important;
-            font-style: italic !important; /* Cursiva como solicitaste */
+        /* 1. Título principal - MÁS ELEGANTE Y ATTRACTIVO */
+        .hero h1 {
+            font-family: 'Parisienne', cursive !important; /* TIPOGRAFÍA ELEGANTE NUEVA */
+            font-size: 6rem !important;
+            color: white !important;
+            margin-bottom: 20px !important;
+            animation: fadeInDown 1.5s ease !important;
+            text-shadow: 
+                3px 3px 8px rgba(0, 0, 0, 0.8),
+                0 0 30px rgba(255, 46, 116, 0.6) !important;
+            letter-spacing: 2px !important;
             position: relative !important;
             display: inline-block !important;
-        }
-        
-        /* 2. Cambiar tipografía en Mensaje Especial - CORREGIDO */
-        .signature {
-            font-family: 'Maven Pro', sans-serif !important; /* CAMBIO: Maven Pro */
-            font-size: 2.8rem !important;
-            color: #e91e63 !important; /* CAMBIO: Color rosado más intenso */
+            font-weight: 400 !important;
             text-align: center !important;
-            margin-top: 40px !important;
-            font-weight: 600 !important;
-            font-style: italic !important;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6) !important; /* CAMBIO: Sombra ajustada */
-            letter-spacing: 1px !important;
+            width: 100% !important;
+            line-height: 1.1 !important;
+            padding-top: 20px !important;
         }
         
-        /* 3. Ajustar línea rosa debajo de "Mis 15 Años" */
+        /* 2. Nombre XIMENA - MÁS ELEGANTE */
+        .hero-content h2 {
+            font-family: 'Alex Brush', cursive !important; /* TIPOGRAFÍA ELEGANTE */
+            font-size: 5.5rem !important;
+            color: #ffebf0 !important;
+            margin-bottom: 30px !important;
+            animation: fadeInUp 1.8s ease !important;
+            text-shadow: 
+                4px 4px 12px rgba(0, 0, 0, 0.9),
+                0 0 40px rgba(255, 46, 116, 0.7) !important;
+            font-weight: 400 !important;
+            position: relative !important;
+            display: inline-block !important;
+            letter-spacing: 1px !important;
+            margin-top: 10px !important;
+        }
+        
+        /* 3. Párrafo descriptivo - MEJORADO */
+        .hero p {
+            font-size: 2rem !important;
+            max-width: 700px !important;
+            margin: 0 auto 40px !important;
+            animation: fadeIn 2.2s ease !important;
+            line-height: 1.7 !important;
+            font-weight: 400 !important;
+            font-family: 'Cormorant Garamond', serif !important; /* TIPOGRAFÍA ELEGANTE */
+            color: #fff8fb !important;
+            text-shadow: 
+                2px 2px 8px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(255, 46, 116, 0.5) !important;
+            padding: 0 20px !important;
+            font-style: italic !important;
+        }
+        
+        /* 4. Línea decorativa debajo del título */
         .hero h1::after {
             content: '' !important;
             position: absolute !important;
-            bottom: -15px !important; /* Aumentar separación */
+            bottom: -20px !important;
             left: 50% !important;
             transform: translateX(-50%) !important;
-            width: 250px !important; /* Ancho adecuado para "Mis 15 Años" */
-            height: 4px !important;
-            background: linear-gradient(to right, rgba(255, 214, 224, 0.5), rgba(255, 107, 139, 0.8), rgba(255, 214, 224, 0.5)) !important;
+            width: 300px !important;
+            height: 2px !important;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 214, 224, 0.8), 
+                rgba(255, 107, 139, 0.9), 
+                rgba(255, 214, 224, 0.8), 
+                transparent) !important;
+            box-shadow: 0 0 15px rgba(255, 107, 139, 0.5) !important;
+        }
+        
+        /* 5. Efecto de brillo sutil en el nombre */
+        .hero-content h2::before {
+            content: '' !important;
+            position: absolute !important;
+            top: -10px !important;
+            left: -10px !important;
+            right: -10px !important;
+            bottom: -10px !important;
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 70%
+            ) !important;
+            z-index: -1 !important;
+            border-radius: 20px !important;
+            animation: gentleGlow 3s ease-in-out infinite !important;
+        }
+        
+        @keyframes gentleGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* 6. Responsive para sección inicio */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 4rem !important;
+                padding-top: 10px !important;
+            }
+            
+            .hero-content h2 {
+                font-size: 4rem !important;
+            }
+            
+            .hero p {
+                font-size: 1.6rem !important;
+            }
+            
+            .hero h1::after {
+                width: 200px !important;
+                bottom: -15px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 3.2rem !important;
+            }
+            
+            .hero-content h2 {
+                font-size: 3.2rem !important;
+            }
+            
+            .hero p {
+                font-size: 1.4rem !important;
+            }
+            
+            .hero h1::after {
+                width: 150px !important;
+            }
+        }
+        
+        /* ========== FIN DE MEJORAS EN INICIO ========== */
+        
+        /* ========== CORRECCIONES SOLICITADAS ========== */
+        
+        /* 3. Cambiar tipografía en Mensaje Especial - CORREGIDO */
+        .signature {
+            font-family: 'Alex Brush', cursive !important; /* TIPOGRAFÍA ELEGANTE */
+            font-size: 3.5rem !important;
+            color: #e91e63 !important;
+            text-align: center !important;
+            margin-top: 40px !important;
+            font-weight: 400 !important;
+            text-shadow: 
+                3px 3px 10px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(255, 46, 116, 0.5) !important;
+            letter-spacing: 1px !important;
+            position: relative !important;
+            padding-top: 10px !important;
+        }
+        
+        .signature::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 200px !important;
+            height: 1px !important;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 107, 139, 0.7), 
+                transparent) !important;
         }
         
         /* 4. Ajustar imagen en "Con la bendición de Dios" para celulares */
@@ -180,25 +310,6 @@
         @media (max-width: 480px) {
             .parents-section {
                 background-position: 80% center !important; /* Ajustar más para mostrar rostro */
-            }
-        }
-        
-        /* 5. Sección Inicio - Centrar texto "Mis Quince Años" */
-        .hero-content h1 {
-            text-align: center !important;
-            left: 0 !important;
-            right: 0 !important;
-            margin: 0 auto !important;
-            font-family: 'Maven Pro', sans-serif !important; /* CAMBIO: Maven Pro */
-            font-weight: 700 !important;
-            letter-spacing: 2px !important;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 3.5rem !important;
-                text-align: center !important;
-                width: 100% !important;
             }
         }
         
@@ -232,11 +343,11 @@
             margin-bottom: 10px !important;
         }
         .date-separator {
-             font-size: 2rem !important;
-             color: #ffd6e0 !important;
-             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8) !important;
-             font-weight: 700 !important;
-             letter-spacing: 4px !important;
+            font-size: 2rem !important;
+            color: #ffd6e0 !important;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8) !important;
+            font-weight: 700 !important;
+            letter-spacing: 4px !important;
         }
         
         .date-container .date-month {
@@ -441,6 +552,17 @@
             box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4) !important;
             transition: all 0.3s ease !important;
             min-width: 250px !important;
+        }
+        
+        /* Botón gris para "No podré asistir" */
+        .whatsapp-button.grey {
+            background: linear-gradient(45deg, #808080, #696969) !important;
+            box-shadow: 0 5px 20px rgba(128, 128, 128, 0.4) !important;
+        }
+        
+        .whatsapp-button.grey:hover {
+            background: linear-gradient(45deg, #696969, #808080) !important;
+            box-shadow: 0 10px 25px rgba(128, 128, 128, 0.6) !important;
         }
         
         .whatsapp-button:hover, .action-btn:hover {
@@ -744,6 +866,12 @@
             box-shadow: 0 2px 5px rgba(255, 152, 0, 0.3);
         }
         
+        .status-badge.no-asistira {
+            background-color: #F44336;
+            color: white;
+            box-shadow: 0 2px 5px rgba(244, 67, 54, 0.3);
+        }
+        
         /* Estilo para filas confirmadas - ROSA */
         .confirmado-row {
             background-color: rgba(255, 182, 193, 0.3) !important;
@@ -758,6 +886,15 @@
         
         .confirmado-row:hover {
             background-color: rgba(255, 182, 193, 0.6) !important;
+        }
+        
+        /* Estilo para fila NO ASISTIRÁ - GRIS */
+        .no-asistira-row {
+            background-color: rgba(128, 128, 128, 0.3) !important;
+        }
+        
+        .no-asistira-row:hover {
+            background-color: rgba(128, 128, 128, 0.6) !important;
         }
 
         /* Modal de activación de audio */
@@ -1236,30 +1373,7 @@
                 text-align: center;
             }
         }
-        .hero h1 {
-            font-family: 'Maven Pro', sans-serif;
-            font-size: 4.5rem;
-            color: white;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            animation: fadeInDown 1.5s ease;
-            letter-spacing: 2px;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }
-        .hero p {
-            font-size: 1.8rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            animation: fadeIn 2s ease;
-            line-height: 1.6;
-            font-weight: 500;
-            font-family: 'Maven Pro', sans-serif;
-            color: white;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-        }
+        
         .scroll-down {
             position: absolute;
             bottom: 30px;
@@ -1858,6 +1972,55 @@
             border-radius: 0;
         }
         
+        /* ====== CONTADORES ELIMINADOS - NO SE MUESTRAN ====== */
+        .all-counters {
+            display: none !important; /* CONTADORES OCULTOS */
+        }
+        
+        /* FILAS CON ESTILOS CORRECTOS */
+        .confirmado-row {
+            background-color: rgba(76, 175, 80, 0.15) !important;
+            transition: all 0.3s ease;
+        }
+        
+        .confirmado-row:hover {
+            background-color: rgba(76, 175, 80, 0.25) !important;
+        }
+        
+        .no-asistira-row {
+            background-color: rgba(244, 67, 54, 0.15) !important;
+            transition: all 0.3s ease;
+        }
+        
+        .no-asistira-row:hover {
+            background-color: rgba(244, 67, 54, 0.25) !important;
+        }
+        
+        .pendiente-row {
+            background-color: rgba(255, 152, 0, 0.15) !important;
+            transition: all 0.3s ease;
+        }
+        
+        .pendiente-row:hover {
+            background-color: rgba(255, 152, 0, 0.25) !important;
+        }
+        
+        /* BADGES MEJORADOS */
+        .status-badge.confirmado {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32) !important;
+            box-shadow: 0 3px 8px rgba(76, 175, 80, 0.4) !important;
+        }
+        
+        .status-badge.pendiente {
+            background: linear-gradient(135deg, #FF9800, #F57C00) !important;
+            box-shadow: 0 3px 8px rgba(255, 152, 0, 0.4) !important;
+        }
+        
+        .status-badge.no-asistira {
+            background: linear-gradient(135deg, #F44336, #C62828) !important;
+            box-shadow: 0 3px 8px rgba(244, 67, 54, 0.4) !important;
+        }
+        
         /* Sección lista de invitados - SIN CUADRO DE FONDO - CORREGIDA */
         .guestlist-section {
             background: url('https://i.pinimg.com/736x/70/73/d2/7073d22dccd8831ad7943468395e2aed.jpg') center/cover no-repeat fixed;
@@ -1893,36 +2056,7 @@
             font-weight: 500;
         }
         
-        /* Contador de pendientes - NUEVO */
-        .pending-counter {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding: 15px 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            border: 2px solid rgba(255, 155, 179, 0.5);
-        }
-        
-        .pending-counter .counter-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #FF9800;
-            text-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
-            font-family: 'Maven Pro', sans-serif;
-        }
-        
-        .pending-counter .counter-label {
-            font-size: 1.5rem;
-            color: white;
-            font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            font-family: 'Maven Pro', sans-serif;
-        }
-        
-        /* Filtros - SIN CANTIDAD - BÚSQUEDA DEBAJO DE AMIGOS XIMENA */
+        /* Filtros - MODIFICADOS (sin Solo Pendientes y Solo Confirmados) */
         .guestlist-filters {
             display: flex;
             justify-content: center;
@@ -1959,7 +2093,7 @@
             font-size: 1.2rem;
         }
         
-        /* Búsqueda - SIN CUADRO DE FONDO - MOVIDA ARRIBA */
+        /* Búsqueda - SIN CUADRO DE FONDO */
         .guestlist-search {
             margin-bottom: 40px;
             position: relative;
@@ -2007,7 +2141,7 @@
             background: rgba(255, 255, 255, 0.05);
         }
         
-        /* Tabla de invitados - SIN CUADRO DE FONDO - CORREGIDA (3 columnas visibles) */
+        /* Tabla de invitados - SIN CUADRO DE FONDO - CORREGIDA (4 columnas con numeración) */
         .guestlist-table {
             width: 100%;
             border-collapse: collapse;
@@ -2045,29 +2179,30 @@
             background: rgba(255, 255, 255, 0.1);
         }
         
-        /* Mostrar solo 3 columnas: Nombre, Tipo de Platillo, Confirmación */
+        /* Mostrar 4 columnas: No., Nombre, Tipo de Platillo, Confirmación */
         .guestlist-table th:nth-child(1),
         .guestlist-table td:nth-child(1) {
-            width: 50%; /* Nombre más ancho */
+            width: 10%; /* Número */
+            text-align: center;
             display: table-cell !important;
         }
         
         .guestlist-table th:nth-child(2),
         .guestlist-table td:nth-child(2) {
-            width: 25%; /* Tipo de Platillo */
+            width: 50%; /* Nombre más ancho */
             display: table-cell !important;
         }
         
         .guestlist-table th:nth-child(3),
         .guestlist-table td:nth-child(3) {
-            width: 25%; /* Confirmación */
+            width: 20%; /* Tipo de Platillo */
             display: table-cell !important;
         }
         
-        /* Ocultar cualquier otra columna que pueda existir */
-        .guestlist-table th:nth-child(n+4),
-        .guestlist-table td:nth-child(n+4) {
-            display: none !important;
+        .guestlist-table th:nth-child(4),
+        .guestlist-table td:nth-child(4) {
+            width: 20%; /* Confirmación */
+            display: table-cell !important;
         }
         
         /* Mensaje de invitados - SIN CUADRO DE FONDO */
@@ -2685,51 +2820,6 @@
             .section-title {
                 font-size: 3.2rem;
             }
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            .hero h2 {
-                font-size: 4rem;
-            }
-            .hero p {
-                font-size: 1.5rem;
-            }
-            .message-text {
-                font-size: 2rem;
-            }
-            .signature {
-                font-size: 3.2rem !important;
-            }
-            .parents-text {
-                font-size: 2.2rem;
-            }
-            .parents-names {
-                font-size: 3rem;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            nav ul li {
-                margin: 0 8px 8px;
-            }
-            .header-container {
-                padding: 0 4%;
-            }
-            nav ul li {
-                margin-left: 10px;
-            }
-            nav ul li a {
-                font-size: 0.8rem;
-                padding: 8px 4px;
-            }
-            nav ul li a i {
-                font-size: 0.9rem;
-                margin-right: 4px;
-            }
-            .logo {
-                font-size: 1.4rem;
-            }
             .guestlist-table {
                 font-size: 1rem;
             }
@@ -2807,19 +2897,7 @@
                 margin-top: 60px;
                 background-attachment: scroll;
             }
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            .hero h2 {
-                font-size: 3.5rem;
-            }
-            .hero p {
-                font-size: 1.3rem;
-            }
-            .hero-content {
-                padding: 30px 20px;
-                max-width: 90%;
-            }
+            
             .section-title {
                 font-size: 2.8rem;
             }
@@ -2857,21 +2935,6 @@
             .envelopes-section {
                 background-attachment: scroll;
                 padding: 80px 5%;
-            }
-            
-            /* Responsive para contador de pendientes */
-            .pending-counter {
-                flex-direction: column;
-                gap: 10px;
-                padding: 12px 20px;
-            }
-            
-            .pending-counter .counter-number {
-                font-size: 1.8rem;
-            }
-            
-            .pending-counter .counter-label {
-                font-size: 1.3rem;
             }
             
             /* Responsive para itinerario */
@@ -2949,12 +3012,6 @@
             .logo {
                 font-size: 1.3rem;
             }
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero h2 {
-                font-size: 3rem;
-            }
             nav {
                 width: 80%;
             }
@@ -2999,20 +3056,6 @@
             .guestlist-table td {
                 padding: 8px 6px;
                 font-size: 0.9rem;
-            }
-            
-            /* Responsive para contador de pendientes */
-            .pending-counter .counter-number {
-                font-size: 1.5rem;
-            }
-            
-            .pending-counter .counter-label {
-                font-size: 1.1rem;
-            }
-            
-            /* Responsive para itinerario */
-            .itinerary-container {
-                padding: 20px;
             }
             
             /* Responsive para audio player */
@@ -3167,11 +3210,11 @@
         </div>
     </header>
 
-    <!-- 1. Sección Inicio - SIN CUADRO DE FONDO - CON CAMBIOS SOLICITADOS -->
+    <!-- 1. Sección Inicio - MEJORADA CON TIPOGRAFÍAS ELEGANTES -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Mis 15 Años</h1>
-            <h2>"XIMENA"</h2> <!-- CAMBIO: Fuente Maven Pro cursiva -->
+            <h2>"XIMENA"</h2>
             <p>Con mucha alegría quiero compartir contigo este momento tan especial en mi vida. Te espero para celebrar juntos esta fecha inolvidable.</p>
         </div>
         <div class="scroll-down">
@@ -3193,7 +3236,7 @@
                         Agradezco a Dios por estos 15 años de bendiciones y a mis padres por su amor incondicional. 
                         Espero compartir este momento tan especial con las personas más importantes de mi vida.
                     </p>
-                    <div class="signature">"Ximena Alcantar Valdez"</div> <!-- CAMBIO: Fuente Maven Pro cursiva -->
+                    <div class="signature">"Ximena Alcantar Valdez"</div>
                 </div>
             </div>
         </div>
@@ -3214,7 +3257,7 @@
                         y<br>
                         Jazzel Valdez García<br>
                         junto a su hija<br>
-                        <span class="highlight-name">Ximena Alcantar Valdez</span> <!-- CAMBIO: Fuente Maven Pro cursiva -->
+                        <span class="highlight-name">Ximena Alcantar Valdez</span>
                     </div>
                 </div>
             </div>
@@ -3265,19 +3308,15 @@
         </div>
     </section>
 
-    <!-- 6. Sección Lista de Invitados - CON CAMBIOS SOLICITADOS -->
+    <!-- 6. Sección Lista de Invitados - MODIFICADA SIN CONTADORES -->
     <section class="guestlist-section" id="invitados">
         <h2 class="section-title">Lista de Invitados</h2>
         <div class="guestlist-container">
             <p class="guestlist-text">Aquí puedes verificar si aparece tu nombre y el de tus acompañantes</p>
             
-            <!-- Contador de pendientes - NUEVO -->
-            <div class="pending-counter" id="pendingCounter">
-                <span class="counter-number" id="pendingCount">180</span>
-                <span class="counter-label">Pendientes por confirmar</span>
-            </div>
+            <!-- CONTADORES ELIMINADOS (NO SE MUESTRAN) -->
             
-            <!-- Filtros - SIN CANTIDAD - BÚSQUEDA DEBAJO DE AMIGOS XIMENA -->
+            <!-- Filtros - SIN "Solo Pendientes" y "Solo Confirmados" -->
             <div class="guestlist-filters">
                 <button class="filter-btn active" data-filter="all">
                     <i class="fas fa-users"></i> Todos
@@ -3293,13 +3332,13 @@
                 </button>
             </div>
             
-            <!-- CAMBIO: Búsqueda movida aquí, contador eliminado -->
+            <!-- Búsqueda -->
             <div class="guestlist-search">
                 <input type="text" id="guestSearch" placeholder="Buscar invitado por nombre...">
                 <i class="fas fa-search"></i>
             </div>
             
-            <!-- Contenedor de tabla - CORREGIDO (3 columnas) -->
+            <!-- Contenedor de tabla -->
             <div id="guestListBody">
                 <!-- La tabla se cargará dinámicamente -->
             </div>
@@ -3310,7 +3349,7 @@
         </div>
     </section>
 
-    <!-- 7. Sección Confirmar Asistencia - SIN CUADRO DE FONDO -->
+    <!-- 7. Sección Confirmar Asistencia - SIN CUADRO DE FONDO - CON BOTÓN GRIS AÑADIDO -->
     <section class="confirmation-section" id="confirmar">
         <h2 class="section-title">Confirma tu Asistencia</h2>
         <div class="confirmation-container">
@@ -3318,11 +3357,14 @@
                 <strong>Si apareces en la lista de invitados,</strong><br>
                 <strong><u>favor de confirma tu asistencia</u> ANTES DEL 12 DE ENERO DE 2026</strong><br>
                 <strong>"ES IMPORTANTE PARA CONSIDERAR TU PLATILLO"</strong><br><br>
-                ¡Esperamos contar con tu presencia en este día tan especial! "Si por alguna razón no te es posible asistir", 
-                <u>"avísanos con confianza".</u> ¡Gracias por tu compresión! 
+                ¡Esperamos contar con tu presencia en este día tan especial!. 
             </p>
             <a href="https://wa.me/4437292451?text=Hola,%20confirmo%20mi%20asistencia%20a%20tus%2015%20años" class="whatsapp-button" target="_blank">
                 <i class="fab fa-whatsapp"></i> Confirmar por WhatsApp
+            </a>
+            <!-- BOTÓN GRIS AÑADIDO -->
+            <a href="https://wa.me/4437292451?text=Hola,%20lamento%20informar%20que%20no%20podré%20asistir%20a%20tus%2015%20años" class="whatsapp-button grey" target="_blank" style="margin-top: 20px;">
+                <i class="fab fa-whatsapp"></i> No podré asistir
             </a>
         </div>
     </section>
@@ -3765,14 +3807,13 @@
         });
 
         // =============================================
-        // LISTA DE INVITADOS - CON TODOS LOS ESTADOS ACTUALIZADOS DEL EXCEL
+        // LISTA DE INVITADOS - CON TODOS LOS ESTADOS
         // =============================================
-
-        // Datos de invitados del Excel - CON ESTADOS ACTUALIZADOS
+        
+        // Datos de invitados del Excel - ESTADOS ACTUALIZADOS Y CORREGIDOS
         const guestListData = [];
 
-        // FUNCIONES PARA CREAR LISTA DE INVITADOS - ACTUALIZADAS CON ESTADOS REALES DEL EXCEL
-        // Familia Marcos (100 invitados) - CON ESTADOS REALES DEL EXCEL
+        // Familia Marcos (100 invitados) - CON ESTADOS REALES
         const createFamiliaMarcosGuests = () => {
             const nombres = [
                 {nombre: "NAVARRETE MIRANDA GLORIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3871,7 +3912,6 @@
                 {nombre: "TERCERO NAVARRETE SUSANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TORRES TERCERO JILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TORRES TERCERO NAYELI EDITH", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "TORRES TERCERO JILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERO NAVARRETE VICTOR", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERRO NAVARRETE MARIA MAGDALENA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "CHAVEZ LOPEZ CUAUHTEMOC", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"}
@@ -3879,6 +3919,7 @@
 
             nombres.forEach((item, index) => {
                 guestListData.push({
+                    id: `marcos-${index + 1}`,
                     name: item.nombre,
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "familia-marcos",
@@ -3888,7 +3929,7 @@
             });
         };
 
-        // Familia Jazzel (82 invitados) - CON ESTADOS REALES DEL EXCEL
+        // Familia Jazzel (82 invitados) - CON ESTADOS REALES
         const createFamiliaJazzelGuests = () => {
             const nombres = [
                 {nombre: "MUÑOZ PADILLA CANDIDA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3977,6 +4018,7 @@
 
             nombres.forEach((item, index) => {
                 guestListData.push({
+                    id: `jazzel-${index + 1}`,
                     name: item.nombre,
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "familia-jazzel",
@@ -3986,7 +4028,7 @@
             });
         };
 
-        // Amigos de Ximena (19 invitados) - TODOS PENDIENTES según el Excel
+        // Amigos de Ximena (20 invitados) - TODOS PENDIENTES
         const createAmigosXimenaGuests = () => {
             const nombres = [
                 {nombre: "DE LA CRUZ RIVERA YORSHELI FERNANDA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -4013,6 +4055,7 @@
 
             nombres.forEach((item, index) => {
                 guestListData.push({
+                    id: `amigos-${index + 1}`,
                     name: item.nombre,
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "amigos",
@@ -4022,27 +4065,44 @@
             });
         };
 
-        // Crear todos los invitados en el orden correcto
+        // Crear todos los invitados
         createFamiliaMarcosGuests();
         createFamiliaJazzelGuests();
         createAmigosXimenaGuests();
 
-        // Función para actualizar el contador de pendientes
-        function updatePendingCounter() {
+        // Función para actualizar todos los contadores (mantenida pero no se muestran)
+        function updateAllCounters() {
+            const confirmados = guestListData.filter(guest => guest.status === "confirmado").length;
             const pendientes = guestListData.filter(guest => guest.status === "pendiente").length;
-            document.getElementById('pendingCount').textContent = pendientes;
+            const noAsistiran = guestListData.filter(guest => guest.status === "no asistirá").length;
+            
+            // Los contadores existen internamente pero no se muestran en la interfaz
+            console.log(`Confirmados: ${confirmados}, Pendientes: ${pendientes}, No Asistirán: ${noAsistiran}`);
+            
+            // Actualizar el localStorage
+            saveGuestStatusToLocalStorage();
         }
 
-        // Función para cargar la lista de invitados
+        // Función para cargar la lista de invitados con filtros mejorados
         function loadGuestList(filter = 'all') {
             const guestListBody = document.getElementById('guestListBody');
             guestListBody.innerHTML = '';
             
-            let filteredGuests = guestListData;
+            let filteredGuests = [...guestListData];
             
-            // Filtrar por grupo
+            // Filtrar por grupo o estado
             if (filter !== 'all') {
-                filteredGuests = guestListData.filter(guest => guest.group === filter);
+                if (['familia-marcos', 'familia-jazzel', 'amigos'].includes(filter)) {
+                    filteredGuests = guestListData.filter(guest => guest.group === filter);
+                }
+            }
+            
+            if (filteredGuests.length === 0) {
+                const noResults = document.createElement('div');
+                noResults.classList.add('guestlist-message');
+                noResults.innerHTML = '<p>No se encontraron invitados con los filtros seleccionados.</p>';
+                guestListBody.appendChild(noResults);
+                return;
             }
             
             // Crear contenedor de tabla
@@ -4053,10 +4113,11 @@
             const table = document.createElement('table');
             table.classList.add('guestlist-table');
             
-            // Crear encabezados de la tabla - SOLO 3 COLUMNAS
+            // Crear encabezados
             const thead = document.createElement('thead');
             thead.innerHTML = `
                 <tr>
+                    <th>No.</th>
                     <th>Nombre Completo</th>
                     <th>Tipo de Platillo</th>
                     <th>Confirmación</th>
@@ -4067,39 +4128,70 @@
             // Crear cuerpo de la tabla
             const tbody = document.createElement('tbody');
             
-            // Agregar cada invitado EN EL ORDEN ORIGINAL
-            filteredGuests.forEach(guest => {
+            // Agregar cada invitado con numeración
+            filteredGuests.forEach((guest, index) => {
                 const row = document.createElement('tr');
                 
-                // Aplicar clase rosa si está confirmado
+                // Aplicar clase según el estado
                 if (guest.status === "confirmado") {
                     row.classList.add('confirmado-row');
+                } else if (guest.status === "no asistirá") {
+                    row.classList.add('no-asistira-row');
+                } else {
+                    row.classList.add('pendiente-row');
                 }
                 
-                // Solo mantener el texto en negrita para cabezas de familia
+                // Agregar negrita a cabezas de familia
                 if (guest.cabezaFamilia) {
-                    row.classList.add('cabeza-familia');
+                    row.style.fontWeight = "600";
                 }
                 
+                // Número de invitado
+                const numCell = document.createElement('td');
+                numCell.textContent = index + 1;
+                numCell.style.textAlign = 'center';
+                
+                // Nombre
                 const nameCell = document.createElement('td');
                 nameCell.textContent = guest.name;
-                if (guest.cabezaFamilia) {
-                    nameCell.style.fontWeight = "600";
-                }
                 
+                // Tipo de platillo
                 const typeCell = document.createElement('td');
                 typeCell.textContent = guest.type === 'adulto' ? 'Platillo Adulto' : 'Platillo Niño';
+                typeCell.style.textAlign = 'center';
                 
+                // Estado de confirmación
                 const statusCell = document.createElement('td');
                 const statusBadge = document.createElement('span');
-                statusBadge.classList.add('status-badge', guest.status);
-                statusBadge.textContent = guest.status === 'confirmado' ? 'Confirmado' : 'Pendiente';
+                let statusText = '';
+                let statusClass = '';
+                
+                switch(guest.status) {
+                    case 'confirmado':
+                        statusText = 'Confirmado ✓';
+                        statusClass = 'confirmado';
+                        break;
+                    case 'no asistirá':
+                        statusText = 'No asistirá ✗';
+                        statusClass = 'no-asistira';
+                        break;
+                    default:
+                        statusText = 'Pendiente ?';
+                        statusClass = 'pendiente';
+                }
+                
+                statusBadge.classList.add('status-badge', statusClass);
+                statusBadge.textContent = statusText;
                 
                 statusCell.appendChild(statusBadge);
+                statusCell.style.textAlign = 'center';
                 
+                // Agregar celdas a la fila
+                row.appendChild(numCell);
                 row.appendChild(nameCell);
                 row.appendChild(typeCell);
                 row.appendChild(statusCell);
+                
                 tbody.appendChild(row);
             });
             
@@ -4107,36 +4199,15 @@
             tableContainer.appendChild(table);
             guestListBody.appendChild(tableContainer);
             
-            // Mostrar mensaje si no hay resultados
-            if (filteredGuests.length === 0) {
-                const noResults = document.createElement('div');
-                noResults.classList.add('guestlist-message');
-                noResults.innerHTML = '<p>No se encontraron invitados con los filtros seleccionados.</p>';
-                guestListBody.appendChild(noResults);
-            }
-        }
-
-        // Función para cambiar el estado de confirmación
-        function toggleConfirmation(guestName) {
-            const guest = guestListData.find(g => g.name === guestName);
-            if (guest) {
-                guest.status = guest.status === 'pendiente' ? 'confirmado' : 'pendiente';
-                
-                const currentFilter = document.querySelector('.filter-btn.active').dataset.filter;
-                loadGuestList(currentFilter);
-                
-                // Actualizar contador de pendientes
-                updatePendingCounter();
-                
-                saveGuestStatusToLocalStorage();
-            }
+            // Actualizar contadores (internos)
+            updateAllCounters();
         }
 
         // Función para guardar el estado en localStorage
         function saveGuestStatusToLocalStorage() {
             const statusData = {};
             guestListData.forEach(guest => {
-                statusData[guest.name] = guest.status;
+                statusData[guest.id] = guest.status;
             });
             localStorage.setItem('guestStatus', JSON.stringify(statusData));
         }
@@ -4147,8 +4218,8 @@
             if (savedStatus) {
                 const statusData = JSON.parse(savedStatus);
                 guestListData.forEach(guest => {
-                    if (statusData[guest.name]) {
-                        guest.status = statusData[guest.name];
+                    if (statusData[guest.id]) {
+                        guest.status = statusData[guest.id];
                     }
                 });
             }
@@ -4177,7 +4248,7 @@
                 let hasResults = false;
                 
                 rows.forEach(row => {
-                    const name = row.cells[0].textContent.toLowerCase();
+                    const name = row.cells[1].textContent.toLowerCase();
                     if (name.includes(searchValue)) {
                         row.style.display = '';
                         hasResults = true;
@@ -4186,13 +4257,14 @@
                     }
                 });
                 
+                // Mostrar mensaje si no hay resultados
                 const noResultsMsg = document.querySelector('.no-results-message');
                 if (!hasResults && searchValue !== '') {
                     if (!noResultsMsg) {
                         const message = document.createElement('div');
                         message.classList.add('guestlist-message', 'no-results-message');
                         message.innerHTML = `<p>No se encontraron invitados con "${searchValue}"</p>`;
-                        document.querySelector('.guestlist-table-container').appendChild(message);
+                        document.querySelector('#guestListBody').appendChild(message);
                     }
                 } else if (noResultsMsg) {
                     noResultsMsg.remove();
@@ -4607,8 +4679,8 @@
             setupGuestFilters();
             setupSearch();
             
-            // Actualizar contador de pendientes
-            updatePendingCounter();
+            // Actualizar contadores (internos)
+            updateAllCounters();
         });
     </script>
 </body>
