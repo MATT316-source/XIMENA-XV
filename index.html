@@ -3807,15 +3807,28 @@
         });
 
         // =============================================
-        // LISTA DE INVITADOS - CORREGIDA PARA COINCIDIR CON EXCEL
+        // LISTA DE INVITADOS - CORREGIDA Y COMPLETA
         // =============================================
         
-        // Datos de invitados del Excel - CORREGIDOS
+        // Datos de invitados del Excel - CORREGIDOS Y COMPLETOS
         const guestListData = [];
 
-        // Familia Marcos (103 invitados) - CORREGIDO
+        // Función para normalizar estados
+        function normalizeStatus(status) {
+            const normalized = status.toLowerCase().trim();
+            if (normalized.includes('confirmado')) {
+                return 'confirmado';
+            } else if (normalized.includes('no asist')) {
+                return 'no asistirá';
+            } else {
+                return 'pendiente';
+            }
+        }
+
+        // Familia Marcos (104 invitados) - COMPLETO Y CORREGIDO
         const createFamiliaMarcosGuests = () => {
             const nombres = [
+                // FILA 1-15
                 {nombre: "NAVARRETE MIRANDA GLORIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "NAVARRETE MIRANDA CARMEN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO NAVARRETE SANDRA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3831,6 +3844,7 @@
                 {nombre: "TOLEDO MERCADO DIANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "AVILA TOLEDO KATERIN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO MERCADO DANIELA", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
+                // FILA 16-30
                 {nombre: "TOLEDO NAVARRETE MARIA TERESA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "CORTES TORRES EMILIANO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "CORTES GOMEZ LAURA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3839,13 +3853,15 @@
                 {nombre: "ALCANTAR TOLEDO JEANNETE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "VILLA HERNANDEZ CARLOS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "VILLA ALCANTAR KARLA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-                {nombre: "VILLA ALCANTAR CARLOS", tipo: "PLATILL NIÑO", estado: "CONFIRMADO"},
+                {nombre: "VILLA ALCANTAR CARLOS", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
                 {nombre: "ALCANTAR TOLEDO ALFREDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "PANTOJA LAZARO LIZBETH", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "GONZALEZ GUEVARA ORLANDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "VILLA HERNANDEZ FABIOLA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "GONZALEZ VILLA MAXIMILIANO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                // CORRECCIÓN: MARCOS ALFREDO SÍ ES CONFIRMADO (fila 30 del Excel)
                 {nombre: "ALCANTAR TOLEDO MARCOS ALFREDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+                // FILA 31-45
                 {nombre: "VALDEZ GARCIA JAZZEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "ALCANTAR VALDEZ MARCOS HAZIEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "ALCANTAR VALDEZ XIMENA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
@@ -3861,6 +3877,7 @@
                 {nombre: "MEDINA QUINTANA WALTER", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "MEDINA QUINTANA DARWIN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "MEDINA TOLEDO ALEJANDRO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                // FILA 46-60
                 {nombre: "PANIAHUA LOPEZ PATRICIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "MEDINA TOLEDO ERIKA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "VEGA TORRES JAVIER", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3876,8 +3893,9 @@
                 {nombre: "TOLEDO NAVARRETE ARMANDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "GUTIERREZ BOTELLO ANGELICA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO GUTIERREZ AARON", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
+                // FILA 61-75
                 {nombre: "TOLEDO GUTIERREZ ALAN", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
-                {nombre: "TOLEDO NAVARRETE  CHRISTIAN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "TOLEDO NAVARRETE CHRISTIAN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO NAVARRETE JORGE", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "MORA HERNANDEZ MARILY", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO MORA PAULINA", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
@@ -3891,6 +3909,7 @@
                 {nombre: "TOLEDO NAVARRETE DENISE", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "DE JOSE TOLEDO LEONARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "DE JOSE TOLEDO JOANA", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
+                // FILA 76-90
                 {nombre: "DE JOSE TOLEDO DECLAN", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO NAVARRETE GLORIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "NAVARRETE TOLEDO ERICK", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3906,34 +3925,39 @@
                 {nombre: "TOLEDO MELENA GEOVANNI", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "OSEGUERA RODRIGUEZ GEORGINA AIDA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO OSEGUERA MARCO GIOVANNI", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                // FILA 91-104 - COMPLETO
                 {nombre: "TOLEDO OSEGUERA JENNIFER PAULINA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO MELENA DAVID", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "CHAVEZ ORTIZ PATRICIA ANGELICA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TOLEDO CHAVEZ BRIAN EDUARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "TORRES HINOJOSA GILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TERCERO NAVARRETE ESPERANZA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "TERCERO NAVARRETE SUSANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "TORRES TERCERO GILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TORRES TERCERO NAYELI EDITH", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "TORRES TERCERO GILDARDO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "TERCERO NAVARRETE SUSANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "OCHOA TERCERO FERNANDA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "SIMON OCHOA LIAM", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
                 {nombre: "TERCERO NAVARRETE VICTOR", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "TERCERRO NAVARRETE MARIA MAGDALENA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "CHAVEZ LOPEZ CUAUHTEMOC", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"}
+                {nombre: "CHAVEZ LOPEZ CUAUHTEMOC", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "TERCERO NAVARRETE MARIA MAGDALENA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"}
             ];
 
             nombres.forEach((item, index) => {
                 guestListData.push({
                     id: `marcos-${index + 1}`,
-                    name: item.nombre,
+                    name: item.nombre.trim(),
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "familia-marcos",
                     cabezaFamilia: index < 10,
-                    status: item.estado.toLowerCase()
+                    status: normalizeStatus(item.estado)
                 });
             });
         };
 
-        // Familia Jazzel (82 invitados) - CORREGIDO
+        // Familia Jazzel (82 invitados) - COMPLETO Y CORREGIDO
         const createFamiliaJazzelGuests = () => {
             const nombres = [
+                // FILA 1-15
                 {nombre: "MUÑOZ PADILLA CANDIDA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "MUÑOZ PADILLA VIRGINIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "TORRES GARCIA KEVIN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3949,6 +3973,7 @@
                 {nombre: "GARCIA NAVARRETE FRANCISCO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "ESCAMILLA GONZALEZ YAZMIN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "GARCIA ESCAMILLA VERA LUNA", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
+                // FILA 16-30
                 {nombre: "GARCIA NAVARRETE JONATHAN", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "HIDALGO SANDRA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "GARCIA NAVARRETE OSCAR", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3964,6 +3989,7 @@
                 {nombre: "PEREZ SANCHEZ GUSTAVO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "PEREZ CAMPOS GUSTAVO", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
                 {nombre: "CAMPOS VALDEZ ARISBETH", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                // FILA 31-45
                 {nombre: "MORALES CONTRERAS ISIDRO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "LOZANO CONTRERAS ALEXA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "CAMPOS VALDEZ DALIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -3979,6 +4005,7 @@
                 {nombre: "GUZMAN ARCHI", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
                 {nombre: "GUZMAN ARGENIS", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "VALDEZ GARCIA YULMA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+                // FILA 46-60
                 {nombre: "VALDEZ GARCIA MARLEN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "GARCIA GUILLEN RAMON", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "ARRIAGA RIVERA KAREN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
@@ -3993,7 +4020,8 @@
                 {nombre: "VALDEZ CHAVEZ JOHANA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "VALDEZ CHAVEZ ALEXANDRA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "VALDEZ MORALES ANTONIO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-                {nombre: "GARCIA MUÑOS MARGARITA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+                {nombre: "GARCIA MUÑOZ MARGARITA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+                // FILA 61-75
                 {nombre: "LOZANO DE LOS SANTOS FATIMA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "LOZANO ANTONIO", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
                 {nombre: "VALDEZ GARCIA KARLA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -4009,6 +4037,7 @@
                 {nombre: "GARCIA MUÑOZ SERGIO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "LOMELI YESENIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "GARCIA LOMELI SERGIO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                // FILA 76-82
                 {nombre: "GARCIA LOMELI YEDOVIR", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "GARCIA MUÑOZ MATEO", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "ARREOLA MIRANDA RAMONA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -4021,11 +4050,11 @@
             nombres.forEach((item, index) => {
                 guestListData.push({
                     id: `jazzel-${index + 1}`,
-                    name: item.nombre,
+                    name: item.nombre.trim(),
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "familia-jazzel",
                     cabezaFamilia: index < 8,
-                    status: item.estado.toLowerCase()
+                    status: normalizeStatus(item.estado)
                 });
             });
         };
@@ -4033,6 +4062,7 @@
         // Amigos de Ximena (20 invitados) - CORREGIDO
         const createAmigosXimenaGuests = () => {
             const nombres = [
+                // FILA 1-10
                 {nombre: "DE LA CRUZ RIVERA YORSHELI FERNANDA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "RIVERA ALMAZAN ALEJANDRA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "DE LA CRUZ RIVERA MICHELL", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
@@ -4043,34 +4073,40 @@
                 {nombre: "TERAN LAVOIGNET SAID ELI", tipo: "PLATILLO NIÑO", estado: "PENDIENTE"},
                 {nombre: "MONCADA LEON IKER MATHIAS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "CORONA PADILLA VIOLETA ZARETH", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+                // FILA 11-20
                 {nombre: "PADILLA LOPEZ MARIA ELENA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-                {nombre: "CORONA DOMINGUEZ ARNOLDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO%"},
-                {nombre: "REYES CHAVEZ MAYTE", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
+                {nombre: "CORONA DOMINGUEZ ARNOLDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+                {nombre: "LOAIZA LOPEZ CRISTOPHER ALDAIR", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "PIÑA LUIS LIBNI VELANI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
                 {nombre: "CALDERON SOSA JOSHAR DANIEL", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "SAUCEDO RANGEL PEDRO AARON", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "SANCHEZ CARRANZA PATRICIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
                 {nombre: "ESPOSO MAESTRA PATRICIA", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "VEGA MORA ELIZABETH ARACELI", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"},
-                {nombre: "PEREZ VEGA YARENI", tipo: "PLATILLO ADULTO", estado: "PENDIENTE"}
+                {nombre: "VEGA MORA ELIZABETH ARACELI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+                {nombre: "PEREZ VEGA YARENI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"}
             ];
 
             nombres.forEach((item, index) => {
                 guestListData.push({
                     id: `amigos-${index + 1}`,
-                    name: item.nombre,
+                    name: item.nombre.trim(),
                     type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
                     group: "amigos",
                     cabezaFamilia: false,
-                    status: item.estado.toLowerCase()
+                    status: normalizeStatus(item.estado)
                 });
             });
         };
 
         // Crear todos los invitados
-        createFamiliaMarcosGuests();
-        createFamiliaJazzelGuests();
-        createAmigosXimenaGuests();
+        createFamiliaMarcosGuests();  // 104 invitados
+        createFamiliaJazzelGuests();  // 82 invitados  
+        createAmigosXimenaGuests();   // 20 invitados
+
+        console.log("Total de invitados cargados:", guestListData.length);
+        console.log("Familia Marcos:", guestListData.filter(g => g.group === "familia-marcos").length);
+        console.log("Familia Jazzel:", guestListData.filter(g => g.group === "familia-jazzel").length);
+        console.log("Amigos Ximena:", guestListData.filter(g => g.group === "amigos").length);
 
         // Función para actualizar todos los contadores (mantenida pero no se muestran)
         function updateAllCounters() {
@@ -4078,7 +4114,6 @@
             const pendientes = guestListData.filter(guest => guest.status === "pendiente").length;
             const noAsistiran = guestListData.filter(guest => guest.status === "no asistirá").length;
             
-            // Los contadores existen internamente pero no se muestran en la interfaz
             console.log(`Confirmados: ${confirmados}, Pendientes: ${pendientes}, No Asistirán: ${noAsistiran}`);
             
             // Actualizar el localStorage
@@ -4683,6 +4718,11 @@
             
             // Actualizar contadores (internos)
             updateAllCounters();
+            
+            console.log("¡Código cargado exitosamente! Total de invitados:", guestListData.length);
+            console.log("Familia Marcos:", guestListData.filter(g => g.group === "familia-marcos").length, "invitados");
+            console.log("Familia Jazzel:", guestListData.filter(g => g.group === "familia-jazzel").length, "invitados");
+            console.log("Amigos Ximena:", guestListData.filter(g => g.group === "amigos").length, "invitados");
         });
     </script>
 </body>
