@@ -1688,7 +1688,7 @@ border: none;
 .reception-image:hover {
 transform: scale(1.03);
 }
-/* Sección itinerario - SIN CUADRO DE FONDO */
+/* ========== SECCIÓN ITINERARIO ACTUALIZADA ========== */
 .itinerary-section {
 background: url('https://i.pinimg.com/1200x/61/52/64/615264dcdf1a6eb6f8561cc829ac32e2.jpg') center/cover no-repeat fixed;
 text-align: center;
@@ -1704,7 +1704,7 @@ height: 100%;
 background: rgba(0, 0, 0, 0.5);
 z-index: 0;
 }
-.itinerary-container {
+.itinerario-container {
 max-width: 900px;
 margin: 0 auto;
 background: none;
@@ -1714,11 +1714,11 @@ border-radius: 0;
 position: relative;
 z-index: 1;
 }
-.itinerary-timeline {
+.itinerario-timeline {
 position: relative;
 margin: 60px 0;
 }
-.itinerary-timeline::before {
+.itinerario-timeline::before {
 content: '';
 position: absolute;
 top: 0;
@@ -1833,7 +1833,7 @@ box-shadow: 0 3px 8px rgba(255, 152, 0, 0.4) !important;
 background: linear-gradient(135deg, #F44336, #C62828) !important;
 box-shadow: 0 3px 8px rgba(244, 67, 54, 0.4) !important;
 }
-/* Sección lista de invitados - SIN CUADRO DE FONDO - CORREGIDA */
+/* ========== LISTA DE INVITADOS CON COLUMNA MESA ========== */
 .guestlist-section {
 background: url('https://i.pinimg.com/736x/70/73/d2/7073d22dccd8831ad7943468395e2aed.jpg') center/cover no-repeat fixed;
 text-align: center;
@@ -1949,7 +1949,7 @@ border-radius: 0;
 border: 2px solid rgba(255, 255, 255, 0.2);
 background: rgba(255, 255, 255, 0.05);
 }
-/* Tabla de invitados - SIN CUADRO DE FONDO - CORREGIDA (4 columnas con numeración) */
+/* Tabla de invitados - CON MESA DESPUÉS DEL NOMBRE (5 columnas con numeración) */
 .guestlist-table {
 width: 100%;
 border-collapse: collapse;
@@ -1982,27 +1982,41 @@ background: rgba(255, 255, 255, 0.2);
 .guestlist-table tr:hover {
 background: rgba(255, 255, 255, 0.1);
 }
-/* Mostrar 4 columnas: No., Nombre, Tipo de Platillo, Confirmación */
+/* Mostrar 5 columnas: No., Nombre, Mesa, Tipo de Platillo, Confirmación */
 .guestlist-table th:nth-child(1),
 .guestlist-table td:nth-child(1) {
-width: 10%; /* Número */
+width: 8%; /* Número */
 text-align: center;
 display: table-cell !important;
 }
 .guestlist-table th:nth-child(2),
 .guestlist-table td:nth-child(2) {
-width: 50%; /* Nombre más ancho */
+width: 42%; /* Nombre */
 display: table-cell !important;
 }
 .guestlist-table th:nth-child(3),
 .guestlist-table td:nth-child(3) {
-width: 20%; /* Tipo de Platillo */
+width: 15%; /* Mesa - DESPUÉS DEL NOMBRE */
+text-align: center;
 display: table-cell !important;
 }
 .guestlist-table th:nth-child(4),
 .guestlist-table td:nth-child(4) {
-width: 20%; /* Confirmación */
+width: 20%; /* Tipo de Platillo */
 display: table-cell !important;
+}
+.guestlist-table th:nth-child(5),
+.guestlist-table td:nth-child(5) {
+width: 15%; /* Confirmación */
+display: table-cell !important;
+}
+/* Estilo especial para celda de Mesa */
+.guestlist-table td:nth-child(3) {
+font-weight: bold;
+color: #ff2e74;
+text-align: center;
+font-size: 1.2rem;
+text-shadow: 0 0 10px rgba(255, 46, 116, 0.5);
 }
 /* Mensaje de invitados - SIN CUADRO DE FONDO */
 .guestlist-message {
@@ -2714,7 +2728,7 @@ background-attachment: scroll;
 padding: 80px 5%;
 }
 /* Responsive para itinerario */
-.itinerary-timeline::before {
+.itinerario-timeline::before {
 left: 30px;
 }
 .timeline-item {
@@ -3159,81 +3173,89 @@ Valdez García Yulma y Valdez Morales Antonio
 </a>
 </div>
 </section>
-<!-- 10. Sección Itinerario - SIN CUADRO DE FONDO -->
+<!-- 10. SECCIÓN ITINERARIO ACTUALIZADA SEGÚN EXCEL -->
 <section class="itinerary-section" id="itinerario">
 <h2 class="section-title">Itinerario del Día</h2>
-<div class="itinerary-container">
-<div class="itinerary-timeline">
+<div class="itinerario-container">
+<div class="itinerario-timeline">
+<!-- 17:00:00 - ceremonia religiosa -->
 <div class="timeline-item">
 <div class="timeline-content">
-<div class="timeline-time">5:00 PM</div>
-<div class="timeline-event">Ceremonia Religiosa</div>
+<div class="timeline-time">17:00</div>
+<div class="timeline-event">Ceremonia religiosa</div>
 </div>
 <div class="timeline-icon">
 <i class="fas fa-church"></i>
 </div>
 </div>
+<!-- 18:30:00 - recepción cocteleria en el jardín -->
 <div class="timeline-item">
 <div class="timeline-content">
-<div class="timeline-time">7:00 PM</div>
-<div class="timeline-event">Ingreso y Recepción</div>
+<div class="timeline-time">18:30</div>
+<div class="timeline-event">Recepción coctelería en el jardín</div>
 </div>
 <div class="timeline-icon">
 <i class="fas fa-glass-cheers"></i>
 </div>
 </div>
+<!-- 19:00:00 - inicio del evento, recepción de invitados -->
 <div class="timeline-item">
 <div class="timeline-content">
-<div class="timeline-time">7:30 PM</div>
-<div class="timeline-event">Entrada de la Quinceañera</div>
+<div class="timeline-time">19:00</div>
+<div class="timeline-event">Inicio del evento, recepción de invitados</div>
 </div>
 <div class="timeline-icon">
-<i class="fas fa-camera"></i>
+<i class="fas fa-users"></i>
 </div>
 </div>
+<!-- 19:30:00 - entrada de la quinceañera -->
 <div class="timeline-item">
 <div class="timeline-content">
-<div class="timeline-time">8:00 PM</div>
-<div class="timeline-event">Cena</div>
-</div>
-<div class="timeline-icon">
-<i class="fas fa-utensils"></i>
-</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-content">
-<div class="timeline-time">8:30 PM</div>
-<div class="timeline-event">Vals</div>
+<div class="timeline-time">19:30</div>
+<div class="timeline-event">Entrada de la quinceañera</div>
 </div>
 <div class="timeline-icon">
 <i class="fas fa-star"></i>
 </div>
 </div>
+<!-- 19:45:00 - bals principal, brindis, bals con familia, bals con papa y baile sorpresa -->
 <div class="timeline-item">
 <div class="timeline-content">
-<div class="timeline-time">9:00 PM</div>
-<div class="timeline-event">Baile y música </div>
+<div class="timeline-time">19:45</div>
+<div class="timeline-event">Vals principal, brindis, vals con familia, vals con papá y baile sorpresa</div>
 </div>
 <div class="timeline-icon">
 <i class="fas fa-music"></i>
 </div>
 </div>
+<!-- 21:00:00 - cena, violinista y proyeccion de fotos de ximena -->
 <div class="timeline-item">
 <div class="timeline-content">
-<div class="timeline-time">10:30 PM</div>
-<div class="timeline-event">Pastel y brindis</div>
+<div class="timeline-time">21:00</div>
+<div class="timeline-event">Cena, violinista y proyección de fotos de Ximena</div>
+</div>
+<div class="timeline-icon">
+<i class="fas fa-utensils"></i>
+</div>
+</div>
+<!-- 22:00:00 - se abre pista de baile -->
+<div class="timeline-item">
+<div class="timeline-content">
+<div class="timeline-time">22:00</div>
+<div class="timeline-event">Se abre pista de baile</div>
+</div>
+<div class="timeline-icon">
+<i class="fas fa-dancing"></i>
+</div>
+</div>
+<!-- 00:00:00 - cantar mañanitas a la festejada -->
+<div class="timeline-item">
+<div class="timeline-content">
+<div class="timeline-time">00:00</div>
+<div class="timeline-event">Cantar mañanitas a la festejada</div>
 </div>
 <div class="timeline-icon">
 <i class="fas fa-birthday-cake"></i>
-</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-content">
-<div class="timeline-time">12:00 PM</div>
-<div class="timeline-event">Mañanitas para la quinceañera</div>
-</div>
-<div class="timeline-icon">
-<i class="fas fa-moon"></i>
 </div>
 </div>
 </div>
@@ -3506,6 +3528,7 @@ playPauseBtn.addEventListener('click', togglePlayPause);
 musicControl.addEventListener('click', togglePlayPause);
 volumeSlider.addEventListener('input', updateVolume);
 audioToggle.addEventListener('click', toggleAudioPlayer);
+
 // =============================================
 // CARRUSEL DE FOTOS CON SLICK
 // =============================================
@@ -3531,11 +3554,13 @@ dots: true
 ]
 });
 });
+
 // =============================================
-// LISTA DE INVITADOS - CORREGIDA Y FINAL
+// LISTA DE INVITADOS - ACTUALIZADA CON COLUMNA MESA DESPUÉS DEL NOMBRE
 // =============================================
-// Datos de invitados del Excel - CORREGIDOS Y COMPLETOS
+// Datos de invitados del Excel - CON FORMATO CORREGIDO: {nombre, mesa, tipo, estado}
 const guestListData = [];
+
 // Función para normalizar estados
 function normalizeStatus(status) {
 const normalized = status.toLowerCase().trim();
@@ -3547,128 +3572,129 @@ return 'no asistirá';
 return 'pendiente';
 }
 }
-// Familia Marcos (106 invitados) - COMPLETO Y CORREGIDO
+
+// Familia Marcos (106 invitados) - CON FORMATO CORREGIDO
 const createFamiliaMarcosGuests = () => {
 const nombres = [
-// FILA 1-15
-{nombre: "NAVARRETE MIRANDA GLORIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE MIRANDA CARMEN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE SANDRA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE JAVIER", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MERCADO CAMARGO BERTHA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO MERCADO JAVIER", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA TOVAR RUBI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO GARCIA PERLA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO MERCADO WENDY", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ZEPEDA TOLEDO ALFONSO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ZEPEDA TOLEDO SOFIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO MERCADO DIANA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "AVILA TOLEDO KATERIN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO MERCADO DANIELA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+// FILA 1-15 - CON MESAS ASIGNADAS
+{nombre: "NAVARRETE MIRANDA GLORIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE MIRANDA CARMEN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE SANDRA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE JAVIER", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MERCADO CAMARGO BERTHA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO MERCADO JAVIER", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA TOVAR RUBI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO GARCIA PERLA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO MERCADO WENDY", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ZEPEDA TOLEDO ALFONSO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ZEPEDA TOLEDO SOFIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO MERCADO DIANA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "AVILA TOLEDO KATERIN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO MERCADO DANIELA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
 // FILA 16-30
-{nombre: "TOLEDO NAVARRETE MARIA TERESA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CORTES TORRES EMILIANO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CORTES GOMEZ LAURA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "PEREZ MARISCAL OMAR", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "PEREZ CORTES CAMILA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ALCANTAR TOLEDO JEANNETE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VILLA HERNANDEZ CARLOS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VILLA ALCANTAR KARLA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "VILLA ALCANTAR CARLOS", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "ALCANTAR TOLEDO ALFREDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "PANTOJA LAZARO LIZBETH", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GONZALEZ GUEVARA ORLANDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VILLA HERNANDEZ FABIOLA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GONZALEZ VILLA MAXIMILIANO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-// CORRECCIÓN: MARCOS ALFREDO SÍ ES CONFIRMADO (fila 30 del Excel)
-{nombre: "ALCANTAR TOLEDO MARCOS ALFREDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE MARIA TERESA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CORTES TORRES EMILIANO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CORTES GOMEZ LAURA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "PEREZ MARISCAL OMAR", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "PEREZ CORTES CAMILA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ALCANTAR TOLEDO JEANNETE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VILLA HERNANDEZ CARLOS", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VILLA ALCANTAR KARLA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "VILLA ALCANTAR CARLOS", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "ALCANTAR TOLEDO ALFREDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "PANTOJA LAZARO LIZBETH", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GONZALEZ GUEVARA ORLANDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VILLA HERNANDEZ FABIOLA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GONZALEZ VILLA MAXIMILIANO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ALCANTAR TOLEDO MARCOS ALFREDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
 // FILA 31-45
-{nombre: "VALDEZ GARCIA JAZZEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ALCANTAR VALDEZ MARCOS HAZIEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ALCANTAR VALDEZ XIMENA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ALCANTAR GAYTAN ALFREDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ALCANTAR CAMPOS VALERIA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "CAMPOS ORTIZ ANGEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE MARIA DE LOURDES", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MEDINA ZAMBRANO RENE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MEDINA TOLEDO RENE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ARREOLA MARTINEZ JAZMIN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MEDINA ARREOLA RENATA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "MEDINA ESQUIVEL MILTON RENE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MEDINA QUINTANA WALTER", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MEDINA QUINTANA DARWIN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MEDINA TOLEDO ALEJANDRO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VALDEZ GARCIA JAZZEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ALCANTAR VALDEZ MARCOS HAZIEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ALCANTAR VALDEZ XIMENA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ALCANTAR GAYTAN ALFREDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ALCANTAR CAMPOS VALERIA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "CAMPOS ORTIZ ANGEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE MARIA DE LOURDES", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MEDINA ZAMBRANO RENE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MEDINA TOLEDO RENE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ARREOLA MARTINEZ JAZMIN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MEDINA ARREOLA RENATA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "MEDINA ESQUIVEL MILTON RENE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MEDINA QUINTANA WALTER", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MEDINA QUINTANA DARWIN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MEDINA TOLEDO ALEJANDRO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
 // FILA 46-60
-{nombre: "PANIAHUA LOPEZ PATRICIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MEDINA TOLEDO ERIKA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VEGA TORRES JAVIER", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "AYALA MEDINA VANESA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VEGA MEDINA YARA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE CARLOS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "HERNANDEZ MEJIA MARIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO HERNANDEZ CARLOS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ZARCO BOLAÑOS KARINA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO ZARCO ANETTE MICHEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO ZARCO ARLET ARELY", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO ZARCO ALISON", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO HERNANDEZ MARIO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE ARMANDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GUTIERREZ BOTELLO ANGELICA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO GUTIERREZ AARON", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "PANIAHUA LOPEZ PATRICIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MEDINA TOLEDO ERIKA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VEGA TORRES JAVIER", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "AYALA MEDINA VANESA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VEGA MEDINA YARA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE CARLOS", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "HERNANDEZ MEJIA MARIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO HERNANDEZ CARLOS", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ZARCO BOLAÑOS KARINA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO ZARCO ANETTE MICHEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO ZARCO ARLET ARELY", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO ZARCO ALISON", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO HERNANDEZ MARIO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE ARMANDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GUTIERREZ BOTELLO ANGELICA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO GUTIERREZ AARON", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
 // FILA 61-76
-{nombre: "TOLEDO GUTIERREZ ALAN", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE CHRISTIAN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "FLORES RUBIO CLAUDIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE JORGE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MORA HERNANDEZ MARILY", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO MORA PAULINA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE LESLI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ESTRADA HERNANDEZ DANIEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MALDONADO TOLEDO JAIR", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MALDONADO TOLEDO VANESA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE CRISTOFER", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE VALERIA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "FERNANDEZ TOLEDO ZAMIRA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE DENISE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "DE JOSE TOLEDO LEONARDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "DE JOSE TOLEDO JOANA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO GUTIERREZ ALAN", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE CHRISTIAN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "FLORES RUBIO CLAUDIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE JORGE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MORA HERNANDEZ MARILY", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO MORA PAULINA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE LESLI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ESTRADA HERNANDEZ DANIEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MALDONADO TOLEDO JAIR", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MALDONADO TOLEDO VANESA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE CRISTOFER", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE VALERIA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "FERNANDEZ TOLEDO ZAMIRA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE DENISE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "DE JOSE TOLEDO LEONARDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "DE JOSE TOLEDO JOANA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
 // FILA 77-91
-{nombre: "DE JOSE TOLEDO DECLAN", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO NAVARRETE GLORIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE TOLEDO ERICK", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE MORALES ESBEYDI SARAI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE NAVARRETE ERICKA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE NAVARRETE GLORIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE NAVARRETE FRANCISCO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE TOLEDO ANDREA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA GUTIERREZ GABRIEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "LOPEZ NAVARRETE ANGEL MANUEL", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "LOPEZ NAVARRETE IVAN ALEXANDER", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "LOPEZ NAVARRETE ESTRELLA NICOL", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO MELENA GEOVANNI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "OSEGUERA RODRIGUEZ GEORGINA AIDA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO OSEGUERA MARCO GIOVANNI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-// FILA 92-106 - CORREGIDO: 106 invitados (se agregó claudia)
-{nombre: "TOLEDO OSEGUERA JENNIFER PAULINA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO MELENA DAVID", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CHAVEZ ORTIZ PATRICIA ANGELICA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TOLEDO CHAVEZ BRIAN EDUARDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TORRES HINOJOSA GILDARDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TERCERO NAVARRETE ESPERANZA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TORRES TERCERO NAYELI EDITH", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TORRES TERCERO GILDARDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TERCERO NAVARRETE SUSANA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "OCHOA TERCERO FERNANDA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "SIMON OCHOA LIAM", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "TERCERO NAVARRETE VICTOR", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CHAVEZ LOPEZ CUAUHTEMOC", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TERCERO NAVARRETE MARIA MAGDALENA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "BARRON GARCIA JESSICA ANDREA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"}
+{nombre: "DE JOSE TOLEDO DECLAN", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO NAVARRETE GLORIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE TOLEDO ERICK", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE MORALES ESBEYDI SARAI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE NAVARRETE ERICKA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE NAVARRETE GLORIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE NAVARRETE FRANCISCO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE TOLEDO ANDREA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA GUTIERREZ GABRIEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "LOPEZ NAVARRETE ANGEL MANUEL", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "LOPEZ NAVARRETE IVAN ALEXANDER", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "LOPEZ NAVARRETE ESTRELLA NICOL", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO MELENA GEOVANNI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "OSEGUERA RODRIGUEZ GEORGINA AIDA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO OSEGUERA MARCO GIOVANNI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+// FILA 92-106 - CORREGIDO: 106 invitados
+{nombre: "TOLEDO OSEGUERA JENNIFER PAULINA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO MELENA DAVID", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CHAVEZ ORTIZ PATRICIA ANGELICA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TOLEDO CHAVEZ BRIAN EDUARDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TORRES HINOJOSA GILDARDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TERCERO NAVARRETE ESPERANZA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TORRES TERCERO NAYELI EDITH", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TORRES TERCERO GILDARDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TERCERO NAVARRETE SUSANA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "OCHOA TERCERO FERNANDA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "SIMON OCHOA LIAM", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TERCERO NAVARRETE VICTOR", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CHAVEZ LOPEZ CUAUHTEMOC", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TERCERO NAVARRETE MARIA MAGDALENA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "BARRON GARCIA JESSICA ANDREA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"}
 ];
 nombres.forEach((item, index) => {
 guestListData.push({
 id: `marcos-${index + 1}`,
 name: item.nombre.trim(),
+mesa: item.mesa,
 type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
 group: "familia-marcos",
 cabezaFamilia: index < 10,
@@ -3676,87 +3702,89 @@ status: normalizeStatus(item.estado)
 });
 });
 };
-// Familia Jazzel (82 invitados) - COMPLETO Y CORREGIDO
+
+// Familia Jazzel (82 invitados) - CON FORMATO CORREGIDO
 const createFamiliaJazzelGuests = () => {
 const nombres = [
 // FILA 1-13
-{nombre: "MUÑOZ PADILLA CANDIDA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MUÑOZ PADILLA VIRGINIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA MUÑOZ ELVIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TORRES GARCIA KEVIN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TORRES GARCIA ZULEYMA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ORTIZ MARTINEZ SCOTT", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA MUÑOZ RIGOBERTO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA MUÑOZ OBDULIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "HURTADO GARCIA GAEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA MUÑOZ FRANCISCO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE MARTINEZ CONCEPCION", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA NAVARRETE FRANCISCO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ESCAMILLA GONZALEZ YAZMIN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA ESCAMILLA VERA LUNA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "MUÑOZ PADILLA CANDIDA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MUÑOZ PADILLA VIRGINIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ ELVIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TORRES GARCIA KEVIN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TORRES GARCIA ZULEYMA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ORTIZ MARTINEZ SCOTT", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ RIGOBERTO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ OBDULIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "HURTADO GARCIA GAEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ FRANCISCO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE MARTINEZ CONCEPCION", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA NAVARRETE FRANCISCO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ESCAMILLA GONZALEZ YAZMIN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA ESCAMILLA VERA LUNA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
 // FILA 14-24
-{nombre: "GARCIA NAVARRETE JONATHAN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "HIDALGO SANDRA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA NAVARRETE OSCAR", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "SANCHEZ BARBOSA BERENICE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA SANCHEZ SELENE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA SANCHEZ OSCAR TADEO", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "GARCIA NAVARRETE ANGELICA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "RAMIREZ GARCIA IVANNA VICTORIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "RAMIREZ GARCIA RENE DE MARIA", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "REZENDE SILVA TULIO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA NAVARRETE JONATHAN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "HIDALGO SANDRA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA NAVARRETE OSCAR", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "SANCHEZ BARBOSA BERENICE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA SANCHEZ SELENE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA SANCHEZ OSCAR TADEO", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "GARCIA NAVARRETE ANGELICA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "RAMIREZ GARCIA IVANNA VICTORIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "RAMIREZ GARCIA RENE DE MARIA", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "REZENDE SILVA TULIO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
 // FILA 25-33
-{nombre: "GARCIA MUÑOZ RAMIRO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA MUÑOZ RANULFO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "NAVARRETE MARTINEZ LETICIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA NAVARRETE MARICELA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GUZMAN ABEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GUZMAN GLADIS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GUZMAN ARCHI", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "GUZMAN ARGENIS", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "VALDEZ GARCIA YULMA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ RAMIRO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ RANULFO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "NAVARRETE MARTINEZ LETICIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA NAVARRETE MARICELA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GUZMAN ABEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GUZMAN GLADIS", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GUZMAN ARCHI", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "GUZMAN ARGENIS", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "VALDEZ GARCIA YULMA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
 // FILA 34-49
-{nombre: "VALDEZ GARCIA MARLEN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA GUILLEN RAMON", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ARRIAGA RIVERA KAREN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GUTIERREZ GARCIA ULISES", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ARREOLA DURAN CINTHYA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ARREOLA DURAN IVON", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GUZMAN LUIS ANGEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GUTIERREZ ARREOLA ULISES GABRIEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VALDEZ GARCIA NAYAMEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CHAVEZ ALBOR ALEJANDRA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CHAVEZ ALBOR WILLIAM", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "CHAVEZ ALBOR BRAYAN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VALDEZ CHAVEZ JOHANA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VALDEZ CHAVEZ ALEXANDRA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VALDEZ MORALES ANTONIO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CORTES GALLEGOS ELEAZAR", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MOLINA VELEZ MAGNOLIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA MUÑOZ MARGARITA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-// FILA 50-62 - CORREGIDO: nombres según Excel
-{nombre: "VALDEZ DE LOS SANTOS KARLA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VALDEZ DE LOS SANTOS NAYELI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA MUÑOZ ROGELIO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MACEDO RODRIGUEZ ARCENIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "HURTADO JAVIER", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "LEON VALDEZ ALONSO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VALDEZ GARCIA MARLEN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA GUILLEN RAMON", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ARRIAGA RIVERA KAREN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GUTIERREZ GARCIA ULISES", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ARREOLA DURAN CINTHYA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ARREOLA DURAN IVON", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GUZMAN LUIS ANGEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GUTIERREZ ARREOLA ULISES GABRIEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VALDEZ GARCIA NAYAMEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CHAVEZ ALBOR ALEJANDRA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CHAVEZ ALBOR WILLIAM", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "CHAVEZ ALBOR BRAYAN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VALDEZ CHAVEZ JOHANA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VALDEZ CHAVEZ ALEXANDRA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VALDEZ MORALES ANTONIO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CORTES GALLEGOS ELEAZAR", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MOLINA VELEZ MAGNOLIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ MARGARITA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+// FILA 50-62
+{nombre: "VALDEZ DE LOS SANTOS KARLA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VALDEZ DE LOS SANTOS NAYELI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ ROGELIO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MACEDO RODRIGUEZ ARCENIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "HURTADO JAVIER", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "LEON VALDEZ ALONSO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
 // FILA 63-67
-{nombre: "GARCIA MUÑOZ MATEO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ARREOLA MIRANDA RAMONA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ARREOLA DURAN ROSALBA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ARREOLA ALEXIS JEOVANNI", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "VALLE RUBIO BERTHA DE JESUS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA MUÑOZ ERIBERTO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "GARCIA VALLE ESTEBAN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "LOZANO DE LOS SANTOS FATIMA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ANTONIO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ANTONY", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"}
+{nombre: "GARCIA MUÑOZ MATEO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ARREOLA MIRANDA RAMONA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ARREOLA DURAN ROSALBA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ARREOLA ALEXIS JEOVANNI", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "VALLE RUBIO BERTHA DE JESUS", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA MUÑOZ ERIBERTO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "GARCIA VALLE ESTEBAN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "LOZANO DE LOS SANTOS FATIMA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ANTONIO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ANTONY", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"}
 ];
 nombres.forEach((item, index) => {
 guestListData.push({
 id: `jazzel-${index + 1}`,
 name: item.nombre.trim(),
+mesa: item.mesa,
 type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
 group: "familia-jazzel",
 cabezaFamilia: index < 10,
@@ -3764,42 +3792,44 @@ status: normalizeStatus(item.estado)
 });
 });
 };
-// Amigos de Ximena (20 invitados) - CORREGIDO
+
+// Amigos de Ximena (27 invitados) - CON FORMATO CORREGIDO
 const createAmigosXimenaGuests = () => {
 const nombres = [
 // FILA 1-10
-{nombre: "DE LA CRUZ RIVERA YORSHELI FERNANDA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "RIVERA ALMAZAN ALEJANDRA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "DE LA CRUZ RIVERA MICHELL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TERAN LAVOIGNET HANNA ELAINE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TERAN FARIAS ELEAZAR SAID", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "LAVOIGNET LOPEZ DAINELAINE", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "TERAN LAVOIGNET LIAM SAID", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "TERAN LAVOIGNET SAID ELI", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "MONCADA LEON IKER MATHIAS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CORONA PADILLA VIOLETA ZARETH", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "DE LA CRUZ RIVERA YORSHELI FERNANDA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "RIVERA ALMAZAN ALEJANDRA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "DE LA CRUZ RIVERA MICHELL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TERAN LAVOIGNET HANNA ELAINE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TERAN FARIAS ELEAZAR SAID", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "LAVOIGNET LOPEZ DAINELAINE", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "TERAN LAVOIGNET LIAM SAID", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "TERAN LAVOIGNET SAID ELI", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "MONCADA LEON IKER MATHIAS", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CORONA PADILLA VIOLETA ZARETH", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
 // FILA 11-20
-{nombre: "PADILLA LOPEZ MARIA ELENA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CORONA DOMINGUEZ ARNOLDO", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "LOAIZA LOPEZ CRISTOPHER ALDAIR", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "LOAIZA LOPEZ GEORGINA ALEJANDRA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "BRICEÑO SALCEDO MARTHA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "PIÑA LUIS LIBNI VELANI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CALDERON SOSA JOSHAR DANIEL", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "SANCHEZ CARRANZA PATRICIA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MARRON RAMON", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "VEGA MORA ELIZABETH ARACELI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "PEREZ VEGA YARENI", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CISNEROS HERNANDEZ DIEGO ELEANEY", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CISNEROS HERNANDEZ CARLOS FERNANDO", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
-{nombre: "HERNANDEZ HERNANDEZ TERESA", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "CISNEROS CERVANTES CARLOS", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "MOTA NUÑEZ BRUCE ERLAN", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "PADILLA LOPEZ MARIA ELENA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CORONA DOMINGUEZ ARNOLDO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "LOAIZA LOPEZ CRISTOPHER ALDAIR", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "LOAIZA LOPEZ GEORGINA ALEJANDRA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "BRICEÑO SALCEDO MARTHA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "PIÑA LUIS LIBNI VELANI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CALDERON SOSA JOSHAR DANIEL", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "SANCHEZ CARRANZA PATRICIA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MARRON RAMON", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "VEGA MORA ELIZABETH ARACELI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "PEREZ VEGA YARENI", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CISNEROS HERNANDEZ DIEGO ELEANEY", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CISNEROS HERNANDEZ CARLOS FERNANDO", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
+{nombre: "HERNANDEZ HERNANDEZ TERESA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "CISNEROS CERVANTES CARLOS", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "MOTA NUÑEZ BRUCE ERLAN", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"}
 ];
 nombres.forEach((item, index) => {
 guestListData.push({
 id: `amigos-${index + 1}`,
 name: item.nombre.trim(),
+mesa: item.mesa,
 type: item.tipo.toLowerCase().includes("niño") ? "niño" : "adulto",
 group: "amigos",
 cabezaFamilia: false,
@@ -3807,18 +3837,12 @@ status: normalizeStatus(item.estado)
 });
 });
 };
+
 // Crear todos los invitados
-createFamiliaMarcosGuests();  // 105 invitados
+createFamiliaMarcosGuests();  // 106 invitados
 createFamiliaJazzelGuests();  // 82 invitados
-createAmigosXimenaGuests();   // 20 invitados
-// Función para actualizar todos los contadores (se guarda en localStorage, pero NO se carga)
-function updateAllCounters() {
-const confirmados = guestListData.filter(guest => guest.status === "confirmado").length;
-const pendientes = guestListData.filter(guest => guest.status === "pendiente").length;
-const noAsistiran = guestListData.filter(guest => guest.status === "no asistirá").length;
-// Guardar en localStorage (para persistencia futura si se desea)
-saveGuestStatusToLocalStorage();
-}
+createAmigosXimenaGuests();   // 27 invitados
+
 // Función para cargar la lista de invitados con filtros mejorados
 function loadGuestList(filter = 'all') {
 const guestListBody = document.getElementById('guestListBody');
@@ -3843,12 +3867,13 @@ tableContainer.classList.add('guestlist-table-container');
 // Crear tabla
 const table = document.createElement('table');
 table.classList.add('guestlist-table');
-// Encabezados
+// Encabezados con ORDEN CORREGIDO: No., Nombre, Mesa, Tipo, Confirmación
 const thead = document.createElement('thead');
 thead.innerHTML = `
 <tr>
 <th>No.</th>
 <th>Nombre Completo</th>
+<th>Mesa</th>
 <th>Tipo de Platillo</th>
 <th>Confirmación</th>
 </tr>
@@ -3876,6 +3901,13 @@ numCell.style.textAlign = 'center';
 // Nombre
 const nameCell = document.createElement('td');
 nameCell.textContent = guest.name;
+// Mesa - AHORA DESPUÉS DEL NOMBRE
+const mesaCell = document.createElement('td');
+mesaCell.textContent = guest.mesa || "0";
+mesaCell.style.textAlign = 'center';
+mesaCell.style.fontWeight = 'bold';
+mesaCell.style.color = '#ff2e74';
+mesaCell.style.textShadow = '0 0 10px rgba(255, 46, 116, 0.5)';
 // Tipo de platillo
 const typeCell = document.createElement('td');
 typeCell.textContent = guest.type === 'adulto' ? 'Platillo Adulto' : 'Platillo Niño';
@@ -3902,9 +3934,10 @@ statusBadge.classList.add('status-badge', statusClass);
 statusBadge.textContent = statusText;
 statusCell.appendChild(statusBadge);
 statusCell.style.textAlign = 'center';
-// Agregar celdas a la fila
+// Agregar celdas a la fila EN EL ORDEN CORRECTO
 row.appendChild(numCell);
 row.appendChild(nameCell);
+row.appendChild(mesaCell);
 row.appendChild(typeCell);
 row.appendChild(statusCell);
 tbody.appendChild(row);
@@ -3912,16 +3945,6 @@ tbody.appendChild(row);
 table.appendChild(tbody);
 tableContainer.appendChild(table);
 guestListBody.appendChild(tableContainer);
-// Actualizar contadores (solo localStorage, no interfaz)
-updateAllCounters();
-}
-// Función para guardar el estado en localStorage
-function saveGuestStatusToLocalStorage() {
-const statusData = {};
-guestListData.forEach(guest => {
-statusData[guest.id] = guest.status;
-});
-localStorage.setItem('guestStatus', JSON.stringify(statusData));
 }
 // Configurar filtros de invitados
 function setupGuestFilters() {
@@ -4298,16 +4321,12 @@ loadQuestion();
 window.addEventListener('load', function() {
 // Mostrar el modal de activación de audio
 audioModal.style.display = 'flex';
-// >>>> CRUCIAL: NO CARGAR DESDE localStorage <<<<
-// loadGuestStatusFromLocalStorage(); // ¡COMENTADO!
 // Inicializar
 createBubbleHearts();
 observeSections();
 loadGuestList(); // Renderiza con los estados del código
 setupGuestFilters();
 setupSearch();
-// Solo guardamos contadores (no interfaz)
-updateAllCounters();
 });
 </script>
 </body>
