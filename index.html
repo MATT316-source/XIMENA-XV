@@ -1833,6 +1833,67 @@ box-shadow: 0 3px 8px rgba(255, 152, 0, 0.4) !important;
 background: linear-gradient(135deg, #F44336, #C62828) !important;
 box-shadow: 0 3px 8px rgba(244, 67, 54, 0.4) !important;
 }
+/* ========== FILTRO POR MESA - LISTA DESPLEGABLE ========== */
+.table-filter-container {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.table-filter-label {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 12px;
+    display: block;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: 500;
+}
+
+.table-filter-select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 155, 179, 0.5);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+    min-width: 250px;
+    font-family: 'Maven Pro', sans-serif;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 20px;
+    padding-right: 60px;
+}
+
+.table-filter-select:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 107, 139, 0.8);
+}
+
+.table-filter-select:focus {
+    border-color: rgba(255, 107, 139, 0.8);
+    box-shadow: 0 0 20px rgba(255, 107, 139, 0.4);
+}
+
+.table-filter-select option {
+    background: rgba(255, 107, 139, 0.9);
+    color: white;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .table-filter-select {
+        min-width: 200px;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
+
 /* ========== LISTA DE INVITADOS CON COLUMNA MESA ========== */
 .guestlist-section {
 background: url('https://i.pinimg.com/736x/70/73/d2/7073d22dccd8831ad7943468395e2aed.jpg') center/cover no-repeat fixed;
@@ -2032,7 +2093,7 @@ border: 2px solid rgba(255, 155, 179, 0.5);
 text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 font-family: 'Maven Pro', sans-serif;
 }
-/* Sección confirmación - SIN CUADRO DE FONDO */
+/* Sección confirmación - SIN CUADRO DE FONDO - MODIFICADA: SIN BOTONES */
 .confirmation-section {
 background: url('https://i.pinimg.com/1200x/4e/ae/15/4eae15131810c3fe141f5fa263cf00f8.jpg') center/cover no-repeat fixed;
 text-align: center;
@@ -2628,6 +2689,9 @@ right: 15px;
 grid-template-columns: 1fr;
 gap: 20px;
 }
+.table-filter-select {
+    min-width: 220px;
+}
 }
 @media (max-width: 768px) {
 .header-container {
@@ -2793,6 +2857,14 @@ font-size: 1.8rem;
 .quiz-option {
 font-size: 1.3rem;
 }
+.table-filter-label {
+    font-size: 1.3rem;
+}
+.table-filter-select {
+    min-width: 200px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+}
 }
 @media (max-width: 576px) {
 .logo {
@@ -2903,6 +2975,11 @@ font-size: 1.5rem;
 .social-icon {
 font-size: 1.8rem;
 }
+.table-filter-select {
+    min-width: 180px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
 }
 @media (max-width: 400px) {
 nav {
@@ -2938,6 +3015,11 @@ font-size: 1.5rem;
 }
 .section-title {
 font-size: 2rem;
+}
+.table-filter-select {
+    min-width: 160px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
 }
 }
 </style>
@@ -3081,12 +3163,41 @@ junto a su hija<br>
 <div class="countdown-message" id="countdown-message">¡Faltan muy pocos días para este momento especial!</div>
 </div>
 </section>
-<!-- 6. Sección Lista de Invitados - MODIFICADA SIN CONTADORES -->
+<!-- 6. Sección Lista de Invitados - MODIFICADA SIN CONTADORES CON FILTRO POR MESA -->
 <section class="guestlist-section" id="invitados">
 <h2 class="section-title">Lista de Invitados</h2>
 <div class="guestlist-container">
 <p class="guestlist-text">Aquí puedes verificar si aparece tu nombre y el de tus acompañantes</p>
 <!-- CONTADORES ELIMINADOS (NO SE MUESTRAN) -->
+<!-- Filtro por Mesa - LISTA DESPLEGABLE -->
+<div class="table-filter-container">
+    <label class="table-filter-label">Filtrar por número de mesa:</label>
+    <select class="table-filter-select" id="tableFilter">
+        <option value="all">Todas las mesas</option>
+        <option value="0">Mesa 0</option>
+        <option value="1">Mesa 1</option>
+        <option value="2">Mesa 2</option>
+        <option value="3">Mesa 3</option>
+        <option value="4">Mesa 4</option>
+        <option value="5">Mesa 5</option>
+        <option value="6">Mesa 6</option>
+        <option value="7">Mesa 7</option>
+        <option value="8">Mesa 8</option>
+        <option value="9">Mesa 9</option>
+        <option value="10">Mesa 10</option>
+        <option value="11">Mesa 11</option>
+        <option value="12">Mesa 12</option>
+        <option value="13">Mesa 13</option>
+        <option value="14">Mesa 14</option>
+        <option value="15">Mesa 15</option>
+        <option value="16">Mesa 16</option>
+        <option value="17">Mesa 17</option>
+        <option value="18">Mesa 18</option>
+        <option value="19">Mesa 19</option>
+        <option value="20">Mesa 20</option>
+        <option value="21">Mesa 21</option>
+        </select>
+</div>
 <!-- Filtros - SIN "Solo Pendientes" y "Solo Confirmados" -->
 <div class="guestlist-filters">
 <button class="filter-btn active" data-filter="all">
@@ -3116,23 +3227,17 @@ junto a su hija<br>
 </div>
 </div>
 </section>
-<!-- 7. Sección Confirmar Asistencia - SIN CUADRO DE FONDO - CON BOTÓN GRIS AÑADIDO -->
+<!-- 7. Sección Confirmar Asistencia - SIN CUADRO DE FONDO - MODIFICADA: SIN BOTONES -->
 <section class="confirmation-section" id="confirmar">
 <h2 class="section-title"><u>AVISO IMPORTANTE</u></h2>
 <div class="confirmation-container">
 <p class="confirmation-text">
 <strong>Ya se acerca el gran día de la fiesta de XV de XIMENA y queremos que todo sea perfecto, </strong><br>
 <strong>especialmente para que tú y todos nuestros seres queridos disfruten sin ningún contratiempo.</strong><br>
-<strong>"Te pido un favor importante": Para que tu acceso al salón sea inmediato y sin demoras, por favor confirma que tu nombre (y el de tus acompañantes) está en la lista oficial. <u>La fiesta es exclusiva para invitados confirmados que aparezcan en ella.</u></strong><br><br>
+<strong>"Te pido un favor importante": Para que tu acceso al salón sea inmediato y sin demoras, por favor revisa que tu nombre (y el de tus acompañantes) está en la lista oficial. <u>La fiesta es exclusiva para invitados confirmados que aparezcan en ella.</u></strong><br><br>
 ¡Esperamos contar con tu presencia en este día tan especial!.
 </p>
-<a href="https://wa.me/4437292451?text=Hola,%20confirmo%20mi%20asistencia%20a%20tus%2015%20años" class="whatsapp-button" target="_blank">
-<i class="fab fa-whatsapp"></i> Confirmar por WhatsApp
-</a>
-<!-- BOTÓN GRIS AÑADIDO -->
-<a href="https://wa.me/4437292451?text=Hola,%20lamento%20informar%20que%20no%20podré%20asistir%20a%20tus%2015%20años" class="whatsapp-button grey" target="_blank" style="margin-top: 20px;">
-<i class="fab fa-whatsapp"></i> No podré asistir
-</a>
+<!-- BOTONES ELIMINADOS SEGÚN SOLICITUD -->
 </div>
 </section>
 <!-- 8. Sección Ceremonia - SIN CUADRO DE FONDO -->
@@ -3556,7 +3661,7 @@ dots: true
 });
 
 // =============================================
-// LISTA DE INVITADOS - ACTUALIZADA CON COLUMNA MESA DESPUÉS DEL NOMBRE
+// LISTA DE INVITADOS - ACTUALIZADA CON FILTRO POR MESA
 // =============================================
 // Datos de invitados del Excel - CON FORMATO CORREGIDO: {nombre, mesa, tipo, estado}
 const guestListData = [];
@@ -3849,8 +3954,12 @@ createFamiliaMarcosGuests();  // 106 invitados
 createFamiliaJazzelGuests();  // 82 invitados
 createAmigosXimenaGuests();   // 27 invitados
 
+// Variables globales para filtros
+let currentFilter = 'all';
+let currentTableFilter = 'all';
+
 // Función para cargar la lista de invitados con filtros mejorados
-function loadGuestList(filter = 'all') {
+function loadGuestList(filter = 'all', tableFilter = 'all') {
 const guestListBody = document.getElementById('guestListBody');
 guestListBody.innerHTML = '';
 let filteredGuests = [...guestListData];
@@ -3859,6 +3968,10 @@ if (filter !== 'all') {
 if (['familia-marcos', 'familia-jazzel', 'amigos'].includes(filter)) {
 filteredGuests = guestListData.filter(guest => guest.group === filter);
 }
+}
+// Filtrar por mesa
+if (tableFilter !== 'all') {
+filteredGuests = filteredGuests.filter(guest => guest.mesa === tableFilter);
 }
 if (filteredGuests.length === 0) {
 const noResults = document.createElement('div');
@@ -3955,13 +4068,19 @@ guestListBody.appendChild(tableContainer);
 // Configurar filtros de invitados
 function setupGuestFilters() {
 const filterButtons = document.querySelectorAll('.filter-btn');
+const tableFilter = document.getElementById('tableFilter');
 filterButtons.forEach(button => {
 button.addEventListener('click', () => {
 filterButtons.forEach(btn => btn.classList.remove('active'));
 button.classList.add('active');
-const filter = button.getAttribute('data-filter');
-loadGuestList(filter);
+currentFilter = button.getAttribute('data-filter');
+loadGuestList(currentFilter, currentTableFilter);
 });
+});
+// Configurar filtro por mesa
+tableFilter.addEventListener('change', function() {
+currentTableFilter = this.value;
+loadGuestList(currentFilter, currentTableFilter);
 });
 }
 // Función para filtrar por búsqueda
