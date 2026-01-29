@@ -1928,171 +1928,225 @@ text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 font-family: 'Maven Pro', sans-serif;
 font-weight: 500;
 }
-/* Filtros - MODIFICADOS (sin Solo Pendientes y Solo Confirmados) */
+
+/* ========== FILTROS PARA INVITADOS - MEJORADOS CON BOTÓN LIMPIAR ========== */
 .guestlist-filters {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 15px;
-margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 0 10px;
 }
+
 .filter-btn {
-background: rgba(255, 255, 255, 0.1);
-border: 2px solid rgba(255, 155, 179, 0.5);
-padding: 12px 25px;
-border-radius: 30px;
-cursor: pointer;
-transition: all 0.3s;
-font-size: 1.1rem;
-display: flex;
-align-items: center;
-gap: 10px;
-color: white;
-min-width: 160px;
-justify-content: center;
-font-family: 'Maven Pro', sans-serif;
-font-weight: 500;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 155, 179, 0.5);
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    min-width: 140px;
+    justify-content: center;
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    flex: 1;
+    min-width: 120px;
+    max-width: 180px;
 }
+
 .filter-btn:hover {
-background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
 }
+
 .filter-btn.active {
-background: rgba(255, 107, 139, 0.8);
-color: white;
-border-color: rgba(255, 107, 139, 0.8);
+    background: rgba(255, 107, 139, 0.8);
+    color: white;
+    border-color: rgba(255, 107, 139, 0.8);
+    box-shadow: 0 4px 12px rgba(255, 107, 139, 0.3);
 }
+
 .filter-btn i {
-font-size: 1.2rem;
+    font-size: 1.1rem;
 }
-/* Búsqueda - SIN CUADRO DE FONDO */
+
+/* Botón especial para limpiar filtros */
+#clearFiltersBtn {
+    background: rgba(155, 155, 155, 0.3);
+    border-color: rgba(200, 200, 200, 0.6);
+    min-width: 150px;
+}
+
+#clearFiltersBtn:hover {
+    background: rgba(175, 175, 175, 0.4);
+}
+
+#clearFiltersBtn.active {
+    background: rgba(100, 100, 100, 0.6);
+    border-color: rgba(150, 150, 150, 0.8);
+}
+
+/* ========== BÚSQUEDA - MEJORADA ========== */
 .guestlist-search {
-margin-bottom: 40px;
-position: relative;
+    margin-bottom: 40px;
+    position: relative;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
 }
+
 .guestlist-search input {
-width: 100%;
-padding: 18px 25px;
-border: 2px solid rgba(255, 155, 179, 0.5);
-border-radius: 50px;
-font-size: 1.2rem;
-outline: none;
-transition: all 0.3s;
-background: rgba(255, 255, 255, 0.2);
-color: white;
-backdrop-filter: blur(5px);
-font-family: 'Maven Pro', sans-serif;
+    width: 100%;
+    padding: 16px 25px;
+    border: 2px solid rgba(255, 155, 179, 0.5);
+    border-radius: 50px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(5px);
+    font-family: 'Maven Pro', sans-serif;
 }
+
 .guestlist-search input::placeholder {
-color: rgba(255, 255, 255, 0.7);
-font-family: 'Maven Pro', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Maven Pro', sans-serif;
 }
+
 .guestlist-search input:focus {
-border-color: rgba(255, 107, 139, 0.8);
-box-shadow: 0 0 20px rgba(255, 107, 139, 0.4);
-background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 107, 139, 0.8);
+    box-shadow: 0 0 20px rgba(255, 107, 139, 0.4);
+    background: rgba(255, 255, 255, 0.3);
 }
+
 .guestlist-search i {
-position: absolute;
-right: 25px;
-top: 50%;
-transform: translateY(-50%);
-color: rgba(255, 155, 179, 0.8);
-z-index: 2;
-font-size: 1.3rem;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 155, 179, 0.8);
+    z-index: 2;
+    font-size: 1.2rem;
 }
+
 /* Contenedor de tabla - SIN CUADRO DE FONDO - CORREGIDO */
 .guestlist-table-container {
-overflow-x: auto;
-margin-bottom: 30px;
-max-height: 500px;
-overflow-y: auto;
-border-radius: 0;
-border: 2px solid rgba(255, 255, 255, 0.2);
-background: rgba(255, 255, 255, 0.05);
+    overflow-x: auto;
+    margin-bottom: 30px;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
 }
+
 /* Tabla de invitados - CON MESA DESPUÉS DEL NOMBRE (5 columnas con numeración) */
 .guestlist-table {
-width: 100%;
-border-collapse: collapse;
-min-width: 300px;
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 300px;
 }
+
 .guestlist-table th,
 .guestlist-table td {
-padding: 15px 12px;
-text-align: left;
-border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-font-size: 1.1rem;
-color: white;
-font-family: 'Maven Pro', sans-serif;
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1.05rem;
+    color: white;
+    font-family: 'Maven Pro', sans-serif;
 }
+
 .guestlist-table th {
-background: rgba(255, 255, 255, 0.1);
-color: white;
-font-weight: 600;
-cursor: pointer;
-position: sticky;
-top: 0;
-z-index: 10;
-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-white-space: nowrap;
-font-family: 'Maven Pro', sans-serif;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    font-family: 'Maven Pro', sans-serif;
+    backdrop-filter: blur(5px);
 }
+
 .guestlist-table th:hover {
-background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
 }
+
 .guestlist-table tr:hover {
-background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
+
 /* Mostrar 5 columnas: No., Nombre, Mesa, Tipo de Platillo, Confirmación */
 .guestlist-table th:nth-child(1),
 .guestlist-table td:nth-child(1) {
-width: 8%; /* Número */
-text-align: center;
-display: table-cell !important;
+    width: 8%; /* Número */
+    text-align: center;
+    display: table-cell !important;
 }
+
 .guestlist-table th:nth-child(2),
 .guestlist-table td:nth-child(2) {
-width: 42%; /* Nombre */
-display: table-cell !important;
+    width: 42%; /* Nombre */
+    display: table-cell !important;
 }
+
 .guestlist-table th:nth-child(3),
 .guestlist-table td:nth-child(3) {
-width: 15%; /* Mesa - DESPUÉS DEL NOMBRE */
-text-align: center;
-display: table-cell !important;
+    width: 15%; /* Mesa - DESPUÉS DEL NOMBRE */
+    text-align: center;
+    display: table-cell !important;
 }
+
 .guestlist-table th:nth-child(4),
 .guestlist-table td:nth-child(4) {
-width: 20%; /* Tipo de Platillo */
-display: table-cell !important;
+    width: 20%; /* Tipo de Platillo */
+    display: table-cell !important;
 }
+
 .guestlist-table th:nth-child(5),
 .guestlist-table td:nth-child(5) {
-width: 15%; /* Confirmación */
-display: table-cell !important;
+    width: 15%; /* Confirmación */
+    display: table-cell !important;
 }
+
 /* Estilo especial para celda de Mesa */
 .guestlist-table td:nth-child(3) {
-font-weight: bold;
-color: #ff2e74;
-text-align: center;
-font-size: 1.2rem;
-text-shadow: 0 0 10px rgba(255, 46, 116, 0.5);
+    font-weight: bold;
+    color: #ff2e74;
+    text-align: center;
+    font-size: 1.15rem;
+    text-shadow: 0 0 10px rgba(255, 46, 116, 0.5);
 }
+
 /* Mensaje de invitados - SIN CUADRO DE FONDO */
 .guestlist-message {
-margin-top: 40px;
-padding: 25px;
-background: rgba(255, 255, 255, 0.1);
-border-radius: 0;
-font-size: 1.5rem;
-color: white;
-font-weight: 600;
-text-align: center;
-border: 2px solid rgba(255, 155, 179, 0.5);
-text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-font-family: 'Maven Pro', sans-serif;
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    border: 2px solid rgba(255, 155, 179, 0.5);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    font-family: 'Maven Pro', sans-serif;
+    backdrop-filter: blur(5px);
 }
+
 /* Sección confirmación - SIN CUADRO DE FONDO - MODIFICADA: SIN BOTONES */
 .confirmation-section {
 background: url('https://i.pinimg.com/1200x/4e/ae/15/4eae15131810c3fe141f5fa263cf00f8.jpg') center/cover no-repeat fixed;
@@ -2657,7 +2711,7 @@ transform: translateY(0px);
 }
 }
 /* ============================ */
-/* RESPONSIVE PARA MÓVILES */
+/* RESPONSIVE PARA MÓVILES - FILTROS MEJORADOS */
 /* ============================ */
 @media (max-width: 1200px) {
 nav ul li {
@@ -2670,6 +2724,7 @@ nav ul li a i {
 font-size: 1rem;
 }
 }
+
 @media (max-width: 992px) {
 .section-title {
 font-size: 3.2rem;
@@ -2693,6 +2748,7 @@ gap: 20px;
     min-width: 220px;
 }
 }
+
 @media (max-width: 768px) {
 .header-container {
 padding: 0 15px;
@@ -2766,10 +2822,19 @@ height: 400px;
 .reception-image {
 max-height: 350px;
 }
+/* MEJORAS ESPECÍFICAS PARA FILTROS EN MÓVILES */
 .guestlist-filters {
-flex-direction: column;
-align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
 }
+
+.filter-btn {
+    min-width: 110px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    gap: 5px;
+}
+
 .message-section,
 .parents-section {
 background-attachment: scroll;
@@ -2827,11 +2892,11 @@ font-size: 1.5rem;
 .guestlist-table th,
 .guestlist-table td {
 padding: 10px 8px;
-font-size: 1rem;
+font-size: 0.95rem;
 }
 .status-badge {
 padding: 5px 10px;
-font-size: 0.8rem;
+font-size: 0.75rem;
 }
 /* Ajustes de fuentes para móviles */
 .ceremony-container h3,
@@ -2866,6 +2931,7 @@ font-size: 1.3rem;
     font-size: 1.1rem;
 }
 }
+
 @media (max-width: 576px) {
 .logo {
 font-size: 1.3rem;
@@ -2895,6 +2961,20 @@ height: 300px;
 .reception-image {
 max-height: 250px;
 }
+/* MEJORAS PARA FILTROS EN CELULARES PEQUEÑOS */
+.guestlist-filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-btn {
+    width: 90%;
+    max-width: 250px;
+    min-width: auto;
+    justify-content: center;
+}
+
 /* CORRECCIÓN: Los textos se muestran junto a los íconos */
 nav ul li a {
 font-size: 0.9rem;
@@ -2914,7 +2994,7 @@ font-size: 1rem;
 .guestlist-table th,
 .guestlist-table td {
 padding: 8px 6px;
-font-size: 0.9rem;
+font-size: 0.85rem;
 }
 /* Responsive para audio player */
 .audio-player {
@@ -2955,6 +3035,11 @@ padding: 60px 5%;
 .guestlist-table {
 min-width: 280px;
 }
+.guestlist-table th,
+.guestlist-table td {
+font-size: 0.8rem;
+padding: 6px 4px;
+}
 /* Ajustes adicionales de fuentes */
 .quiz-intro {
 font-size: 1.4rem;
@@ -2981,6 +3066,7 @@ font-size: 1.8rem;
     font-size: 1rem;
 }
 }
+
 @media (max-width: 400px) {
 nav {
 width: 85%;
@@ -2993,13 +3079,23 @@ nav ul li a i {
 margin-right: 6px;
 font-size: 1rem;
 }
+/* FILTROS EN PANTALLAS MUY PEQUEÑAS */
+.guestlist-filters {
+    gap: 6px;
+}
+
+.filter-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
 .guestlist-table {
 min-width: 250px;
 }
 .guestlist-table th,
 .guestlist-table td {
 padding: 6px 4px;
-font-size: 0.85rem;
+font-size: 0.8rem;
 }
 .message-text {
 font-size: 1.2rem;
@@ -3163,7 +3259,7 @@ junto a su hija<br>
 <div class="countdown-message" id="countdown-message">¡Faltan muy pocos días para este momento especial!</div>
 </div>
 </section>
-<!-- 6. Sección Lista de Invitados - MODIFICADA SIN CONTADORES CON FILTRO POR MESA -->
+<!-- 6. Sección Lista de Invitados - MODIFICADA CON BOTÓN LIMPIAR FILTROS -->
 <section class="guestlist-section" id="invitados">
 <h2 class="section-title">Lista de Invitados</h2>
 <div class="guestlist-container">
@@ -3185,20 +3281,9 @@ junto a su hija<br>
         <option value="8">Mesa 8</option>
         <option value="9">Mesa 9</option>
         <option value="10">Mesa 10</option>
-        <option value="11">Mesa 11</option>
-        <option value="12">Mesa 12</option>
-        <option value="13">Mesa 13</option>
-        <option value="14">Mesa 14</option>
-        <option value="15">Mesa 15</option>
-        <option value="16">Mesa 16</option>
-        <option value="17">Mesa 17</option>
-        <option value="18">Mesa 18</option>
-        <option value="19">Mesa 19</option>
-        <option value="20">Mesa 20</option>
-        <option value="21">Mesa 21</option>
-        </select>
+    </select>
 </div>
-<!-- Filtros - SIN "Solo Pendientes" y "Solo Confirmados" -->
+<!-- Filtros - CON BOTÓN "LIMPIAR FILTROS" -->
 <div class="guestlist-filters">
 <button class="filter-btn active" data-filter="all">
 <i class="fas fa-users"></i> Todos
@@ -3211,6 +3296,10 @@ junto a su hija<br>
 </button>
 <button class="filter-btn" data-filter="amigos">
 <i class="fas fa-user-friends"></i> Amigos Ximena
+</button>
+<!-- BOTÓN LIMPIAR FILTROS - NUEVO -->
+<button class="filter-btn" id="clearFiltersBtn">
+<i class="fas fa-broom"></i> Limpiar Filtros
 </button>
 </div>
 <!-- Búsqueda -->
@@ -3234,7 +3323,7 @@ junto a su hija<br>
 <p class="confirmation-text">
 <strong>Ya se acerca el gran día de la fiesta de XV de XIMENA y queremos que todo sea perfecto, </strong><br>
 <strong>especialmente para que tú y todos nuestros seres queridos disfruten sin ningún contratiempo.</strong><br>
-<strong>"Te pido un favor importante": Para que tu acceso al salón sea inmediato y sin demoras, por favor revisa que tu nombre (y el de tus acompañantes) está en la lista oficial. <u>La fiesta es exclusiva para invitados confirmados que aparezcan en ella.</u></strong><br><br>
+<strong>"Te pido un favor importante": Para que tu acceso al salón sea inmediato y sin demoras, por favor confirma que tu nombre (y el de tus acompañantes) está en la lista oficial. <u>La fiesta es exclusiva para invitados confirmados que aparezcan en ella.</u></strong><br><br>
 ¡Esperamos contar con tu presencia en este día tan especial!.
 </p>
 <!-- BOTONES ELIMINADOS SEGÚN SOLICITUD -->
@@ -3661,7 +3750,7 @@ dots: true
 });
 
 // =============================================
-// LISTA DE INVITADOS - ACTUALIZADA CON FILTRO POR MESA
+// LISTA DE INVITADOS - ACTUALIZADA CON BOTÓN LIMPIAR FILTROS
 // =============================================
 // Datos de invitados del Excel - CON FORMATO CORREGIDO: {nombre, mesa, tipo, estado}
 const guestListData = [];
@@ -3882,7 +3971,7 @@ const nombres = [
 // FILA 63-67
 {nombre: "GARCIA MUÑOZ MATEO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
 {nombre: "ARREOLA MIRANDA RAMONA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
-{nombre: "ARREOLA DURAN ROSALBA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
+{nombre: "ARREOLA DURAN ROSALBA", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMado"},
 {nombre: "ARREOLA ALEXIS JEOVANNI", mesa: "0", tipo: "PLATILLO NIÑO", estado: "CONFIRMADO"},
 {nombre: "VALLE RUBIO BERTHA DE JESUS", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
 {nombre: "GARCIA MUÑOZ ERIBERTO", mesa: "0", tipo: "PLATILLO ADULTO", estado: "CONFIRMADO"},
@@ -4065,23 +4154,54 @@ table.appendChild(tbody);
 tableContainer.appendChild(table);
 guestListBody.appendChild(tableContainer);
 }
+
+// Función para limpiar todos los filtros
+function clearAllFilters() {
+// Restablecer el filtro de grupo a "Todos"
+const filterButtons = document.querySelectorAll('.filter-btn');
+filterButtons.forEach(btn => {
+btn.classList.remove('active');
+if (btn.getAttribute('data-filter') === 'all') {
+btn.classList.add('active');
+}
+});
+currentFilter = 'all';
+// Restablecer el filtro de mesa a "Todas las mesas"
+const tableFilter = document.getElementById('tableFilter');
+tableFilter.value = 'all';
+currentTableFilter = 'all';
+// Limpiar la búsqueda
+const searchInput = document.getElementById('guestSearch');
+searchInput.value = '';
+// Cargar la lista completa
+loadGuestList(currentFilter, currentTableFilter);
+}
 // Configurar filtros de invitados
 function setupGuestFilters() {
 const filterButtons = document.querySelectorAll('.filter-btn');
 const tableFilter = document.getElementById('tableFilter');
+const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 filterButtons.forEach(button => {
+if (button.id !== 'clearFiltersBtn') {
 button.addEventListener('click', () => {
-filterButtons.forEach(btn => btn.classList.remove('active'));
+filterButtons.forEach(btn => {
+if (btn.id !== 'clearFiltersBtn') {
+btn.classList.remove('active');
+}
+});
 button.classList.add('active');
 currentFilter = button.getAttribute('data-filter');
 loadGuestList(currentFilter, currentTableFilter);
 });
+}
 });
 // Configurar filtro por mesa
 tableFilter.addEventListener('change', function() {
 currentTableFilter = this.value;
 loadGuestList(currentFilter, currentTableFilter);
 });
+// Configurar botón de limpiar filtros
+clearFiltersBtn.addEventListener('click', clearAllFilters);
 }
 // Función para filtrar por búsqueda
 function setupSearch() {
